@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workflows — OpsPilot</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="sidebar-overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <a class="logo" href="index.html"><span class="back-arrow">&lsaquo;</span> OpsPilot Help Center</a>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <div class="section-label">Getting Started</div>
+    <a href="getting-started.html">Getting Started</a>
+    <div class="section-label">Features</div>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="notes.html">Notes</a>
+    <a href="tasks.html">Tasks</a>
+    <a href="workflows.html" class="active">Workflows</a>
+    <div class="section-label">Configuration</div>
+    <a href="settings.html">Settings</a>
+    <a href="integrations.html">Integrations</a>
+    <a href="billing.html">Billing &amp; Plans</a>
+    <div class="section-label">Help</div>
+    <a href="faq.html">FAQ &amp; Troubleshooting</a>
+  </nav>
+</aside>
+
+<div class="main">
+  <button class="hamburger" onclick="toggleSidebar()">&#9776;</button>
+  <div class="content">
+
+    <div class="section-hero">
+      <h1>Workflows</h1>
+      <div class="last-updated">Last updated on 1 April 2026</div>
+      <p>Automate repetitive operations — when something happens in your store, OpsPilot can create tasks, send emails, post to Slack, and more.</p>
+    </div>
+
+    <h2>What Are Workflows?</h2>
+    <p>Workflows let you automate repetitive operations. When something happens (a new order, low inventory, abandoned checkout), OpsPilot can automatically create tasks, send emails, post to Slack, log to Google Sheets — or any combination.</p>
+
+    <div class="callout callout-note">
+      <span class="callout-icon">💡</span>
+      <div><strong>Example:</strong> "When a new order over $500 is placed, create a task for the fulfillment team and send a Slack alert."</div>
+    </div>
+
+    <h2>Creating a Workflow</h2>
+
+    <div class="steps">
+      <div class="step"><div class="step-content">Click <strong>Workflows</strong> in the sidebar</div></div>
+      <div class="step"><div class="step-content">Click <strong>New Workflow</strong></div></div>
+    </div>
+
+    <figure class="screenshot has-image">
+      <img src="images/costmized_workflow_wizard_.png" alt="Create new workflow wizard with Event-based and Scheduled options" loading="lazy" />
+      <figcaption class="screenshot-caption">The New Workflow wizard — choose between Event-based or Scheduled workflow types.</figcaption>
+    </figure>
+
+    <div class="steps" style="counter-reset: step 2;">
+      <div class="step"><div class="step-content">Give it a <strong>name</strong> (e.g., "High-Value Order Alert")</div></div>
+    </div>
+
+    <figure class="screenshot has-image">
+      <img src="images/creat_custem_work_flow_.png" alt="Create custom workflow screen" loading="lazy" />
+      <figcaption class="screenshot-caption">Name your workflow and configure its settings.</figcaption>
+    </figure>
+
+    <div class="steps" style="counter-reset: step 3;">
+      <div class="step"><div class="step-content">Choose a <strong>trigger</strong> — the event that starts the workflow</div></div>
+    </div>
+
+    <figure class="screenshot has-image">
+      <img src="images/chous_the_triger_action_.png" alt="Choose trigger action in workflow wizard" loading="lazy" />
+      <figcaption class="screenshot-caption">Choose the trigger that launches your workflow.</figcaption>
+    </figure>
+
+    <figure class="screenshot has-image">
+      <img src="images/chos_a_treger_waht_shloud_hapen_to_lanch_the_workflow_.png" alt="Trigger details with active status and deduplication settings" loading="lazy" />
+      <figcaption class="screenshot-caption">Trigger details panel showing active status, update-once-per-entity, and duplicate protection.</figcaption>
+    </figure>
+
+    <div class="steps" style="counter-reset: step 4;">
+      <div class="step"><div class="step-content">Add <strong>conditions</strong> (optional) — filters to narrow when it runs</div></div>
+    </div>
+
+    <figure class="screenshot has-image">
+      <img src="images/choos_predfined_condition_.png" alt="Predefined condition selector" loading="lazy" />
+      <figcaption class="screenshot-caption">Choose predefined conditions to filter when workflows run.</figcaption>
+    </figure>
+
+    <figure class="screenshot has-image">
+      <img src="images/add_costmized_condition_.png" alt="Add customized condition in workflow" loading="lazy" />
+      <figcaption class="screenshot-caption">Add custom AND/OR logic for advanced workflow rules.</figcaption>
+    </figure>
+
+    <figure class="screenshot has-image">
+      <img src="images/add_a_condetion_to_the_workflow_.png" alt="Condition step with match any/all and drag to reorder" loading="lazy" />
+      <figcaption class="screenshot-caption">The IF step — set condition matching (Any/All) and drag to reorder conditions.</figcaption>
+    </figure>
+
+    <div class="steps" style="counter-reset: step 5;">
+      <div class="step"><div class="step-content">Add <strong>actions</strong> — what should happen when the trigger fires</div></div>
+    </div>
+
+    <figure class="screenshot has-image">
+      <img src="images/the_action_tipe_.png" alt="Action type selector" loading="lazy" />
+      <figcaption class="screenshot-caption">Pick action type such as task, email, or external notification.</figcaption>
+    </figure>
+
+    <figure class="screenshot has-image">
+      <img src="images/Screenshot_2026-04-01_165139.png" alt="Then step with immediate and delayed actions" loading="lazy" />
+      <figcaption class="screenshot-caption">The THEN step — add immediate and delayed actions like tasks, notes, emails, Slack, and Google Sheets.</figcaption>
+    </figure>
+
+    <figure class="screenshot has-image">
+      <img src="images/add_action_waht_should_hapned_if_the_treger_and_the_condetion_get_true_.png" alt="Add action when trigger and condition are true" loading="lazy" />
+      <figcaption class="screenshot-caption">Define exactly what should happen when trigger and conditions are met.</figcaption>
+    </figure>
+
+    <figure class="screenshot has-image">
+      <img src="images/add_the_email_content_.png" alt="Compose workflow email content" loading="lazy" />
+      <figcaption class="screenshot-caption">Configure email subject and body directly inside the workflow action.</figcaption>
+    </figure>
+
+    <figure class="screenshot has-image">
+      <img src="images/if_the_action_is_sanding_email_you_shod_choos_the_emals_resever_costumer_stafe_or_admin_.png" alt="Choose email receivers for workflow action" loading="lazy" />
+      <figcaption class="screenshot-caption">Choose recipient type: customer, staff member, admin, or custom address.</figcaption>
+    </figure>
+
+    <div class="steps" style="counter-reset: step 6;">
+      <div class="step"><div class="step-content">Click <strong>Save</strong>, then toggle the workflow <strong>Active</strong></div></div>
+    </div>
+
+    <h2>Triggers</h2>
+    <p>A trigger is the event that starts your workflow. You can choose one trigger per workflow.</p>
+
+    <h3>Event-Based Triggers</h3>
+    <p>These fire instantly when something happens in your Shopify store:</p>
+    <table>
+      <thead><tr><th>Trigger</th><th>Fires When…</th><th>Example Use</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Order Created</strong></td><td>A new order is placed</td><td>Alert team for high-value orders</td></tr>
+        <tr><td><strong>Order Updated</strong></td><td>An order changes</td><td>Track payment or fulfillment changes</td></tr>
+        <tr><td><strong>Checkout Abandoned</strong></td><td>Customer leaves checkout</td><td>Send recovery reminder</td></tr>
+        <tr><td><strong>Inventory Level Updated</strong></td><td>Stock quantity changes</td><td>Alert when running low</td></tr>
+        <tr><td><strong>Customer Created</strong></td><td>New customer account</td><td>Welcome email, VIP tagging</td></tr>
+        <tr><td><strong>Product Updated</strong></td><td>A product is modified</td><td>Review task for quality control</td></tr>
+        <tr><td><strong>Manual Trigger</strong></td><td>You click "Run Now"</td><td>On-demand escalations</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Scheduled Trigger</h3>
+    <p>Run workflows on a set schedule (daily, weekly, monthly, or custom interval). Perfect for batch operations like daily unfulfilled orders checks.</p>
+
+    <h2>Conditions (Optional)</h2>
+    <p>Conditions let you filter when the workflow runs. Without conditions, the workflow triggers on every matching event.</p>
+
+    <h3>Operators</h3>
+    <table>
+      <thead><tr><th>Operator</th><th>Meaning</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Equals</strong></td><td>Exact match</td><td><code>financial_status</code> equals <code>"pending"</code></td></tr>
+        <tr><td><strong>Not Equal</strong></td><td>Does not match</td><td><code>fulfillment_status</code> not equal <code>"fulfilled"</code></td></tr>
+        <tr><td><strong>Greater Than</strong></td><td>Numeric comparison</td><td><code>total_price</code> greater than <code>500</code></td></tr>
+        <tr><td><strong>Less Than</strong></td><td>Numeric comparison</td><td><code>available</code> less than <code>10</code></td></tr>
+        <tr><td><strong>Contains</strong></td><td>Text includes value</td><td><code>tags</code> contains <code>"vip"</code></td></tr>
+        <tr><td><strong>Exists</strong></td><td>Field is present</td><td><code>email</code> exists</td></tr>
+      </tbody>
+    </table>
+
+    <h3>AND / OR Groups</h3>
+    <p>Combine conditions with AND (all must be true) or OR (at least one). You can nest groups for complex logic:</p>
+    <pre><code>IF (order.total_price > 500 AND order.tags contains "wholesale")
+   OR (order.total_price > 1000)
+→ Run actions</code></pre>
+
+    <h2>Actions</h2>
+    <p>Actions are what happens when the trigger fires and conditions are met. You can add multiple actions — they run in order.</p>
+
+    <h3>Create Task</h3>
+    <p>Automatically creates a task for your team. Set the title, description, priority, assignee, and due date offset.</p>
+    <div class="callout callout-note">
+      <span class="callout-icon">📝</span>
+      <div><strong>Example:</strong> Title: <code>Review high-value order #{{order_number}}</code> — Priority: High — Assign To: John — Due: 2 days</div>
+    </div>
+
+    <h3>Create Note</h3>
+    <p>Automatically creates an internal note. Set the title, content, entity type, and whether to pin it.</p>
+
+    <h3>Send Email</h3>
+    <p>Send an email to a customer, team member, or custom address. Supports HTML and template variables.</p>
+
+    <div class="callout callout-warning">
+      <span class="callout-icon">⚠️</span>
+      <div>Requires email integration to be configured. Not available on the Free plan.</div>
+    </div>
+
+    <h3>Send Slack Message</h3>
+    <p>Posts a message to your Slack channel. Supports Slack markdown and template variables.</p>
+
+    <div class="callout callout-warning">
+      <span class="callout-icon">⚠️</span>
+      <div>Requires Slack integration to be configured. Not available on the Free plan.</div>
+    </div>
+
+    <h3>Add to Google Sheet</h3>
+    <p>Appends a row to a Google Sheets spreadsheet. Great for reports, audit trails, and dashboards. Supports deduplication and custom styling.</p>
+
+    <h2>Template Variables</h2>
+    <p>Template variables let you insert <strong>dynamic data</strong> from the trigger into your actions. Wrap them in double curly braces: <code>{{variable_name}}</code>.</p>
+
+    <table>
+      <thead><tr><th>Variable</th><th>Value</th><th>Available For</th></tr></thead>
+      <tbody>
+        <tr><td><code>{{order_number}}</code></td><td>Order number (e.g., #1234)</td><td>Order triggers</td></tr>
+        <tr><td><code>{{order_total}}</code></td><td>Order total price</td><td>Order triggers</td></tr>
+        <tr><td><code>{{order_link}}</code></td><td>Link to order in Shopify admin</td><td>Order triggers</td></tr>
+        <tr><td><code>{{order_financial_status}}</code></td><td>Payment status</td><td>Order triggers</td></tr>
+        <tr><td><code>{{customer_name}}</code></td><td>Customer full name</td><td>Customer / Order triggers</td></tr>
+        <tr><td><code>{{customer_email}}</code></td><td>Customer email</td><td>Customer / Order triggers</td></tr>
+        <tr><td><code>{{product_title}}</code></td><td>Product name</td><td>Product triggers</td></tr>
+        <tr><td><code>{{product_link}}</code></td><td>Link to product in Shopify admin</td><td>Product triggers</td></tr>
+        <tr><td><code>{{store_name}}</code></td><td>Your store name</td><td>All triggers</td></tr>
+        <tr><td><code>{{event_timestamp}}</code></td><td>When the event occurred</td><td>All triggers</td></tr>
+      </tbody>
+    </table>
+
+    <figure class="screenshot has-image">
+      <img src="images/ation_informations.png" alt="Action information and dynamic values" loading="lazy" />
+      <figcaption class="screenshot-caption">Action information panel with dynamic values from the selected trigger.</figcaption>
+    </figure>
+
+    <div class="callout callout-tip">
+      <span class="callout-icon">💡</span>
+      <div>When editing an action, click the <strong>{} Variables</strong> button to see all available variables for your trigger type.</div>
+    </div>
+
+    <h2>Delayed Actions</h2>
+    <p>Add a delay to any action so it runs later instead of immediately. Enable <strong>Delay</strong> in the action settings and set the duration.</p>
+    <table>
+      <thead><tr><th>Delay</th><th>Use Case</th></tr></thead>
+      <tbody>
+        <tr><td>30 minutes</td><td>Send a follow-up email after order confirmation</td></tr>
+        <tr><td>2 hours</td><td>Remind fulfillment team if order still pending</td></tr>
+        <tr><td>1 day</td><td>Check if abandoned checkout was recovered</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Deduplication (Smart Repeat Prevention)</h2>
+    <p>OpsPilot automatically prevents duplicates:</p>
+    <ul>
+      <li><strong>Task Deduplication:</strong> When "Create Once Per Entity" is enabled (default), existing tasks for the same entity are updated instead of creating duplicates</li>
+      <li><strong>Email / Slack / Sheets:</strong> Identical notifications are not sent twice within 24 hours by default</li>
+    </ul>
+
+    <h2>Scheduled Workflows</h2>
+    <p>Run workflows on a repeating schedule instead of reacting to events. Choose a data source (orders, products, customers, or none), set a filter, and pick a frequency.</p>
+
+    <table>
+      <thead><tr><th>Frequency</th><th>Configuration</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Hourly</strong></td><td>Runs every hour</td></tr>
+        <tr><td><strong>Daily</strong></td><td>Pick one or more times</td></tr>
+        <tr><td><strong>Weekly</strong></td><td>Pick a day and time</td></tr>
+        <tr><td><strong>Monthly</strong></td><td>Pick a day of month and time</td></tr>
+        <tr><td><strong>Custom Interval</strong></td><td>Every X hours/days/weeks</td></tr>
+      </tbody>
+    </table>
+
+    <figure class="screenshot has-image">
+      <img src="images/workflow_remainder_.png" alt="Workflow reminder schedule settings" loading="lazy" />
+      <figcaption class="screenshot-caption">Set reminder frequency and scheduled execution details.</figcaption>
+    </figure>
+
+    <h2>Workflow Templates</h2>
+    <p>OpsPilot includes <strong>28+ pre-built templates</strong> to get you started quickly. Browse the template gallery when creating a new workflow.</p>
+
+    <figure class="screenshot has-image">
+      <img src="images/use_a_tamplate_.png" alt="Workflow template selection" loading="lazy" />
+      <figcaption class="screenshot-caption">Use a template to start quickly from prebuilt workflow logic.</figcaption>
+    </figure>
+
+    <h2>Workflow Management Screens</h2>
+    <figure class="screenshot has-image">
+      <img src="images/workflows_list_.png" alt="Workflow list page" loading="lazy" />
+      <figcaption class="screenshot-caption">Workflow list where you can activate, pause, edit, and monitor each automation.</figcaption>
+    </figure>
+
+    <figure class="screenshot has-image">
+      <img src="images/you_can_manage_your_woek_flow_hear_.png" alt="Manage workflows area" loading="lazy" />
+      <figcaption class="screenshot-caption">Central management area for workflow operations.</figcaption>
+    </figure>
+
+    <figure class="screenshot has-image">
+      <img src="images/you_can_creat_more_then_one_at_one_s_.png" alt="Create multiple workflows" loading="lazy" />
+      <figcaption class="screenshot-caption">Create and run multiple workflows at the same time.</figcaption>
+    </figure>
+
+    <h2>Testing a Workflow</h2>
+    <p>You can test without waiting for a real event: open the workflow and click <strong>Test Workflow</strong>. Pick a real order, product, or customer as test data.</p>
+
+    <div class="callout callout-note">
+      <span class="callout-icon">📝</span>
+      <div>Test runs count toward your monthly quota.</div>
+    </div>
+
+  </div>
+</div>
+
+<script src="nav.js"></script>
+</body>
+</html>

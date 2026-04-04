@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notes — OpsPilot</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="sidebar-overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <a class="logo" href="index.html"><span class="back-arrow">&lsaquo;</span> OpsPilot Help Center</a>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <div class="section-label">Getting Started</div>
+    <a href="getting-started.html">Getting Started</a>
+    <div class="section-label">Features</div>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="notes.html" class="active">Notes</a>
+    <a href="tasks.html">Tasks</a>
+    <a href="workflows.html">Workflows</a>
+    <div class="section-label">Configuration</div>
+    <a href="settings.html">Settings</a>
+    <a href="integrations.html">Integrations</a>
+    <a href="billing.html">Billing &amp; Plans</a>
+    <div class="section-label">Help</div>
+    <a href="faq.html">FAQ &amp; Troubleshooting</a>
+  </nav>
+</aside>
+
+<div class="main">
+  <button class="hamburger" onclick="toggleSidebar()">&#9776;</button>
+  <div class="content">
+
+    <div class="section-hero">
+      <h1>Notes</h1>
+      <div class="last-updated">Last updated on 1 April 2026</div>
+      <p>Add comments, instructions, and context to your Shopify orders, products, and customers. Like sticky notes for your store data.</p>
+    </div>
+
+    <h2>What Are Notes?</h2>
+    <p>Notes let you add comments, instructions, and context to your Shopify data that your whole team can see. Think of them as sticky notes attached to your store records.</p>
+    <ul>
+      <li><strong>"Customer requested gift wrapping"</strong> → attached to an Order</li>
+      <li><strong>"Restock by Friday, supplier: ABC Inc."</strong> → attached to a Product</li>
+      <li><strong>"VIP customer, always offer free shipping"</strong> → attached to a Customer</li>
+      <li><strong>"Weekly team meeting agenda"</strong> → standalone note (not attached to anything)</li>
+    </ul>
+
+    <h2>Creating a Note</h2>
+    <div class="steps">
+      <div class="step"><div class="step-content">Click <strong>Notes</strong> in the sidebar</div></div>
+      <div class="step"><div class="step-content">Click the <strong>Create Note</strong> button (top right)</div></div>
+      <div class="step"><div class="step-content">Choose an <strong>Entity Type</strong>: Order, Product, Customer, or None (standalone)</div></div>
+      <div class="step"><div class="step-content">If you chose an entity type, select a specific <strong>record</strong> from the dropdown</div></div>
+      <div class="step"><div class="step-content">Add an optional <strong>Title</strong> and write your <strong>Content</strong> using the rich text editor</div></div>
+      <div class="step"><div class="step-content">Click <strong>Save</strong></div></div>
+    </div>
+
+    <h3>Rich Text Formatting</h3>
+    <p>The note editor supports:</p>
+    <ul>
+      <li><strong>Bold</strong> and <em>Italic</em> text</li>
+      <li>Bullet lists and numbered lists</li>
+      <li>Blockquotes</li>
+      <li>Code blocks</li>
+    </ul>
+
+    <h2>Attaching Files</h2>
+    <p>You can upload files to any note — great for images, PDFs, or documents.</p>
+    <div class="steps">
+      <div class="step"><div class="step-content">When creating or editing a note, scroll down to <strong>File Attachments</strong></div></div>
+      <div class="step"><div class="step-content">Click <strong>Upload File</strong> or drag &amp; drop files into the upload area</div></div>
+      <div class="step"><div class="step-content">Click <strong>Save</strong> to confirm</div></div>
+    </div>
+
+    <p><strong>Supported files:</strong> PNG, JPG, GIF, WebP, PDF, DOC, DOCX, TXT, XLS, XLSX, CSV</p>
+
+    <h2>Viewing &amp; Editing Notes</h2>
+    <p>The Notes page shows all your notes in a table with title, content preview, entity info, author, and date. Click any note to open its detail view.</p>
+
+    <h2>Pinning Notes</h2>
+    <p>Pin important notes so they always appear at the top of your list. Click the 📌 icon on any note to pin/unpin it.</p>
+
+    <div class="callout callout-tip">
+      <span class="callout-icon">💡</span>
+      <div>Pin notes for ongoing issues, reminders, or important customer instructions.</div>
+    </div>
+
+    <h2>Converting Notes to Tasks</h2>
+    <p>Turn notes into actionable tasks with one click:</p>
+    <div class="steps">
+      <div class="step"><div class="step-content">Select one or more notes using the checkboxes</div></div>
+      <div class="step"><div class="step-content">Click <strong>Convert to Tasks</strong></div></div>
+      <div class="step"><div class="step-content">Review the task preview — the note title becomes the task title, and the content becomes the description</div></div>
+      <div class="step"><div class="step-content">Click <strong>Confirm</strong></div></div>
+    </div>
+
+    <h2>Searching &amp; Filtering</h2>
+    <table>
+      <thead><tr><th>Filter</th><th>Options</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Entity Type</strong></td><td>All, Orders, Products, Customers, Standalone</td></tr>
+        <tr><td><strong>Author</strong></td><td>Filter by team member who created the note</td></tr>
+        <tr><td><strong>Date Range</strong></td><td>Filter by creation date</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Notes on Entity Pages (Shopify Extension)</h2>
+    <p>OpsPilot adds a quick action button to your Shopify order, product, and customer pages. Click it to quickly create a note attached to that entity — without leaving the page!</p>
+
+  </div>
+</div>
+
+<script src="nav.js"></script>
+</body>
+</html>

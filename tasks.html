@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tasks — OpsPilot</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="sidebar-overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <a class="logo" href="index.html"><span class="back-arrow">&lsaquo;</span> OpsPilot Help Center</a>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <div class="section-label">Getting Started</div>
+    <a href="getting-started.html">Getting Started</a>
+    <div class="section-label">Features</div>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="notes.html">Notes</a>
+    <a href="tasks.html" class="active">Tasks</a>
+    <a href="workflows.html">Workflows</a>
+    <div class="section-label">Configuration</div>
+    <a href="settings.html">Settings</a>
+    <a href="integrations.html">Integrations</a>
+    <a href="billing.html">Billing &amp; Plans</a>
+    <div class="section-label">Help</div>
+    <a href="faq.html">FAQ &amp; Troubleshooting</a>
+  </nav>
+</aside>
+
+<div class="main">
+  <button class="hamburger" onclick="toggleSidebar()">&#9776;</button>
+  <div class="content">
+
+    <div class="section-hero">
+      <h1>Tasks</h1>
+      <div class="last-updated">Last updated on 1 April 2026</div>
+      <p>Track what needs to be done, who's responsible, and when it's due. Create tasks manually, from notes, or automatically via workflows.</p>
+    </div>
+
+    <h2>Creating a Task</h2>
+    <div class="steps">
+      <div class="step"><div class="step-content">Click <strong>Tasks</strong> in the sidebar</div></div>
+      <div class="step"><div class="step-content">Click the <strong>Create Task</strong> button</div></div>
+      <div class="step"><div class="step-content">Fill in the <strong>Title</strong>, choose a <strong>Priority</strong>, set a <strong>Due Date</strong>, and optionally <strong>Assign To</strong> a team member</div></div>
+      <div class="step"><div class="step-content">Add a <strong>Description</strong> with detailed instructions (supports rich text)</div></div>
+      <div class="step"><div class="step-content">Click <strong>Save</strong></div></div>
+    </div>
+
+    <h2>Priority Levels</h2>
+    <table>
+      <thead><tr><th>Priority</th><th>When to Use</th><th>Badge</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Low</strong></td><td>Nice-to-have, no rush</td><td><span class="badge badge-green">Low</span></td></tr>
+        <tr><td><strong>Medium</strong></td><td>Should be done soon</td><td><span class="badge badge-yellow">Medium</span></td></tr>
+        <tr><td><strong>High</strong></td><td>Important, needs attention this week</td><td><span class="badge badge-orange">High</span></td></tr>
+        <tr><td><strong>Urgent</strong></td><td>Drop everything and handle this now</td><td><span class="badge badge-red">Urgent</span></td></tr>
+      </tbody>
+    </table>
+
+    <h2>Task Statuses</h2>
+    <table>
+      <thead><tr><th>Status</th><th>Meaning</th><th>Closed?</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Pending</strong></td><td>Task hasn't been started yet</td><td>No</td></tr>
+        <tr><td><strong>In Progress</strong></td><td>Someone is working on it</td><td>No</td></tr>
+        <tr><td><strong>On Hold</strong></td><td>Paused — waiting for something</td><td>No</td></tr>
+        <tr><td><strong>Completed</strong></td><td>Task is done ✅</td><td>Yes</td></tr>
+        <tr><td><strong>Cancelled</strong></td><td>Task was cancelled</td><td>Yes</td></tr>
+        <tr><td><strong>Archived</strong></td><td>Old task moved to archive</td><td>Yes</td></tr>
+      </tbody>
+    </table>
+    <p>Your admin can create <strong>custom statuses</strong> in Settings (e.g., "Waiting for Customer", "Under Review").</p>
+
+    <h2>Table View</h2>
+    <p>The default view shows tasks in a table with columns for title, status, priority, assignee, due date, and created date. Click column headers to sort.</p>
+
+    <h2>Kanban Board View</h2>
+    <p>Switch to the Kanban view for a visual board — tasks appear as cards organized by status. <strong>Drag and drop</strong> cards between columns to change their status.</p>
+
+    <div class="callout callout-tip">
+      <span class="callout-icon">💡</span>
+      <div>To set the default view for your store, go to <strong>Settings → Task Preferences → Default View</strong>.</div>
+    </div>
+
+    <h2>Task Timeline</h2>
+    <p>Every task has a timeline that shows its full history — when it was created, every status change, every edit, and if it was created by a workflow (shows which workflow and what triggered it).</p>
+
+    <h2>Linking Tasks to Notes</h2>
+    <p>Tasks and notes can be connected. When creating a task, search for existing notes to link in the <strong>Notes</strong> section. You can also convert notes to tasks from the Notes page.</p>
+
+    <h2>Auto-Created Tasks (From Workflows)</h2>
+    <p>When a workflow has a "Create Task" action, tasks are created automatically. These tasks show an <strong>"Auto-created"</strong> badge and include a timeline entry showing which workflow created them.</p>
+
+    <h2>Filtering &amp; Searching</h2>
+    <table>
+      <thead><tr><th>Filter</th><th>Options</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Status</strong></td><td>Any, Pending, In Progress, Completed, etc.</td></tr>
+        <tr><td><strong>Priority</strong></td><td>Low, Medium, High, Urgent</td></tr>
+        <tr><td><strong>Assigned To</strong></td><td>Specific team member or Unassigned</td></tr>
+        <tr><td><strong>Due Date</strong></td><td>Date range filter</td></tr>
+        <tr><td><strong>Show</strong></td><td>Open tasks, Overdue tasks, All tasks</td></tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+<script src="nav.js"></script>
+</body>
+</html>

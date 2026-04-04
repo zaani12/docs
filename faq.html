@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ &amp; Troubleshooting — OpsPilot</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="sidebar-overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <a class="logo" href="index.html"><span class="back-arrow">&lsaquo;</span> OpsPilot Help Center</a>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <div class="section-label">Getting Started</div>
+    <a href="getting-started.html">Getting Started</a>
+    <div class="section-label">Features</div>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="notes.html">Notes</a>
+    <a href="tasks.html">Tasks</a>
+    <a href="workflows.html">Workflows</a>
+    <div class="section-label">Configuration</div>
+    <a href="settings.html">Settings</a>
+    <a href="integrations.html">Integrations</a>
+    <a href="billing.html">Billing &amp; Plans</a>
+    <div class="section-label">Help</div>
+    <a href="faq.html" class="active">FAQ &amp; Troubleshooting</a>
+  </nav>
+</aside>
+
+<div class="main">
+  <button class="hamburger" onclick="toggleSidebar()">&#9776;</button>
+  <div class="content">
+
+    <div class="section-hero">
+      <h1>FAQ &amp; Troubleshooting</h1>
+      <div class="last-updated">Last updated on 1 April 2026</div>
+      <p>Common questions, known issues, and how to get help.</p>
+    </div>
+
+    <h2>General Questions</h2>
+
+    <h3>What is OpsPilot?</h3>
+    <p>OpsPilot is a Shopify app that helps you manage store operations. It provides <strong>Notes</strong> to annotate orders, products, and customers; <strong>Tasks</strong> to track what needs to be done; and <strong>Workflows</strong> to automate repetitive actions.</p>
+
+    <h3>Does OpsPilot work with all Shopify plans?</h3>
+    <p>Yes. OpsPilot works with all Shopify plans (Basic, Shopify, Advanced, Plus).</p>
+
+    <h3>Is my data secure?</h3>
+    <p>Yes. OpsPilot uses encrypted connections, stores sensitive data in encrypted form, and follows security best practices. Your Shopify data is accessed through Shopify's official API with the permissions you approve.</p>
+
+    <h2>Notes FAQ</h2>
+
+    <h3>How many notes can I create?</h3>
+    <p>Unlimited on all plans (including Free).</p>
+
+    <h3>Can I attach files to notes?</h3>
+    <p>Yes. You can upload images, PDFs, and documents. See the <a href="notes.html">Notes guide</a> for details.</p>
+
+    <h3>Can I convert a note to a task?</h3>
+    <p>Yes. Select notes and click <strong>Convert to Tasks</strong>. Each note becomes a task and they remain linked.</p>
+
+    <h3>I deleted a note by mistake. Can I recover it?</h3>
+    <p>Notes move to a soft-deleted state and can be restored. Check the note list for a "Deleted" filter.</p>
+
+    <h2>Tasks FAQ</h2>
+
+    <h3>How do I change a task's status?</h3>
+    <ul>
+      <li><strong>Table View:</strong> Click the status badge on the task row</li>
+      <li><strong>Kanban View:</strong> Drag the task card to a different column</li>
+      <li><strong>Detail View:</strong> Open the task → Edit → change the status</li>
+    </ul>
+
+    <h3>Can I create custom task statuses?</h3>
+    <p>Yes. Go to <strong>Settings → Task Statuses</strong> and click <strong>Add Status</strong>.</p>
+
+    <h3>What's the difference between Table and Kanban view?</h3>
+    <p><strong>Table</strong> shows tasks in a spreadsheet-style list — good for sorting. <strong>Kanban</strong> shows cards on a board organized by status — good for visual tracking and drag-and-drop.</p>
+
+    <h2>Workflows FAQ</h2>
+
+    <h3>My workflow isn't triggering. Why?</h3>
+    <ol>
+      <li><strong>Workflow is not active</strong> — Make sure the toggle is set to Active</li>
+      <li><strong>Conditions are too restrictive</strong> — Temporarily remove conditions to test</li>
+      <li><strong>Wrong trigger type</strong> — Verify the trigger matches the event you expect</li>
+      <li><strong>Plan limit reached</strong> — Check if you've hit your monthly run limit</li>
+      <li><strong>Paused due to failures</strong> — Check for a "Paused Due to Failure" badge</li>
+    </ol>
+
+    <h3>My workflow shows "Paused Due to Failure." How do I fix it?</h3>
+    <p>This means the workflow failed 4 times in a row. Check the <strong>Execution History</strong> for error messages, fix the root cause, then click <strong>Re-enable</strong>.</p>
+
+    <h3>Can I test a workflow without waiting for a real event?</h3>
+    <p>Yes. Open the workflow and click <strong>Test Workflow</strong>. Pick a real order, product, or customer as test data. Test runs count toward your monthly quota.</p>
+
+    <h3>What are template variables?</h3>
+    <p>Template variables let you insert dynamic data into actions. For example, <code>{{order_number}}</code> inserts the actual order number. See the <a href="workflows.html">Workflows guide</a> for all variables.</p>
+
+    <h3>Emails from my workflow aren't being sent. Why?</h3>
+    <ol>
+      <li><strong>Email integration not configured</strong> — Set up your domain in Settings</li>
+      <li><strong>Domain not verified</strong> — DNS records might not have propagated yet</li>
+      <li><strong>On Free plan</strong> — Email actions require Starter or Growth</li>
+      <li><strong>Deduplication</strong> — Same email may have been sent in the last 24 hours</li>
+    </ol>
+
+    <h2>Billing FAQ</h2>
+
+    <h3>Can I try a paid plan before committing?</h3>
+    <p>Yes. New users get a <strong>15-day free trial</strong> of Starter or Growth. No charge until the trial ends.</p>
+
+    <h3>What happens if I exceed my monthly run limit?</h3>
+    <p>Workflows stop executing for the rest of the month. You can upgrade your plan or wait for the next billing cycle.</p>
+
+    <h3>Can I cancel anytime?</h3>
+    <p>Yes. Downgrade to the Free plan at any time from the Billing page. The change takes effect at the end of your current billing cycle.</p>
+
+    <h2>Still Need Help?</h2>
+    <div class="callout callout-tip">
+      <span class="callout-icon">📧</span>
+      <div>Contact our support team at <strong>support@opspilot.app</strong> — we usually respond within 24 hours.</div>
+    </div>
+
+  </div>
+</div>
+
+<script src="nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings — OpsPilot</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="sidebar-overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <a class="logo" href="index.html"><span class="back-arrow">&lsaquo;</span> OpsPilot Help Center</a>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <div class="section-label">Getting Started</div>
+    <a href="getting-started.html">Getting Started</a>
+    <div class="section-label">Features</div>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="notes.html">Notes</a>
+    <a href="tasks.html">Tasks</a>
+    <a href="workflows.html">Workflows</a>
+    <div class="section-label">Configuration</div>
+    <a href="settings.html" class="active">Settings</a>
+    <a href="integrations.html">Integrations</a>
+    <a href="billing.html">Billing &amp; Plans</a>
+    <div class="section-label">Help</div>
+    <a href="faq.html">FAQ &amp; Troubleshooting</a>
+  </nav>
+</aside>
+
+<div class="main">
+  <button class="hamburger" onclick="toggleSidebar()">&#9776;</button>
+  <div class="content">
+
+    <div class="section-hero">
+      <h1>Settings</h1>
+      <div class="last-updated">Last updated on 1 April 2026</div>
+      <p>Configure task preferences, team management, custom statuses, timezone, and display options.</p>
+    </div>
+
+    <h2>Task Preferences</h2>
+
+    <h3>Default Task Assignment</h3>
+    <table>
+      <thead><tr><th>Option</th><th>Behavior</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Leave Unassigned</strong></td><td>Tasks start with no assignee (default)</td></tr>
+        <tr><td><strong>Assign to Shop Owner</strong></td><td>Tasks are auto-assigned to the store owner</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Default View</h3>
+    <table>
+      <thead><tr><th>View</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Table</strong></td><td>Spreadsheet-style list with sortable columns</td></tr>
+        <tr><td><strong>Kanban</strong></td><td>Visual board with drag-and-drop cards (default)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Auto-Archive Completed Tasks</h3>
+    <p>Automatically move completed tasks to "Archived" after a set period (e.g., 7 days, 14 days, 30 days). Keeps your active task list clean.</p>
+
+    <h2>Task Statuses</h2>
+    <p>Customize the status options available for your tasks.</p>
+
+    <h3>Creating Custom Statuses</h3>
+    <div class="steps">
+      <div class="step"><div class="step-content">Scroll to the <strong>Task Statuses</strong> section in Settings</div></div>
+      <div class="step"><div class="step-content">Click <strong>Add Status</strong></div></div>
+      <div class="step"><div class="step-content">Enter a <strong>label</strong> (e.g., "Waiting for Customer")</div></div>
+      <div class="step"><div class="step-content">Choose if it's a <strong>Closed</strong> status</div></div>
+      <div class="step"><div class="step-content">Click <strong>Save</strong></div></div>
+    </div>
+
+    <p>You can <strong>reorder</strong> by dragging, <strong>toggle</strong> built-in statuses, and <strong>delete</strong> custom statuses (only if no tasks use them).</p>
+
+    <div class="callout callout-warning">
+      <span class="callout-icon">⚠️</span>
+      <div>You must keep at least one "Closed" status active (Completed cannot be disabled).</div>
+    </div>
+
+    <h2>Dashboard Date Range</h2>
+    <table>
+      <thead><tr><th>Option</th><th>Shows Data From</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Today</strong></td><td>Current day only</td></tr>
+        <tr><td><strong>Last Week</strong></td><td>Past 7 days (default)</td></tr>
+        <tr><td><strong>Last Month</strong></td><td>Past 30 days</td></tr>
+        <tr><td><strong>Last 3 Months</strong></td><td>Past 90 days</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Timezone</h2>
+    <p>Set the timezone used for scheduled workflows and time displays. OpsPilot detects your timezone automatically based on your Shopify settings, but you can override it here.</p>
+
+    <h2>Team Management</h2>
+    <p>OpsPilot automatically detects your Shopify staff members. From the Team Management section you can:</p>
+    <ul>
+      <li>View all team members and their roles</li>
+      <li>See task assignments per team member</li>
+      <li>Manage who has access to the app</li>
+    </ul>
+
+  </div>
+</div>
+
+<script src="nav.js"></script>
+</body>
+</html>

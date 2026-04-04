@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — OpsPilot</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="sidebar-overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <a class="logo" href="index.html"><span class="back-arrow">&lsaquo;</span> OpsPilot Help Center</a>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <div class="section-label">Getting Started</div>
+    <a href="getting-started.html">Getting Started</a>
+    <div class="section-label">Features</div>
+    <a href="dashboard.html" class="active">Dashboard</a>
+    <a href="notes.html">Notes</a>
+    <a href="tasks.html">Tasks</a>
+    <a href="workflows.html">Workflows</a>
+    <div class="section-label">Configuration</div>
+    <a href="settings.html">Settings</a>
+    <a href="integrations.html">Integrations</a>
+    <a href="billing.html">Billing &amp; Plans</a>
+    <div class="section-label">Help</div>
+    <a href="faq.html">FAQ &amp; Troubleshooting</a>
+  </nav>
+</aside>
+
+<div class="main">
+  <button class="hamburger" onclick="toggleSidebar()">&#9776;</button>
+  <div class="content">
+
+    <div class="section-hero">
+      <h1>Dashboard</h1>
+      <div class="last-updated">Last updated on 1 April 2026</div>
+      <p>Your command center — get a quick snapshot of your store's health, team workload, and automation performance.</p>
+    </div>
+
+    <figure class="screenshot has-image">
+      <img src="images/Screenshot_2026-04-01_162559.png" alt="OpsPilot Dashboard overview" loading="lazy" />
+      <figcaption class="screenshot-caption">Dashboard overview showing attention alerts, KPI cards, today's tasks, and automation performance.</figcaption>
+    </figure>
+
+    <h2>KPI Quick Stats</h2>
+    <p>At the top of the dashboard, you'll see a row of KPI cards showing important store metrics:</p>
+
+    <table>
+      <thead><tr><th>KPI</th><th>What It Means</th></tr></thead>
+      <tbody>
+        <tr><td>🔔 <strong>Attention Required</strong></td><td>Items that need your immediate action</td></tr>
+        <tr><td>📦 <strong>Overdue Fulfillment</strong></td><td>Orders that should have been fulfilled but haven't</td></tr>
+        <tr><td>🛒 <strong>Abandoned Checkouts</strong></td><td>Customers who didn't complete their purchase</td></tr>
+        <tr><td>💰 <strong>Pending Payment</strong></td><td>Orders with payment still pending</td></tr>
+        <tr><td>🚫 <strong>Out of Stock</strong></td><td>Products completely out of stock</td></tr>
+        <tr><td>⚠️ <strong>Low Inventory</strong></td><td>Products running low on stock</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout-tip">
+      <span class="callout-icon">💡</span>
+      <div>Click on any KPI card to see more details or take action.</div>
+    </div>
+
+    <h2>Task Overview</h2>
+    <table>
+      <thead><tr><th>Metric</th><th>What It Means</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Open Tasks</strong></td><td>Total tasks not yet completed</td></tr>
+        <tr><td><strong>Overdue Tasks</strong></td><td>Tasks past their due date (shown in red)</td></tr>
+        <tr><td><strong>Due Today</strong></td><td>Tasks that need to be completed today</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Automation Impact</h2>
+    <p>See how much work your workflows are doing for you:</p>
+    <table>
+      <thead><tr><th>Metric</th><th>What It Means</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Tasks Created by Automation</strong></td><td>How many tasks were auto-created by workflows</td></tr>
+        <tr><td><strong>Time Saved</strong></td><td>Estimated hours saved by automation</td></tr>
+        <tr><td><strong>Success Rate</strong></td><td>Percentage of workflow runs that completed successfully</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Charts</h2>
+    <p>The dashboard includes visual charts to help you understand patterns:</p>
+    <h3>Task Charts</h3>
+    <ul>
+      <li><strong>Task Priority Distribution</strong> — Bar chart showing Low, Medium, High, and Urgent tasks</li>
+      <li><strong>Task Status Breakdown</strong> — How many tasks are in each status</li>
+      <li><strong>Staff Workload</strong> — How many tasks each team member has assigned</li>
+      <li><strong>Completion Rate</strong> — Donut chart showing completed vs. open tasks</li>
+    </ul>
+
+    <h3>Workflow Charts</h3>
+    <ul>
+      <li><strong>7-Day Workflow Trends</strong> — Daily success vs. failure chart</li>
+      <li><strong>Workflow Success Rate</strong> — Overall success rate over time</li>
+      <li><strong>Failure Trends</strong> — Spot if a workflow is failing repeatedly</li>
+    </ul>
+
+    <h2>Changing the Date Range</h2>
+    <p>By default, the dashboard shows data from the last 7 days. To change this:</p>
+    <div class="steps">
+      <div class="step"><div class="step-content">Go to <strong>Settings</strong></div></div>
+      <div class="step"><div class="step-content">Find <strong>Dashboard Stats Date Range</strong></div></div>
+      <div class="step"><div class="step-content">Choose from: <strong>Today</strong>, <strong>Last Week</strong>, <strong>Last Month</strong>, or <strong>Last 3 Months</strong></div></div>
+    </div>
+
+  </div>
+</div>
+
+<script src="nav.js"></script>
+</body>
+</html>

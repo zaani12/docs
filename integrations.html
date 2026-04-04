@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Integrations — OpsPilot</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="sidebar-overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <a class="logo" href="index.html"><span class="back-arrow">&lsaquo;</span> OpsPilot Help Center</a>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <div class="section-label">Getting Started</div>
+    <a href="getting-started.html">Getting Started</a>
+    <div class="section-label">Features</div>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="notes.html">Notes</a>
+    <a href="tasks.html">Tasks</a>
+    <a href="workflows.html">Workflows</a>
+    <div class="section-label">Configuration</div>
+    <a href="settings.html">Settings</a>
+    <a href="integrations.html" class="active">Integrations</a>
+    <a href="billing.html">Billing &amp; Plans</a>
+    <div class="section-label">Help</div>
+    <a href="faq.html">FAQ &amp; Troubleshooting</a>
+  </nav>
+</aside>
+
+<div class="main">
+  <button class="hamburger" onclick="toggleSidebar()">&#9776;</button>
+  <div class="content">
+
+    <div class="section-hero">
+      <h1>Integrations</h1>
+      <div class="last-updated">Last updated on 1 April 2026</div>
+      <p>Connect Email, Slack, and Google Sheets to power your workflow actions.</p>
+    </div>
+
+    <div class="callout callout-note">
+      <span class="callout-icon">📋</span>
+      <div>Integrations require a <strong>Starter</strong> or <strong>Growth</strong> plan. Free plan users cannot use Email, Slack, or Google Sheets actions in workflows.</div>
+    </div>
+
+    <h2>Email Integration</h2>
+    <p>Send automated emails from your own domain through your workflows.</p>
+
+    <h3>Step 1: Add Your Domain</h3>
+    <div class="steps">
+      <div class="step"><div class="step-content">Go to <strong>Settings → Integrations → Email</strong></div></div>
+      <div class="step"><div class="step-content">Enter your domain (e.g., <code>yourdomain.com</code>)</div></div>
+      <div class="step"><div class="step-content">Click <strong>Add Domain</strong> — OpsPilot will generate DNS records</div></div>
+    </div>
+
+    <h3>Step 2: Configure DNS Records</h3>
+    <p>Add the generated DNS records at your domain registrar (GoDaddy, Cloudflare, Route53, etc.):</p>
+    <table>
+      <thead><tr><th>Record Type</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td><strong>MX</strong></td><td>Mail routing</td></tr>
+        <tr><td><strong>SPF</strong> (TXT)</td><td>Sender authorization</td></tr>
+        <tr><td><strong>DKIM</strong> (CNAME)</td><td>Email signing / authentication</td></tr>
+        <tr><td><strong>DMARC</strong> (TXT)</td><td>Email policy</td></tr>
+        <tr><td><strong>CNAME</strong></td><td>Verification</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Step 3: Verify Your Domain</h3>
+    <p>After adding DNS records, click <strong>Verify Domain</strong>. Status will show Verified ✅, Pending ⏳, or Failed ❌.</p>
+
+    <div class="callout callout-tip">
+      <span class="callout-icon">💡</span>
+      <div>DNS changes can take up to 48 hours to propagate. If verification fails, wait and try again.</div>
+    </div>
+
+    <h3>Step 4: Configure Sender</h3>
+    <p>Set your <strong>Sender Email</strong> (must use your verified domain), optional <strong>Sender Name</strong>, and <strong>Reply-To Email</strong>.</p>
+
+    <figure class="screenshot has-image">
+      <img src="images/if_uou_link_your_email_you_you_wll_not_see_this__else_add_email_to_nsad_from.png" alt="Email sender override settings" loading="lazy" />
+      <figcaption class="screenshot-caption">Override the From email and display name for individual workflow actions.</figcaption>
+    </figure>
+
+    <h3>Step 5: Customize Branding (Optional)</h3>
+    <p>Upload your logo, set primary colors, and customize the email footer for all automated emails.</p>
+
+    <h2>Slack Integration</h2>
+    <p>Post automated messages to your Slack workspace from workflows.</p>
+
+    <h3>Option A: Bot Token (Recommended)</h3>
+    <div class="steps">
+      <div class="step"><div class="step-content">Create a Slack App at <strong>api.slack.com/apps</strong></div></div>
+      <div class="step"><div class="step-content">Under OAuth &amp; Permissions, add scopes: <code>chat:write</code> and <code>chat:write.public</code></div></div>
+      <div class="step"><div class="step-content">Install the app to your workspace and copy the <strong>Bot User OAuth Token</strong></div></div>
+      <div class="step"><div class="step-content">In OpsPilot: <strong>Settings → Integrations → Slack</strong>, paste the token</div></div>
+      <div class="step"><div class="step-content">Set a <strong>Default Channel</strong> and click <strong>Verify</strong></div></div>
+    </div>
+
+    <h3>Option B: Webhook URL (Simpler)</h3>
+    <p>A Webhook URL is easier but only posts to one channel. Create an incoming webhook at Slack, paste the URL in OpsPilot, and verify.</p>
+
+    <table>
+      <thead><tr><th>Feature</th><th>Bot Token</th><th>Webhook</th></tr></thead>
+      <tbody>
+        <tr><td>Post to multiple channels</td><td>✅ Yes</td><td>❌ One channel only</td></tr>
+        <tr><td>Per-workflow channel override</td><td>✅ Yes</td><td>❌ No</td></tr>
+        <tr><td>Setup complexity</td><td>Medium</td><td>Easy</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Google Sheets Integration</h2>
+    <p>Log data from workflows directly into Google Sheets — great for reports and audit trails.</p>
+
+    <h3>Step 1: Create a Service Account</h3>
+    <div class="steps">
+      <div class="step"><div class="step-content">Go to <strong>Google Cloud Console</strong> and create a project</div></div>
+      <div class="step"><div class="step-content">Enable the <strong>Google Sheets API</strong></div></div>
+      <div class="step"><div class="step-content">Go to <strong>IAM &amp; Admin → Service Accounts</strong> and create one</div></div>
+      <div class="step"><div class="step-content">Create a <strong>JSON key</strong> and download it</div></div>
+    </div>
+
+    <h3>Step 2: Share Your Spreadsheet</h3>
+    <p>Open your Google Sheet, click <strong>Share</strong>, and add the service account email (from the JSON file) as an <strong>Editor</strong>.</p>
+
+    <h3>Step 3: Add to OpsPilot</h3>
+    <div class="steps">
+      <div class="step"><div class="step-content">Go to <strong>Settings → Integrations → Google Sheets</strong></div></div>
+      <div class="step"><div class="step-content">Upload the JSON key file or paste the credentials</div></div>
+      <div class="step"><div class="step-content">Click <strong>Verify</strong> to test the connection</div></div>
+    </div>
+
+  </div>
+</div>
+
+<script src="nav.js"></script>
+</body>
+</html>

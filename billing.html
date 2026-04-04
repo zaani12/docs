@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Billing &amp; Plans — OpsPilot</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="sidebar-overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <a class="logo" href="index.html"><span class="back-arrow">&lsaquo;</span> OpsPilot Help Center</a>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <div class="section-label">Getting Started</div>
+    <a href="getting-started.html">Getting Started</a>
+    <div class="section-label">Features</div>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="notes.html">Notes</a>
+    <a href="tasks.html">Tasks</a>
+    <a href="workflows.html">Workflows</a>
+    <div class="section-label">Configuration</div>
+    <a href="settings.html">Settings</a>
+    <a href="integrations.html">Integrations</a>
+    <a href="billing.html" class="active">Billing &amp; Plans</a>
+    <div class="section-label">Help</div>
+    <a href="faq.html">FAQ &amp; Troubleshooting</a>
+  </nav>
+</aside>
+
+<div class="main">
+  <button class="hamburger" onclick="toggleSidebar()">&#9776;</button>
+  <div class="content">
+
+    <div class="section-hero">
+      <h1>Billing &amp; Plans</h1>
+      <div class="last-updated">Last updated on 1 April 2026</div>
+      <p>Compare plans, manage your subscription, and understand your usage limits.</p>
+    </div>
+
+    <h2>Plans Comparison</h2>
+    <table>
+      <thead><tr><th>Feature</th><th>Free</th><th>Starter — $19/mo</th><th>Growth — $49/mo</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Active Workflows</strong></td><td>Up to 5</td><td>Up to 5</td><td>Up to 20</td></tr>
+        <tr><td><strong>Monthly Runs</strong></td><td>5,000</td><td>5,000</td><td>20,000</td></tr>
+        <tr><td><strong>Actions per Workflow</strong></td><td>3</td><td>3</td><td>10</td></tr>
+        <tr><td><strong>Notes &amp; Tasks</strong></td><td>✅ Unlimited</td><td>✅ Unlimited</td><td>✅ Unlimited</td></tr>
+        <tr><td><strong>Dashboard &amp; Analytics</strong></td><td>❌</td><td>✅</td><td>✅</td></tr>
+        <tr><td><strong>Email Integration</strong></td><td>❌</td><td>✅</td><td>✅</td></tr>
+        <tr><td><strong>Slack Integration</strong></td><td>❌</td><td>✅</td><td>✅</td></tr>
+        <tr><td><strong>Google Sheets</strong></td><td>❌</td><td>✅</td><td>✅</td></tr>
+        <tr><td><strong>Workflow Templates</strong></td><td>Basic</td><td>All</td><td>All</td></tr>
+        <tr><td><strong>Priority Support</strong></td><td>❌</td><td>❌</td><td>✅</td></tr>
+      </tbody>
+    </table>
+
+    <h2>What's Included in Every Plan</h2>
+    <ul>
+      <li>Unlimited Notes and Tasks</li>
+      <li>Rich text editor with file attachments</li>
+      <li>Task management (Table &amp; Kanban views)</li>
+      <li>Custom task statuses</li>
+      <li>Team management and roles</li>
+      <li>Workflow automation (with plan limits)</li>
+      <li>Shopify admin extension (quick actions)</li>
+    </ul>
+
+    <h2>Free Trial</h2>
+    <p>New users can try <strong>Starter</strong> or <strong>Growth</strong> for free for <strong>15 days</strong>. Full access to all features — no charge until the trial ends. The trial is one-time only.</p>
+
+    <h2>How to Upgrade</h2>
+    <div class="steps">
+      <div class="step"><div class="step-content">Go to <strong>Settings → Billing</strong> (or click <strong>Billing</strong> in the sidebar)</div></div>
+      <div class="step"><div class="step-content">Review the plan comparison</div></div>
+      <div class="step"><div class="step-content">Click <strong>Start Starter</strong> or <strong>Upgrade to Growth</strong></div></div>
+      <div class="step"><div class="step-content">Confirm through Shopify's billing system — new features are available immediately</div></div>
+    </div>
+
+    <h2>How to Downgrade</h2>
+    <p>Go to Billing and click <strong>Schedule Downgrade</strong>. The downgrade takes effect at the end of your current billing cycle — you keep your current features until then.</p>
+
+    <div class="callout callout-warning">
+      <span class="callout-icon">⚠️</span>
+      <div>Before downgrading, review your active workflows. If you exceed the new plan's limits, some workflows may be paused.</div>
+    </div>
+
+    <h2>Usage Limits</h2>
+    <table>
+      <thead><tr><th>Limit</th><th>What Happens</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Max active workflows</strong></td><td>Can't activate new workflows until you deactivate others</td></tr>
+        <tr><td><strong>Monthly run limit</strong></td><td>Workflows stop executing for the rest of the month</td></tr>
+        <tr><td><strong>Actions per workflow</strong></td><td>Can't add more actions to a workflow</td></tr>
+        <tr><td><strong>Integration actions on Free</strong></td><td>Email/Slack/Sheets actions are skipped</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout-tip">
+      <span class="callout-icon">💡</span>
+      <div>Check your usage in the Billing page to see how close you are to your limits.</div>
+    </div>
+
+  </div>
+</div>
+
+<script src="nav.js"></script>
+</body>
+</html>

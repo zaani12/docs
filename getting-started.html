@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Getting Started — OpsPilot</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="sidebar-overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <a class="logo" href="index.html"><span class="back-arrow">&lsaquo;</span> OpsPilot Help Center</a>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <div class="section-label">Getting Started</div>
+    <a href="getting-started.html" class="active">Getting Started</a>
+    <div class="section-label">Features</div>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="notes.html">Notes</a>
+    <a href="tasks.html">Tasks</a>
+    <a href="workflows.html">Workflows</a>
+    <div class="section-label">Configuration</div>
+    <a href="settings.html">Settings</a>
+    <a href="integrations.html">Integrations</a>
+    <a href="billing.html">Billing &amp; Plans</a>
+    <div class="section-label">Help</div>
+    <a href="faq.html">FAQ &amp; Troubleshooting</a>
+  </nav>
+</aside>
+
+<div class="main">
+  <button class="hamburger" onclick="toggleSidebar()">&#9776;</button>
+  <div class="content">
+
+    <div class="section-hero">
+      <h1>Getting Started</h1>
+      <div class="last-updated">Last updated on 1 April 2026</div>
+      <p>Install OpsPilot, take a quick tour, and create your first note, task, and workflow in minutes.</p>
+    </div>
+
+    <h2>Installing OpsPilot</h2>
+    <div class="steps">
+      <div class="step"><div class="step-content">Go to the <strong>Shopify App Store</strong> and search for <strong>OpsPilot</strong></div></div>
+      <div class="step"><div class="step-content">Click <strong>Add app</strong></div></div>
+      <div class="step"><div class="step-content">Review the permissions OpsPilot needs (read orders, products, customers, inventory, checkouts)</div></div>
+      <div class="step"><div class="step-content">Click <strong>Install app</strong></div></div>
+      <div class="step"><div class="step-content">You'll be redirected to the OpsPilot dashboard inside your Shopify Admin</div></div>
+    </div>
+
+    <figure class="screenshot has-image">
+      <img src="images/Screenshot_2026-04-01_162458.png" alt="Shopify admin with OpsPilot installed" loading="lazy" />
+      <figcaption class="screenshot-caption">Shopify admin showing OpsPilot installed in the Apps sidebar.</figcaption>
+    </figure>
+
+    <div class="callout callout-tip">
+      <span class="callout-icon">💡</span>
+      <div>OpsPilot runs inside your Shopify Admin — there's no separate website to log in to. Just click the app from your Shopify sidebar.</div>
+    </div>
+
+    <h2>First-Time Setup</h2>
+    <p>When you install OpsPilot for the first time, the app automatically:</p>
+    <ul>
+      <li>Creates your user account (using your Shopify staff email)</li>
+      <li>Sets up default task statuses (Pending, In Progress, Completed, etc.)</li>
+      <li>Detects your store timezone and currency</li>
+      <li>Prepares sample workflow templates to get you started</li>
+    </ul>
+
+    <h2>Quick Tour</h2>
+    <p>After installation, you'll see the main navigation on the left sidebar:</p>
+
+    <table>
+      <thead><tr><th>Menu Item</th><th>What It Does</th></tr></thead>
+      <tbody>
+        <tr><td>📊 <strong>Dashboard</strong></td><td>Your store health overview: KPIs, task stats, workflow performance</td></tr>
+        <tr><td>📝 <strong>Notes</strong></td><td>Create and manage notes attached to orders, products &amp; customers</td></tr>
+        <tr><td>✅ <strong>Tasks</strong></td><td>Create tasks, assign to team members, track progress</td></tr>
+        <tr><td>⚡ <strong>Workflows</strong></td><td>Set up automations that run when events happen in your store</td></tr>
+        <tr><td>⚙️ <strong>Settings</strong></td><td>Manage your team, task preferences, integrations &amp; more</td></tr>
+        <tr><td>💳 <strong>Billing</strong></td><td>View your current plan and upgrade options</td></tr>
+        <tr><td>📋 <strong>History</strong></td><td>Activity log — see everything that happened in the app</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Your First Note</h2>
+    <p>Create your first note in under 30 seconds:</p>
+    <div class="steps">
+      <div class="step"><div class="step-content">Click <strong>Notes</strong> in the sidebar</div></div>
+      <div class="step"><div class="step-content">Click the <strong>Create Note</strong> button</div></div>
+      <div class="step"><div class="step-content">Choose an entity type (e.g., <strong>Order</strong>)</div></div>
+      <div class="step"><div class="step-content">Select a specific order from the dropdown</div></div>
+      <div class="step"><div class="step-content">Type your note content — you can use <strong>bold</strong>, <em>italic</em>, lists, and more</div></div>
+      <div class="step"><div class="step-content">Click <strong>Save</strong></div></div>
+    </div>
+
+    <h2>Your First Task</h2>
+    <div class="steps">
+      <div class="step"><div class="step-content">Click <strong>Tasks</strong> in the sidebar</div></div>
+      <div class="step"><div class="step-content">Click <strong>Create Task</strong></div></div>
+      <div class="step"><div class="step-content">Fill in the <strong>Title</strong> (e.g., "Follow up with customer about refund"), <strong>Priority</strong>, <strong>Due Date</strong>, and <strong>Assign To</strong></div></div>
+      <div class="step"><div class="step-content">Click <strong>Save</strong></div></div>
+    </div>
+
+    <h2>Your First Workflow</h2>
+    <div class="steps">
+      <div class="step"><div class="step-content">Click <strong>Workflows</strong> in the sidebar</div></div>
+      <div class="step"><div class="step-content">Click <strong>Create Workflow</strong></div></div>
+      <div class="step"><div class="step-content">Choose a <strong>template</strong> (e.g., "New Order → Create Task") or start from scratch</div></div>
+      <div class="step"><div class="step-content">Configure the <strong>Trigger</strong> (what starts the workflow), <strong>Conditions</strong> (optional filters), and <strong>Actions</strong> (what happens)</div></div>
+      <div class="step"><div class="step-content">Click <strong>Save &amp; Activate</strong></div></div>
+    </div>
+
+    <div class="callout callout-tip">
+      <span class="callout-icon">💡</span>
+      <div>Use the <strong>"Test with latest order"</strong> button to try your workflow without waiting for a real event.</div>
+    </div>
+
+    <h2>Inviting Team Members</h2>
+    <p>Your Shopify staff members are automatically detected by OpsPilot. To manage who can access the app:</p>
+    <div class="steps">
+      <div class="step"><div class="step-content">Go to <strong>Settings</strong> in the sidebar</div></div>
+      <div class="step"><div class="step-content">Scroll to <strong>Team Management</strong></div></div>
+      <div class="step"><div class="step-content">Your Shopify staff members appear automatically — assign roles and permissions as needed</div></div>
+    </div>
+
+  </div>
+</div>
+
+<script src="nav.js"></script>
+</body>
+</html>
