@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap');
 
+html { scroll-behavior: smooth; }
+
+/* Highlight targeted section with a brief flash */
+:target {
+  scroll-margin-top: 24px;
+  animation: anchor-highlight 1.5s ease;
+}
+@keyframes anchor-highlight {
+  0%   { background-color: #fef3c7; }
+  100% { background-color: transparent; }
+}
+
 :root {
   --text: #222;
   --text-secondary: #505050;

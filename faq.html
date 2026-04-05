@@ -42,86 +42,86 @@
       <p>Common questions, known issues, and how to get help.</p>
     </div>
 
-    <h2>General Questions</h2>
+    <h2 id="general-questions">General Questions</h2>
 
-    <h3>What is OpsPilot?</h3>
-    <p>OpsPilot is a Shopify app that helps you manage store operations. It provides <strong>Notes</strong> to annotate orders, products, and customers; <strong>Tasks</strong> to track what needs to be done; and <strong>Workflows</strong> to automate repetitive actions.</p>
+    <h3 id="what-is-opspilot">What is OpsPilot?</h3>
+    <p>OpsPilot is a Shopify app that helps you manage store operations. It provides <strong><a href="notes.html">Notes</a></strong> to annotate orders, products, and customers; <strong><a href="tasks.html">Tasks</a></strong> to track what needs to be done; and <strong><a href="workflows.html">Workflows</a></strong> to automate repetitive actions.</p>
 
-    <h3>Does OpsPilot work with all Shopify plans?</h3>
+    <h3 id="shopify-plans">Does OpsPilot work with all Shopify plans?</h3>
     <p>Yes. OpsPilot works with all Shopify plans (Basic, Shopify, Advanced, Plus).</p>
 
-    <h3>Is my data secure?</h3>
+    <h3 id="data-secure">Is my data secure?</h3>
     <p>Yes. OpsPilot uses encrypted connections, stores sensitive data in encrypted form, and follows security best practices. Your Shopify data is accessed through Shopify's official API with the permissions you approve.</p>
 
-    <h2>Notes FAQ</h2>
+    <h2 id="notes-faq">Notes FAQ</h2>
 
-    <h3>How many notes can I create?</h3>
+    <h3 id="notes-limit">How many notes can I create?</h3>
     <p>Unlimited on all plans (including Free).</p>
 
-    <h3>Can I attach files to notes?</h3>
-    <p>Yes. You can upload images, PDFs, and documents. See the <a href="notes.html">Notes guide</a> for details.</p>
+    <h3 id="attach-files">Can I attach files to notes?</h3>
+    <p>Yes. You can upload images, PDFs, and documents. See the <a href="notes.html#attaching-files">Notes → Attaching Files</a> guide for details.</p>
 
-    <h3>Can I convert a note to a task?</h3>
-    <p>Yes. Select notes and click <strong>Convert to Tasks</strong>. Each note becomes a task and they remain linked.</p>
+    <h3 id="convert-note-to-task">Can I convert a note to a task?</h3>
+    <p>Yes. Select notes and click <strong>Convert to Tasks</strong>. Each note becomes a <a href="tasks.html">task</a> and they remain linked.</p>
 
-    <h3>I deleted a note by mistake. Can I recover it?</h3>
+    <h3 id="recover-deleted-note">I deleted a note by mistake. Can I recover it?</h3>
     <p>Notes move to a soft-deleted state and can be restored. Check the note list for a "Deleted" filter.</p>
 
-    <h2>Tasks FAQ</h2>
+    <h2 id="tasks-faq">Tasks FAQ</h2>
 
-    <h3>How do I change a task's status?</h3>
+    <h3 id="change-task-status">How do I change a task's status?</h3>
     <ul>
-      <li><strong>Table View:</strong> Click the status badge on the task row</li>
-      <li><strong>Kanban View:</strong> Drag the task card to a different column</li>
+      <li><strong><a href="tasks.html#table-view">Table View</a>:</strong> Click the status badge on the task row</li>
+      <li><strong><a href="tasks.html#kanban-board-view">Kanban View</a>:</strong> Drag the task card to a different column</li>
       <li><strong>Detail View:</strong> Open the task → Edit → change the status</li>
     </ul>
 
-    <h3>Can I create custom task statuses?</h3>
-    <p>Yes. Go to <strong>Settings → Task Statuses</strong> and click <strong>Add Status</strong>.</p>
+    <h3 id="custom-statuses">Can I create custom task statuses?</h3>
+    <p>Yes. Go to <strong><a href="settings.html#creating-custom-statuses">Settings → Task Statuses</a></strong> and click <strong>Add Status</strong>.</p>
 
-    <h3>What's the difference between Table and Kanban view?</h3>
-    <p><strong>Table</strong> shows tasks in a spreadsheet-style list — good for sorting. <strong>Kanban</strong> shows cards on a board organized by status — good for visual tracking and drag-and-drop.</p>
+    <h3 id="table-vs-kanban">What's the difference between Table and Kanban view?</h3>
+    <p><strong><a href="tasks.html#table-view">Table</a></strong> shows tasks in a spreadsheet-style list — good for sorting. <strong><a href="tasks.html#kanban-board-view">Kanban</a></strong> shows cards on a board organized by status — good for visual tracking and drag-and-drop.</p>
 
-    <h2>Workflows FAQ</h2>
+    <h2 id="workflows-faq">Workflows FAQ</h2>
 
-    <h3>My workflow isn't triggering. Why?</h3>
+    <h3 id="workflow-not-triggering">My workflow isn't triggering. Why?</h3>
     <ol>
       <li><strong>Workflow is not active</strong> — Make sure the toggle is set to Active</li>
-      <li><strong>Conditions are too restrictive</strong> — Temporarily remove conditions to test</li>
-      <li><strong>Wrong trigger type</strong> — Verify the trigger matches the event you expect</li>
-      <li><strong>Plan limit reached</strong> — Check if you've hit your monthly run limit</li>
+      <li><strong><a href="workflows.html#conditions">Conditions</a> are too restrictive</strong> — Temporarily remove conditions to test</li>
+      <li><strong>Wrong <a href="workflows.html#triggers">trigger</a> type</strong> — Verify the trigger matches the event you expect</li>
+      <li><strong><a href="billing.html#usage-limits">Plan limit reached</a></strong> — Check if you've hit your monthly run limit</li>
       <li><strong>Paused due to failures</strong> — Check for a "Paused Due to Failure" badge</li>
     </ol>
 
-    <h3>My workflow shows "Paused Due to Failure." How do I fix it?</h3>
+    <h3 id="paused-due-to-failure">My workflow shows "Paused Due to Failure." How do I fix it?</h3>
     <p>This means the workflow failed 4 times in a row. Check the <strong>Execution History</strong> for error messages, fix the root cause, then click <strong>Re-enable</strong>.</p>
 
-    <h3>Can I test a workflow without waiting for a real event?</h3>
-    <p>Yes. Open the workflow and click <strong>Test Workflow</strong>. Pick a real order, product, or customer as test data. Test runs count toward your monthly quota.</p>
+    <h3 id="test-workflow">Can I test a workflow without waiting for a real event?</h3>
+    <p>Yes. Open the workflow and click <strong>Test Workflow</strong>. Pick a real order, product, or customer as test data. Test runs count toward your <a href="billing.html#usage-limits">monthly quota</a>.</p>
 
-    <h3>What are template variables?</h3>
-    <p>Template variables let you insert dynamic data into actions. For example, <code>{{order_number}}</code> inserts the actual order number. See the <a href="workflows.html">Workflows guide</a> for all variables.</p>
+    <h3 id="what-are-template-variables">What are template variables?</h3>
+    <p><a href="workflows.html#template-variables">Template variables</a> let you insert dynamic data into actions. For example, <code>{{order_number}}</code> inserts the actual order number. See the <a href="workflows.html#template-variables">Workflows → Template Variables</a> guide for all variables.</p>
 
-    <h3>Emails from my workflow aren't being sent. Why?</h3>
+    <h3 id="emails-not-sent">Emails from my workflow aren't being sent. Why?</h3>
     <ol>
-      <li><strong>Email integration not configured</strong> — Set up your domain in Settings</li>
+      <li><strong><a href="integrations.html#email-integration">Email integration</a> not configured</strong> — Set up your domain in Settings</li>
       <li><strong>Domain not verified</strong> — DNS records might not have propagated yet</li>
-      <li><strong>On Free plan</strong> — Email actions require Starter or Growth</li>
-      <li><strong>Deduplication</strong> — Same email may have been sent in the last 24 hours</li>
+      <li><strong>On <a href="billing.html#plans-comparison">Free plan</a></strong> — Email actions require Starter or Growth</li>
+      <li><strong><a href="workflows.html#deduplication">Deduplication</a></strong> — Same email may have been sent in the last 24 hours</li>
     </ol>
 
-    <h2>Billing FAQ</h2>
+    <h2 id="billing-faq">Billing FAQ</h2>
 
-    <h3>Can I try a paid plan before committing?</h3>
-    <p>Yes. New users get a <strong>15-day free trial</strong> of Starter or Growth. No charge until the trial ends.</p>
+    <h3 id="free-trial">Can I try a paid plan before committing?</h3>
+    <p>Yes. New users get a <strong><a href="billing.html#free-trial">15-day free trial</a></strong> of Starter or Growth. No charge until the trial ends.</p>
 
-    <h3>What happens if I exceed my monthly run limit?</h3>
-    <p>Workflows stop executing for the rest of the month. You can upgrade your plan or wait for the next billing cycle.</p>
+    <h3 id="exceed-run-limit">What happens if I exceed my monthly run limit?</h3>
+    <p><a href="workflows.html">Workflows</a> stop executing for the rest of the month. You can <a href="billing.html#how-to-upgrade">upgrade your plan</a> or wait for the next billing cycle.</p>
 
-    <h3>Can I cancel anytime?</h3>
-    <p>Yes. Downgrade to the Free plan at any time from the Billing page. The change takes effect at the end of your current billing cycle.</p>
+    <h3 id="cancel-anytime">Can I cancel anytime?</h3>
+    <p>Yes. <a href="billing.html#how-to-downgrade">Downgrade</a> to the Free plan at any time from the Billing page. The change takes effect at the end of your current billing cycle.</p>
 
-    <h2>Still Need Help?</h2>
+    <h2 id="still-need-help">Still Need Help?</h2>
     <div class="callout callout-tip">
       <span class="callout-icon">📧</span>
       <div>Contact our support team at <strong>support@opspilot.app</strong> — we usually respond within 24 hours.</div>

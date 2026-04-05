@@ -44,20 +44,20 @@
 
     <div class="callout callout-note">
       <span class="callout-icon">📋</span>
-      <div>Integrations require a <strong>Starter</strong> or <strong>Growth</strong> plan. Free plan users cannot use Email, Slack, or Google Sheets actions in workflows.</div>
+      <div>Integrations require a <strong><a href="billing.html#plans-comparison">Starter</a></strong> or <strong><a href="billing.html#plans-comparison">Growth</a></strong> plan. Free plan users cannot use <a href="workflows.html#send-email">Email</a>, <a href="workflows.html#send-slack-message">Slack</a>, or <a href="workflows.html#add-to-google-sheet">Google Sheets</a> actions in <a href="workflows.html">workflows</a>.</div>
     </div>
 
-    <h2>Email Integration</h2>
-    <p>Send automated emails from your own domain through your workflows.</p>
+    <h2 id="email-integration">Email Integration</h2>
+    <p>Send automated emails from your own domain through your <a href="workflows.html">workflows</a>.</p>
 
-    <h3>Step 1: Add Your Domain</h3>
+    <h3 id="email-step-1">Step 1: Add Your Domain</h3>
     <div class="steps">
       <div class="step"><div class="step-content">Go to <strong>Settings → Integrations → Email</strong></div></div>
       <div class="step"><div class="step-content">Enter your domain (e.g., <code>yourdomain.com</code>)</div></div>
       <div class="step"><div class="step-content">Click <strong>Add Domain</strong> — OpsPilot will generate DNS records</div></div>
     </div>
 
-    <h3>Step 2: Configure DNS Records</h3>
+    <h3 id="email-step-2">Step 2: Configure DNS Records</h3>
     <p>Add the generated DNS records at your domain registrar (GoDaddy, Cloudflare, Route53, etc.):</p>
     <table>
       <thead><tr><th>Record Type</th><th>Purpose</th></tr></thead>
@@ -70,7 +70,7 @@
       </tbody>
     </table>
 
-    <h3>Step 3: Verify Your Domain</h3>
+    <h3 id="email-step-3">Step 3: Verify Your Domain</h3>
     <p>After adding DNS records, click <strong>Verify Domain</strong>. Status will show Verified ✅, Pending ⏳, or Failed ❌.</p>
 
     <div class="callout callout-tip">
@@ -78,7 +78,7 @@
       <div>DNS changes can take up to 48 hours to propagate. If verification fails, wait and try again.</div>
     </div>
 
-    <h3>Step 4: Configure Sender</h3>
+    <h3 id="email-step-4">Step 4: Configure Sender</h3>
     <p>Set your <strong>Sender Email</strong> (must use your verified domain), optional <strong>Sender Name</strong>, and <strong>Reply-To Email</strong>.</p>
 
     <figure class="screenshot has-image">
@@ -86,13 +86,13 @@
       <figcaption class="screenshot-caption">Override the From email and display name for individual workflow actions.</figcaption>
     </figure>
 
-    <h3>Step 5: Customize Branding (Optional)</h3>
+    <h3 id="email-step-5">Step 5: Customize Branding (Optional)</h3>
     <p>Upload your logo, set primary colors, and customize the email footer for all automated emails.</p>
 
-    <h2>Slack Integration</h2>
-    <p>Post automated messages to your Slack workspace from workflows.</p>
+    <h2 id="slack-integration">Slack Integration</h2>
+    <p>Post automated messages to your Slack workspace from <a href="workflows.html">workflows</a>.</p>
 
-    <h3>Option A: Bot Token (Recommended)</h3>
+    <h3 id="slack-bot-token">Option A: Bot Token (Recommended)</h3>
     <div class="steps">
       <div class="step"><div class="step-content">Create a Slack App at <strong>api.slack.com/apps</strong></div></div>
       <div class="step"><div class="step-content">Under OAuth &amp; Permissions, add scopes: <code>chat:write</code> and <code>chat:write.public</code></div></div>
@@ -101,7 +101,7 @@
       <div class="step"><div class="step-content">Set a <strong>Default Channel</strong> and click <strong>Verify</strong></div></div>
     </div>
 
-    <h3>Option B: Webhook URL (Simpler)</h3>
+    <h3 id="slack-webhook">Option B: Webhook URL (Simpler)</h3>
     <p>A Webhook URL is easier but only posts to one channel. Create an incoming webhook at Slack, paste the URL in OpsPilot, and verify.</p>
 
     <table>
@@ -113,10 +113,10 @@
       </tbody>
     </table>
 
-    <h2>Google Sheets Integration</h2>
-    <p>Log data from workflows directly into Google Sheets — great for reports and audit trails.</p>
+    <h2 id="google-sheets-integration">Google Sheets Integration</h2>
+    <p>Log data from <a href="workflows.html">workflows</a> directly into Google Sheets — great for reports and audit trails.</p>
 
-    <h3>Step 1: Create a Service Account</h3>
+    <h3 id="sheets-step-1">Step 1: Create a Service Account</h3>
     <div class="steps">
       <div class="step"><div class="step-content">Go to <strong>Google Cloud Console</strong> and create a project</div></div>
       <div class="step"><div class="step-content">Enable the <strong>Google Sheets API</strong></div></div>
@@ -124,10 +124,10 @@
       <div class="step"><div class="step-content">Create a <strong>JSON key</strong> and download it</div></div>
     </div>
 
-    <h3>Step 2: Share Your Spreadsheet</h3>
+    <h3 id="sheets-step-2">Step 2: Share Your Spreadsheet</h3>
     <p>Open your Google Sheet, click <strong>Share</strong>, and add the service account email (from the JSON file) as an <strong>Editor</strong>.</p>
 
-    <h3>Step 3: Add to OpsPilot</h3>
+    <h3 id="sheets-step-3">Step 3: Add to OpsPilot</h3>
     <div class="steps">
       <div class="step"><div class="step-content">Go to <strong>Settings → Integrations → Google Sheets</strong></div></div>
       <div class="step"><div class="step-content">Upload the JSON key file or paste the credentials</div></div>
