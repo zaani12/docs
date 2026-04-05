@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Settings — OpsPilot</title>
+  <title>Settings â€” OpsPilot</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -22,7 +22,33 @@
     <a href="dashboard.html">Dashboard</a>
     <a href="notes.html">Notes</a>
     <a href="tasks.html">Tasks</a>
-    <a href="workflows.html">Workflows</a>
+    <div class="nav-tree">
+      <a href="workflows.html">Workflows</a>
+      <div class="tree-branch">
+        <div class="tree-node">
+          <div class="tree-toggle" onclick="toggleTree(this)">
+            <span class="tree-arrow">â–¸</span> Event-based
+          </div>
+          <div class="tree-children">
+            <a href="workflows.html#event-based-triggers">Triggers</a>
+            <a href="workflows.html#conditions">Conditions</a>
+            <a href="workflows.html#actions">Actions</a>
+            <a href="workflows.html#template-variables">Template Variables</a>
+            <a href="workflows.html#delayed-actions">Delayed Actions</a>
+            <a href="workflows.html#deduplication">Deduplication</a>
+          </div>
+        </div>
+        <div class="tree-node">
+          <div class="tree-toggle" onclick="toggleTree(this)">
+            <span class="tree-arrow">â–¸</span> Scheduled
+          </div>
+          <div class="tree-children">
+            <a href="workflows.html#scheduled-trigger">Scheduled Trigger</a>
+            <a href="workflows.html#scheduled-workflows">Scheduled Workflows</a>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="section-label">Configuration</div>
     <a href="settings.html" class="active">Settings</a>
     <a href="integrations.html">Integrations</a>
@@ -40,6 +66,25 @@
       <h1>Settings</h1>
       <div class="last-updated">Last updated on 1 April 2026</div>
       <p>Configure task preferences, team management, custom statuses, timezone, and display options.</p>
+    </div>
+
+    <!-- Feature Showcase -->
+    <div class="feature-showcase">
+      <div class="blob-tr"></div>
+      <div class="blob-bl"></div>
+      <div class="showcase-logo"><span class="showcase-logo-dot"></span> OpsPilot</div>
+      <div class="showcase-title">Your Store, Your Rules.</div>
+      <div class="showcase-subtitle">Customize statuses, views, team roles, and every detail to match your workflow.</div>
+      <div class="showcase-body">
+        <img class="showcase-image" src="images/Screenshot_2026-04-01_162559.png" alt="OpsPilot Settings" loading="lazy" />
+      </div>
+      <!-- Floating annotations -->
+      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Arrow at 'Attention required' banner — top-left. Settings control which alerts trigger on the dashboard"><span class="ann-icon"></span> Alert thresholds</div>
+      <div class="showcase-annotation ann-pos-ml ann-left" data-tip="Arrow at 'Checkout risk' KPI card — mid-left. The dashboard date range setting controls the time period for these KPI calculations"><span class="ann-icon"></span> KPI date range</div>
+      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Arrow at 'Today's tasks' card — lower-left. Customize the status labels and ordering shown in this card"><span class="ann-icon"></span> Custom task statuses</div>
+      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Arrow at header toolbar — top-right. Default view and dashboard preferences are configured in Settings"><span class="ann-icon"></span> Default view preferences</div>
+      <div class="showcase-annotation ann-pos-mr ann-right" data-tip="Arrow at 'Inventory' KPI card — mid-right. Your timezone setting affects when scheduled stats refresh"><span class="ann-icon"></span> Timezone control</div>
+      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Arrow at 'Automation performance' card — lower-right. Team management in Settings controls who can manage workflows"><span class="ann-icon"></span> Team management</div>
     </div>
 
     <h2 id="task-preferences">Task Preferences</h2>
@@ -71,16 +116,28 @@
     <h3 id="creating-custom-statuses">Creating Custom Statuses</h3>
     <div class="steps">
       <div class="step"><div class="step-content">Scroll to the <strong>Task Statuses</strong> section in Settings</div></div>
-      <div class="step"><div class="step-content">Click <strong>Add Status</strong></div></div>
+      <div class="step"><div class="step-content">Click <span class="hover-preview popup-below"><strong>Add Status</strong><span class="preview-popup"><img src="images/Screenshot_2026-04-01_162559.png" alt="Add Status" /><div class="popup-label">Create a new custom status for your tasks</div></span></span></div></div>
       <div class="step"><div class="step-content">Enter a <strong>label</strong> (e.g., "Waiting for Customer")</div></div>
       <div class="step"><div class="step-content">Choose if it's a <strong>Closed</strong> status</div></div>
       <div class="step"><div class="step-content">Click <strong>Save</strong></div></div>
     </div>
 
-    <p>You can <strong>reorder</strong> by dragging, <strong>toggle</strong> built-in statuses, and <strong>delete</strong> custom statuses (only if no tasks use them).</p>
+    <div class="feature-showcase">
+      <div class="blob-tr"></div>
+      <div class="blob-bl"></div>
+      <div class="showcase-body">
+        <img class="showcase-image" src="images/Screenshot_2026-04-01_162559.png" alt="Add custom status in Settings" loading="lazy" />
+      </div>
+      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Arrow at 'Attention required' banner — top-left. Custom statuses appear across alerts and task views"><span class="ann-icon"></span> Status customization</div>
+      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Arrow at 'Today's tasks' card — lower-left. Mark statuses as 'Closed' to auto-update task counts here"><span class="ann-icon"></span> Closed status toggle</div>
+      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Arrow at header toolbar — top-right. Reorder statuses to match your team's workflow priority"><span class="ann-icon"></span> Drag to reorder</div>
+      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Arrow at 'Automation performance' card — lower-right. Changes apply immediately to all existing tasks"><span class="ann-icon"></span> Save changes</div>
+    </div>
+
+    <p>You can <span class="hover-preview"><strong>reorder</strong><span class="preview-popup"><img src="images/Screenshot_2026-04-01_162559.png" alt="Reorder statuses" /><div class="popup-label">Drag statuses to change their display order</div></span></span> by dragging, <span class="hover-preview"><strong>toggle</strong><span class="preview-popup"><img src="images/Screenshot_2026-04-01_162559.png" alt="Toggle status" /><div class="popup-label">Enable or disable built-in statuses</div></span></span> built-in statuses, and <span class="hover-preview"><strong>delete</strong><span class="preview-popup"><img src="images/Screenshot_2026-04-01_162559.png" alt="Delete status" /><div class="popup-label">Remove custom statuses (only if no tasks use them)</div></span></span> custom statuses (only if no tasks use them).</p>
 
     <div class="callout callout-warning">
-      <span class="callout-icon">⚠️</span>
+      <span class="callout-icon">âš ï¸</span>
       <div>You must keep at least one "Closed" status active (Completed cannot be disabled).</div>
     </div>
 

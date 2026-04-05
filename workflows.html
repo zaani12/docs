@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Workflows — OpsPilot</title>
+  <title>Workflows â€” OpsPilot</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -22,7 +22,58 @@
     <a href="dashboard.html">Dashboard</a>
     <a href="notes.html">Notes</a>
     <a href="tasks.html">Tasks</a>
-    <a href="workflows.html" class="active">Workflows</a>
+    <div class="nav-tree">
+      <a href="workflows.html" class="active">Workflows</a>
+      <div class="tree-branch">
+        <!-- Event-based branch -->
+        <div class="tree-node open">
+          <div class="tree-toggle" onclick="toggleTree(this)">
+            <span class="tree-arrow">â–¸</span> Event-based
+          </div>
+          <div class="tree-children">
+            <a href="workflows.html#event-based-triggers">Triggers</a>
+            <div class="tree-node">
+              <div class="tree-toggle" onclick="toggleTree(this)">
+                <span class="tree-arrow">â–¸</span> Conditions
+              </div>
+              <div class="tree-children">
+                <a href="workflows.html#operators">Operators</a>
+                <a href="workflows.html#and-or-groups">AND / OR Groups</a>
+              </div>
+            </div>
+            <div class="tree-node">
+              <div class="tree-toggle" onclick="toggleTree(this)">
+                <span class="tree-arrow">â–¸</span> Actions
+              </div>
+              <div class="tree-children">
+                <a href="workflows.html#create-task">Create Task</a>
+                <a href="workflows.html#create-note">Create Note</a>
+                <a href="workflows.html#send-email">Send Email</a>
+                <a href="workflows.html#send-slack-message">Send Slack Message</a>
+                <a href="workflows.html#add-to-google-sheet">Add to Google Sheet</a>
+              </div>
+            </div>
+            <a href="workflows.html#template-variables">Template Variables</a>
+            <a href="workflows.html#delayed-actions">Delayed Actions</a>
+            <a href="workflows.html#deduplication">Deduplication</a>
+          </div>
+        </div>
+        <!-- Scheduled branch -->
+        <div class="tree-node open">
+          <div class="tree-toggle" onclick="toggleTree(this)">
+            <span class="tree-arrow">â–¸</span> Scheduled
+          </div>
+          <div class="tree-children">
+            <a href="workflows.html#scheduled-trigger">Scheduled Trigger</a>
+            <a href="workflows.html#scheduled-workflows">Scheduled Workflows</a>
+          </div>
+        </div>
+        <div class="tree-divider"></div>
+        <a href="workflows.html#workflow-templates" style="padding-left:28px;font-size:13px;color:var(--text-muted);">Workflow Templates</a>
+        <a href="workflows.html#workflow-management" style="padding-left:28px;font-size:13px;color:var(--text-muted);">Management</a>
+        <a href="workflows.html#testing-a-workflow" style="padding-left:28px;font-size:13px;color:var(--text-muted);">Testing</a>
+      </div>
+    </div>
     <div class="section-label">Configuration</div>
     <a href="settings.html">Settings</a>
     <a href="integrations.html">Integrations</a>
@@ -39,14 +90,33 @@
     <div class="section-hero">
       <h1>Workflows</h1>
       <div class="last-updated">Last updated on 1 April 2026</div>
-      <p>Automate repetitive operations — when something happens in your store, OpsPilot can create tasks, send emails, post to Slack, and more.</p>
+      <p>Automate repetitive operations â€” when something happens in your store, OpsPilot can create tasks, send emails, post to Slack, and more.</p>
+    </div>
+
+    <!-- Feature Showcase -->
+    <div class="feature-showcase">
+      <div class="blob-tr"></div>
+      <div class="blob-bl"></div>
+      <div class="showcase-logo"><span class="showcase-logo-dot"></span> OpsPilot</div>
+      <div class="showcase-title">The Automation Engine.</div>
+      <div class="showcase-subtitle">Build powerful, logic-based workflows that run your store 24/7.</div>
+      <div class="showcase-body">
+        <img class="showcase-image" src="images/costmized_workflow_wizard_.png" alt="Create new workflow wizard" loading="lazy" />
+      </div>
+      <!-- Floating annotations -->
+      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Upper card in the dialog — create workflows that fire instantly on store events like new orders or low stock"><span class="ann-icon"></span> Event-based workflow card</div>
+      <div class="showcase-annotation ann-pos-ml ann-left" data-tip="Lower card in the dialog — set up repeating workflows on a fixed schedule (hourly, daily, weekly)"><span class="ann-icon"></span> Scheduled workflow card</div>
+      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Bottom-left buttons — 'Back' returns to template selection, 'Close' exits the wizard"><span class="ann-icon"></span> Back & Close buttons</div>
+      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Top of the dialog — 'Create new workflow' title with close (X) button on the right"><span class="ann-icon"></span> Wizard dialog title</div>
+      <div class="showcase-annotation ann-pos-mr ann-right" data-tip="Each card shows an icon and description explaining the workflow type (event-driven vs. timed)"><span class="ann-icon"></span> Type descriptions & icons</div>
+      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Bottom-right blue button — starts building a custom workflow from scratch"><span class="ann-icon"></span> 'Create custom workflow' button</div>
     </div>
 
     <h2 id="what-are-workflows">What Are Workflows?</h2>
-    <p>Workflows let you automate repetitive operations. When something happens (a new order, low inventory, abandoned checkout), OpsPilot can automatically create tasks, send emails, post to Slack, log to Google Sheets — or any combination.</p>
+    <p>Workflows let you automate repetitive operations. When something happens (a new order, low inventory, abandoned checkout), OpsPilot can automatically create tasks, send emails, post to Slack, log to Google Sheets â€” or any combination.</p>
 
     <div class="callout callout-note">
-      <span class="callout-icon">💡</span>
+      <span class="callout-icon">ðŸ’¡</span>
       <div><strong>Example:</strong> "When a new order over $500 is placed, create a task for the fulfillment team and send a Slack alert."</div>
     </div>
 
@@ -54,87 +124,171 @@
 
     <div class="steps">
       <div class="step"><div class="step-content">Click <strong>Workflows</strong> in the sidebar</div></div>
-      <div class="step"><div class="step-content">Click <strong>New Workflow</strong></div></div>
+      <div class="step"><div class="step-content">Click <span class="hover-preview popup-below"><strong>New Workflow</strong><span class="preview-popup"><img src="images/costmized_workflow_wizard_.png" alt="New Workflow wizard" /><div class="popup-label">New Workflow wizard â€” Event-based or Scheduled</div></span></span></div></div>
     </div>
 
-    <figure class="screenshot has-image">
-      <img src="images/costmized_workflow_wizard_.png" alt="Create new workflow wizard with Event-based and Scheduled options" loading="lazy" />
-      <figcaption class="screenshot-caption">The New Workflow wizard — choose between Event-based or Scheduled workflow types.</figcaption>
-    </figure>
+    <div class="feature-showcase">
+      <div class="blob-tr"></div>
+      <div class="blob-bl"></div>
+      <div class="showcase-body">
+        <img class="showcase-image" src="images/costmized_workflow_wizard_.png" alt="Create new workflow wizard with Event-based and Scheduled options" loading="lazy" />
+      </div>
+      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Upper card — triggers instantly when a store event occurs (new order, checkout abandoned, low stock)"><span class="ann-icon"></span> Event-based card</div>
+      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Lower card — runs on a recurring time schedule (hourly, daily, weekly, monthly)"><span class="ann-icon"></span> Scheduled card</div>
+      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Dialog header — 'Create new workflow' title with X close button at top-right"><span class="ann-icon"></span> Dialog title & close</div>
+      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Bottom buttons — 'Back', 'Close', and blue 'Create custom workflow' button at bottom-right"><span class="ann-icon"></span> Wizard action buttons</div>
+    </div>
 
     <div class="steps" style="counter-reset: step 2;">
       <div class="step"><div class="step-content">Give it a <strong>name</strong> (e.g., "High-Value Order Alert")</div></div>
     </div>
 
-    <figure class="screenshot has-image">
-      <img src="images/creat_custem_work_flow_.png" alt="Create custom workflow screen" loading="lazy" />
-      <figcaption class="screenshot-caption">Name your workflow and configure its settings.</figcaption>
-    </figure>
+    <div class="feature-showcase">
+      <div class="blob-tr"></div>
+      <div class="blob-bl"></div>
+      <div class="showcase-body">
+        <img class="showcase-image" src="images/creat_custem_work_flow_.png" alt="Create custom workflow screen" loading="lazy" />
+      </div>
+      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Upper area — partial view of template cards from the 'Choose a starting point' dialog"><span class="ann-icon"></span> Template cards (partial)</div>
+      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Bottom-left — 'Back' button returns to previous dialog step"><span class="ann-icon"></span> 'Back' button</div>
+      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Center — 'Close' button to exit the wizard without creating a workflow"><span class="ann-icon"></span> 'Close' button</div>
+      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Bottom-right — blue 'Create custom workflow' button to build from scratch"><span class="ann-icon"></span> 'Create custom workflow'</div>
+    </div>
 
     <div class="steps" style="counter-reset: step 3;">
-      <div class="step"><div class="step-content">Choose a <strong>trigger</strong> — the event that starts the workflow</div></div>
+      <div class="step"><div class="step-content">Choose a <span class="hover-preview popup-below"><strong>trigger</strong><span class="preview-popup"><img src="images/chous_the_triger_action_.png" alt="Trigger selector" /><div class="popup-label">Pick the event that starts your workflow</div></span></span> â€” the event that starts the workflow</div></div>
     </div>
 
-    <figure class="screenshot has-image">
-      <img src="images/chous_the_triger_action_.png" alt="Choose trigger action in workflow wizard" loading="lazy" />
-      <figcaption class="screenshot-caption">Choose the trigger that launches your workflow.</figcaption>
-    </figure>
+    <div class="feature-showcase">
+      <div class="blob-tr"></div>
+      <div class="blob-bl"></div>
+      <div class="showcase-body">
+        <img class="showcase-image" src="images/chous_the_triger_action_.png" alt="Choose trigger action in workflow wizard" loading="lazy" />
+      </div>
+      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Top input field — workflow's display name (e.g. 'Payment Pending (Review + Reminder)')"><span class="ann-icon"></span> Workflow name field</div>
+      <div class="showcase-annotation ann-pos-ml ann-left" data-tip="Center area — open dropdown listing all trigger events: Order created, Order updated, Checkout abandoned, etc."><span class="ann-icon"></span> Trigger event dropdown</div>
+      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Below the name — optional text field describing the workflow's purpose"><span class="ann-icon"></span> Description field</div>
+      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Bottom-right — saves the workflow configuration and closes the dialog"><span class="ann-icon"></span> 'Save' button</div>
+    </div>
 
-    <figure class="screenshot has-image">
-      <img src="images/chos_a_treger_waht_shloud_hapen_to_lanch_the_workflow_.png" alt="Trigger details with active status and deduplication settings" loading="lazy" />
-      <figcaption class="screenshot-caption">Trigger details panel showing active status, update-once-per-entity, and duplicate protection.</figcaption>
-    </figure>
+    <div class="feature-showcase">
+      <div class="blob-tr"></div>
+      <div class="blob-bl"></div>
+      <div class="showcase-body">
+        <img class="showcase-image" src="images/chos_a_treger_waht_shloud_hapen_to_lanch_the_workflow_.png" alt="Trigger details with active status and deduplication settings" loading="lazy" />
+      </div>
+      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Upper area — shows the workflow name and which trigger event is selected (Order updated)"><span class="ann-icon"></span> Workflow name & trigger</div>
+      <div class="showcase-annotation ann-pos-ml ann-left" data-tip="Center — summary text describing what happens when the workflow fires"><span class="ann-icon"></span> Workflow description</div>
+      <div class="showcase-annotation ann-pos-mr ann-right" data-tip="Below description — green 'Active' badge and 'Update once per entity' toggle"><span class="ann-icon"></span> Active & update-once badges</div>
+      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Bottom — explains how duplicate event handling works for this workflow"><span class="ann-icon"></span> Duplicate protection info</div>
+    </div>
 
     <div class="steps" style="counter-reset: step 4;">
-      <div class="step"><div class="step-content">Add <strong>conditions</strong> (optional) — filters to narrow when it runs</div></div>
+      <div class="step"><div class="step-content">Add <span class="hover-preview popup-below"><strong>conditions</strong><span class="preview-popup"><img src="images/choos_predfined_condition_.png" alt="Condition selector" /><div class="popup-label">Filter when the workflow should run</div></span></span> (optional) â€” filters to narrow when it runs</div></div>
     </div>
 
-    <figure class="screenshot has-image">
-      <img src="images/choos_predfined_condition_.png" alt="Predefined condition selector" loading="lazy" />
-      <figcaption class="screenshot-caption">Choose predefined conditions to filter when workflows run.</figcaption>
-    </figure>
+    <div class="feature-showcase">
+      <div class="blob-tr"></div>
+      <div class="blob-bl"></div>
+      <div class="showcase-body">
+        <img class="showcase-image" src="images/choos_predfined_condition_.png" alt="Predefined condition selector" loading="lazy" />
+      </div>
+      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Top of dialog — 'Edit condition' title where you set field, operator, and value"><span class="ann-icon"></span> 'Edit condition' dialog</div>
+      <div class="showcase-annotation ann-pos-ml ann-left" data-tip="Center — open dropdown showing condition fields: Order total price, Currency, Tags, Email, Financial status, Custom path"><span class="ann-icon"></span> Field dropdown (open)</div>
+      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Bottom of dropdown list — 'Custom path' option highlighted for matching any JSON data field"><span class="ann-icon"></span> 'Custom path' selected</div>
+      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Below the dropdown — enter the comparison value for this condition"><span class="ann-icon"></span> Value input area</div>
+    </div>
 
-    <figure class="screenshot has-image">
-      <img src="images/add_costmized_condition_.png" alt="Add customized condition in workflow" loading="lazy" />
-      <figcaption class="screenshot-caption">Add custom AND/OR logic for advanced workflow rules.</figcaption>
-    </figure>
+    <div class="feature-showcase">
+      <div class="blob-tr"></div>
+      <div class="blob-bl"></div>
+      <div class="showcase-body">
+        <img class="showcase-image" src="images/add_costmized_condition_.png" alt="Add customized condition in workflow" loading="lazy" />
+      </div>
+      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Top — 'Field' dropdown showing 'Custom path' selected as the condition field type"><span class="ann-icon"></span> 'Field' dropdown</div>
+      <div class="showcase-annotation ann-pos-ml ann-left" data-tip="Below field — 'Custom field path' input with JSON path (e.g. 'order.total_price')"><span class="ann-icon"></span> Custom field path input</div>
+      <div class="showcase-annotation ann-pos-mr ann-right" data-tip="Center — 'Operator' dropdown set to 'Equals' (also supports Greater Than, Contains, etc.)"><span class="ann-icon"></span> Operator dropdown</div>
+      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Bottom — 'Value' input field to enter the target comparison value"><span class="ann-icon"></span> Value input field</div>
+    </div>
 
-    <figure class="screenshot has-image">
-      <img src="images/add_a_condetion_to_the_workflow_.png" alt="Condition step with match any/all and drag to reorder" loading="lazy" />
-      <figcaption class="screenshot-caption">The IF step — set condition matching (Any/All) and drag to reorder conditions.</figcaption>
-    </figure>
+    <div class="feature-showcase">
+      <div class="blob-tr"></div>
+      <div class="blob-bl"></div>
+      <div class="showcase-body">
+        <img class="showcase-image" src="images/add_a_condetion_to_the_workflow_.png" alt="Condition step with match any/all and drag to reorder" loading="lazy" />
+      </div>
+      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Top — step 2 'If' header showing this is the condition evaluation step"><span class="ann-icon"></span> 'If' step header</div>
+      <div class="showcase-annotation ann-pos-ml ann-left" data-tip="Upper area — 'Condition match' dropdown to toggle between Any (OR) and All (AND) logic"><span class="ann-icon"></span> Condition match dropdown</div>
+      <div class="showcase-annotation ann-pos-mr ann-right" data-tip="Center — condition row with 'Click to add condition' and 'Remove' button on the right"><span class="ann-icon"></span> Condition row & Remove</div>
+      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Bottom — 'Add condition' button to append a new condition rule"><span class="ann-icon"></span> 'Add condition' button</div>
+    </div>
 
     <div class="steps" style="counter-reset: step 5;">
-      <div class="step"><div class="step-content">Add <strong>actions</strong> — what should happen when the trigger fires</div></div>
+      <div class="step"><div class="step-content">Add <span class="hover-preview popup-below"><strong>actions</strong><span class="preview-popup"><img src="images/the_action_tipe_.png" alt="Action type selector" /><div class="popup-label">Choose what happens: task, email, Slack, etc.</div></span></span> â€” what should happen when the trigger fires</div></div>
     </div>
 
-    <figure class="screenshot has-image">
-      <img src="images/the_action_tipe_.png" alt="Action type selector" loading="lazy" />
-      <figcaption class="screenshot-caption">Pick action type such as task, email, or external notification.</figcaption>
-    </figure>
+    <div class="feature-showcase">
+      <div class="blob-tr"></div>
+      <div class="blob-bl"></div>
+      <div class="showcase-body">
+        <img class="showcase-image" src="images/the_action_tipe_.png" alt="Action type selector" loading="lazy" />
+      </div>
+      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Top — 'Action type' dropdown open showing: Create task, Create note, Send email, Send Slack, Add to Google Sheet"><span class="ann-icon"></span> Action type dropdown</div>
+      <div class="showcase-annotation ann-pos-ml ann-left" data-tip="Center-left — Task title and rich text description fields for the auto-created task"><span class="ann-icon"></span> Task title & description</div>
+      <div class="showcase-annotation ann-pos-mr ann-right" data-tip="Center-right — Priority dropdown (Medium) and Status dropdown (Pending) for the task"><span class="ann-icon"></span> Priority & Status</div>
+      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Bottom — 'Assign to' dropdown (Unassigned) and Due date offset in days"><span class="ann-icon"></span> Assign to & Due date</div>
+    </div>
 
-    <figure class="screenshot has-image">
-      <img src="images/Screenshot_2026-04-01_165139.png" alt="Then step with immediate and delayed actions" loading="lazy" />
-      <figcaption class="screenshot-caption">The THEN step — add immediate and delayed actions like tasks, notes, emails, Slack, and Google Sheets.</figcaption>
-    </figure>
+    <div class="feature-showcase">
+      <div class="blob-tr"></div>
+      <div class="blob-bl"></div>
+      <div class="showcase-body">
+        <img class="showcase-image" src="images/Screenshot_2026-04-01_165139.png" alt="Then step with immediate and delayed actions" loading="lazy" />
+      </div>
+      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Center-upper — 'Immediate actions (1)' section with drag-to-reorder and action items"><span class="ann-icon"></span> Immediate actions section</div>
+      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Center-lower — 'Delayed actions (0)' section for actions scheduled after a time delay"><span class="ann-icon"></span> Delayed actions section</div>
+      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Top — step 3 'Then' header with instruction: 'Run these actions in order'"><span class="ann-icon"></span> 'Then' step header</div>
+      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Bottom row — Add task, Add note, Send email, Send Slack, Add to Google Sheet buttons"><span class="ann-icon"></span> Action type buttons</div>
+    </div>
 
-    <figure class="screenshot has-image">
-      <img src="images/add_action_waht_should_hapned_if_the_treger_and_the_condetion_get_true_.png" alt="Add action when trigger and condition are true" loading="lazy" />
-      <figcaption class="screenshot-caption">Define exactly what should happen when trigger and conditions are met.</figcaption>
-    </figure>
+    <div class="feature-showcase">
+      <div class="blob-tr"></div>
+      <div class="blob-bl"></div>
+      <div class="showcase-body">
+        <img class="showcase-image" src="images/add_action_waht_should_hapned_if_the_treger_and_the_condetion_get_true_.png" alt="Add action when trigger and condition are true" loading="lazy" />
+      </div>
+      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Upper area — orange banners warning that Slack and Google Sheets require setup in Settings > Integrations"><span class="ann-icon"></span> Integration setup warnings</div>
+      <div class="showcase-annotation ann-pos-ml ann-left" data-tip="Center — individual action entry with drag handle and 'Remove' button"><span class="ann-icon"></span> Action item & drag handle</div>
+      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Top — 'Run these actions in order. Drag to reorder, click to edit.' instruction text"><span class="ann-icon"></span> Action ordering info</div>
+      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Bottom-right — 'Save' button to confirm the entire Then step configuration"><span class="ann-icon"></span> 'Save' button</div>
+    </div>
 
-    <figure class="screenshot has-image">
-      <img src="images/add_the_email_content_.png" alt="Compose workflow email content" loading="lazy" />
-      <figcaption class="screenshot-caption">Configure email subject and body directly inside the workflow action.</figcaption>
-    </figure>
+    <div class="feature-showcase">
+      <div class="blob-tr"></div>
+      <div class="blob-bl"></div>
+      <div class="showcase-body">
+        <img class="showcase-image" src="images/add_the_email_content_.png" alt="Compose workflow email content" loading="lazy" />
+      </div>
+      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Upper area — 'Subject' input field (supports {{variables}} like {{order_number}})"><span class="ann-icon"></span> 'Subject' field</div>
+      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Center — 'Body' rich text editor with formatting toolbar (Bold, Italic, Lists, Quotes)"><span class="ann-icon"></span> Body rich text editor</div>
+      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Top-right — 'Apply template' button and 'View variables' link for inserting dynamic data"><span class="ann-icon"></span> Template & variables links</div>
+      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Bottom section — 'Preview with sample values' showing rendered email using real trigger data"><span class="ann-icon"></span> Preview with sample values</div>
+    </div>
 
-    <figure class="screenshot has-image">
-      <img src="images/if_the_action_is_sanding_email_you_shod_choos_the_emals_resever_costumer_stafe_or_admin_.png" alt="Choose email receivers for workflow action" loading="lazy" />
-      <figcaption class="screenshot-caption">Choose recipient type: customer, staff member, admin, or custom address.</figcaption>
-    </figure>
+    <div class="feature-showcase">
+      <div class="blob-tr"></div>
+      <div class="blob-bl"></div>
+      <div class="showcase-body">
+        <img class="showcase-image" src="images/if_the_action_is_sanding_email_you_shod_choos_the_emals_resever_costumer_stafe_or_admin_.png" alt="Choose email receivers for workflow action" loading="lazy" />
+      </div>
+      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Top — 'Action type' dropdown set to 'Send email' with Slack/Sheets setup warnings below"><span class="ann-icon"></span> 'Send email' action type</div>
+      <div class="showcase-annotation ann-pos-ml ann-left" data-tip="Upper-center — 'Send to' dropdown set to 'Customer (from trigger)' (also supports Staff, Admin, Custom)"><span class="ann-icon"></span> 'Send to' recipient</div>
+      <div class="showcase-annotation ann-pos-mr ann-right" data-tip="Upper area — 'Delay this action' checkbox enabled with delay set to 1 Hour"><span class="ann-icon"></span> Delay action config</div>
+      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Bottom-right — 'Cancel' and 'Save' buttons to discard or confirm the action"><span class="ann-icon"></span> Cancel & Save buttons</div>
+    </div>
 
     <div class="steps" style="counter-reset: step 6;">
-      <div class="step"><div class="step-content">Click <strong>Save</strong>, then toggle the workflow <strong>Active</strong></div></div>
+      <div class="step"><div class="step-content">Click <strong>Save</strong>, then toggle the workflow <span class="hover-preview popup-below"><strong>Active</strong><span class="preview-popup"><img src="images/workflows_list_.png" alt="Workflow list" /><div class="popup-label">Activate, pause, or edit workflows from the list</div></span></span></div></div>
     </div>
 
     <h2 id="triggers">Triggers</h2>
@@ -143,7 +297,7 @@
     <h3 id="event-based-triggers">Event-Based Triggers</h3>
     <p>These fire instantly when something happens in your Shopify store:</p>
     <table>
-      <thead><tr><th>Trigger</th><th>Fires When…</th><th>Example Use</th></tr></thead>
+      <thead><tr><th>Trigger</th><th>Fires Whenâ€¦</th><th>Example Use</th></tr></thead>
       <tbody>
         <tr><td><strong>Order Created</strong></td><td>A new order is placed</td><td>Alert team for high-value orders</td></tr>
         <tr><td><strong>Order Updated</strong></td><td>An order changes</td><td>Track payment or fulfillment changes</td></tr>
@@ -178,16 +332,16 @@
     <p>Combine conditions with AND (all must be true) or OR (at least one). You can nest groups for complex logic:</p>
     <pre><code>IF (order.total_price > 500 AND order.tags contains "wholesale")
    OR (order.total_price > 1000)
-→ Run actions</code></pre>
+â†’ Run actions</code></pre>
 
     <h2 id="actions">Actions</h2>
-    <p>Actions are what happens when the trigger fires and conditions are met. You can add multiple actions — they run in order.</p>
+    <p>Actions are what happens when the trigger fires and conditions are met. You can add multiple actions â€” they run in order.</p>
 
     <h3 id="create-task">Create Task</h3>
     <p>Automatically creates a <a href="tasks.html">task</a> for your team. Set the title, description, <a href="tasks.html#priority-levels">priority</a>, assignee, and due date offset.</p>
     <div class="callout callout-note">
-      <span class="callout-icon">📝</span>
-      <div><strong>Example:</strong> Title: <code>Review high-value order #{{order_number}}</code> — Priority: High — Assign To: John — Due: 2 days</div>
+      <span class="callout-icon">ðŸ“</span>
+      <div><strong>Example:</strong> Title: <code>Review high-value order #{{order_number}}</code> â€” Priority: High â€” Assign To: John â€” Due: 2 days</div>
     </div>
 
     <h3 id="create-note">Create Note</h3>
@@ -197,15 +351,15 @@
     <p>Send an email to a customer, team member, or custom address. Supports HTML and <a href="#template-variables">template variables</a>.</p>
 
     <div class="callout callout-warning">
-      <span class="callout-icon">⚠️</span>
-      <div>Requires <a href="integrations.html#email-integration">email integration</a> to be configured. Not available on the <a href="billing.html#plans-comparison">Free plan</a>.</div>
+      <span class="callout-icon">âš ï¸</span>
+      <div>Requires <span class="hover-preview"><a href="integrations.html#email-integration">email integration</a><span class="preview-popup"><img src="images/add_the_email_content_.png" alt="Email action" /><div class="popup-label">Configure email subject and body in the workflow</div></span></span> to be configured. Not available on the <a href="billing.html#plans-comparison">Free plan</a>.</div>
     </div>
 
     <h3 id="send-slack-message">Send Slack Message</h3>
     <p>Posts a message to your <a href="integrations.html#slack-integration">Slack</a> channel. Supports Slack markdown and <a href="#template-variables">template variables</a>.</p>
 
     <div class="callout callout-warning">
-      <span class="callout-icon">⚠️</span>
+      <span class="callout-icon">âš ï¸</span>
       <div>Requires <a href="integrations.html#slack-integration">Slack integration</a> to be configured. Not available on the <a href="billing.html#plans-comparison">Free plan</a>.</div>
     </div>
 
@@ -231,13 +385,20 @@
       </tbody>
     </table>
 
-    <figure class="screenshot has-image">
-      <img src="images/ation_informations.png" alt="Action information and dynamic values" loading="lazy" />
-      <figcaption class="screenshot-caption">Action information panel with dynamic values from the selected trigger.</figcaption>
-    </figure>
+    <div class="feature-showcase">
+      <div class="blob-tr"></div>
+      <div class="blob-bl"></div>
+      <div class="showcase-body">
+        <img class="showcase-image" src="images/ation_informations.png" alt="Action information and dynamic values" loading="lazy" />
+      </div>
+      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Top — 'Task title' text input for the auto-created task name (supports {{variables}})"><span class="ann-icon"></span> 'Task title' field</div>
+      <div class="showcase-annotation ann-pos-ml ann-left" data-tip="Center — 'Task description' rich text editor with formatting toolbar"><span class="ann-icon"></span> Task description editor</div>
+      <div class="showcase-annotation ann-pos-mr ann-right" data-tip="Center-right — 'Priority' dropdown (Medium) and 'Status' dropdown (Pending)"><span class="ann-icon"></span> Priority & Status dropdowns</div>
+      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Bottom — 'Assign to' dropdown (Unassigned) and 'Due date offset (days)' input (0)"><span class="ann-icon"></span> Assign to & Due date</div>
+    </div>
 
     <div class="callout callout-tip">
-      <span class="callout-icon">💡</span>
+      <span class="callout-icon">ðŸ’¡</span>
       <div>When editing an action, click the <strong>{} Variables</strong> button to see all available variables for your trigger type.</div>
     </div>
 
@@ -273,40 +434,75 @@
       </tbody>
     </table>
 
-    <figure class="screenshot has-image">
-      <img src="images/workflow_remainder_.png" alt="Workflow reminder schedule settings" loading="lazy" />
-      <figcaption class="screenshot-caption">Set reminder frequency and scheduled execution details.</figcaption>
-    </figure>
+    <div class="feature-showcase">
+      <div class="blob-tr"></div>
+      <div class="blob-bl"></div>
+      <div class="showcase-body">
+        <img class="showcase-image" src="images/workflow_remainder_.png" alt="Workflow reminder schedule settings" loading="lazy" />
+      </div>
+      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Top — 'Delay this action' checkbox (checked) to add a time delay before execution"><span class="ann-icon"></span> 'Delay this action' checkbox</div>
+      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Bottom-left — numeric input set to 1 for the delay duration"><span class="ann-icon"></span> Delay value input</div>
+      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Below checkbox — helper text: 'Example: send reminder after 4 hours.'"><span class="ann-icon"></span> Example hint text</div>
+      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Bottom-right — 'Hours' unit selector (also Minutes, Days) for the delay period"><span class="ann-icon"></span> 'Hours' unit dropdown</div>
+    </div>
 
     <h2 id="workflow-templates">Workflow Templates</h2>
-    <p>OpsPilot includes <strong>28+ pre-built templates</strong> to get you started quickly. Browse the template gallery when creating a new workflow.</p>
+    <p>OpsPilot includes <span class="hover-preview"><strong>28+ pre-built templates</strong><span class="preview-popup"><img src="images/use_a_tamplate_.png" alt="Template gallery" /><div class="popup-label">Browse and select from pre-built workflow templates</div></span></span> to get you started quickly. Browse the template gallery when creating a new workflow.</p>
 
-    <figure class="screenshot has-image">
-      <img src="images/use_a_tamplate_.png" alt="Workflow template selection" loading="lazy" />
-      <figcaption class="screenshot-caption">Use a template to start quickly from prebuilt workflow logic.</figcaption>
-    </figure>
+    <div class="feature-showcase">
+      <div class="blob-tr"></div>
+      <div class="blob-bl"></div>
+      <div class="showcase-body">
+        <img class="showcase-image" src="images/use_a_tamplate_.png" alt="Workflow template selection" loading="lazy" />
+      </div>
+      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Upper area — 'From template' section header with 'All' filter dropdown to narrow by category"><span class="ann-icon"></span> 'From template' header</div>
+      <div class="showcase-annotation ann-pos-ml ann-left" data-tip="Center — scrollable list of templates: VIP Order Alert, Priority Order, Payment Pending, Refunded Order Follow-Up"><span class="ann-icon"></span> Template cards list</div>
+      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Right side of each card — 'Use template' button to instantly create a workflow from that template"><span class="ann-icon"></span> 'Use template' buttons</div>
+      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Bottom-right — blue 'Create custom workflow' button to skip templates and build from scratch"><span class="ann-icon"></span> 'Create custom workflow'</div>
+    </div>
 
     <h2 id="workflow-management">Workflow Management Screens</h2>
-    <figure class="screenshot has-image">
-      <img src="images/workflows_list_.png" alt="Workflow list page" loading="lazy" />
-      <figcaption class="screenshot-caption">Workflow list where you can activate, pause, edit, and monitor each automation.</figcaption>
-    </figure>
+    <div class="feature-showcase">
+      <div class="blob-tr"></div>
+      <div class="blob-bl"></div>
+      <div class="showcase-body">
+        <img class="showcase-image" src="images/workflows_list_.png" alt="Workflow list page" loading="lazy" />
+      </div>
+      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Upper area — four stat cards: Total workflows (1), Active (1), Success rate (100%), Recent runs (2)"><span class="ann-icon"></span> Stats overview cards</div>
+      <div class="showcase-annotation ann-pos-ml ann-left" data-tip="Center — Type/Trigger/Action filter dropdowns above the workflow table with Name, Status, Actions columns"><span class="ann-icon"></span> Filter & workflow table</div>
+      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Top-right — 'Add predefined workflows' and '+ New workflow' buttons"><span class="ann-icon"></span> '+ New workflow' button</div>
+      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Bottom section — recent workflow runs with timestamps and SUCCESS/FAILURE status badges"><span class="ann-icon"></span> Recent executions log</div>
+    </div>
 
-    <figure class="screenshot has-image">
-      <img src="images/you_can_manage_your_woek_flow_hear_.png" alt="Manage workflows area" loading="lazy" />
-      <figcaption class="screenshot-caption">Central management area for workflow operations.</figcaption>
-    </figure>
+    <div class="feature-showcase">
+      <div class="blob-tr"></div>
+      <div class="blob-bl"></div>
+      <div class="showcase-body">
+        <img class="showcase-image" src="images/you_can_manage_your_woek_flow_hear_.png" alt="Manage workflows area" loading="lazy" />
+      </div>
+      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Top — 'Operational summary' with Active badge, last run time (SUCCESS), and next execution details"><span class="ann-icon"></span> Operational summary header</div>
+      <div class="showcase-annotation ann-pos-ml ann-left" data-tip="Center-left — 'When' trigger card showing workflow name, trigger type, and description"><span class="ann-icon"></span> 'When' trigger card</div>
+      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Upper area — Frequency, Conditions, Actions, Delayed counts with 'Run now' / 'Pause' / 'View run history' buttons below"><span class="ann-icon"></span> Run controls & stats</div>
+      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Bottom — 'Then' section with Immediate actions: Create task and Send email entries with Preview/Quick edit"><span class="ann-icon"></span> 'Then' actions list</div>
+    </div>
 
-    <figure class="screenshot has-image">
-      <img src="images/you_can_creat_more_then_one_at_one_s_.png" alt="Create multiple workflows" loading="lazy" />
-      <figcaption class="screenshot-caption">Create and run multiple workflows at the same time.</figcaption>
-    </figure>
+    <div class="feature-showcase">
+      <div class="blob-tr"></div>
+      <div class="blob-bl"></div>
+      <div class="showcase-body">
+        <img class="showcase-image" src="images/you_can_creat_more_then_one_at_one_s_.png" alt="Create multiple workflows" loading="lazy" />
+      </div>
+      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Upper area — search by name and filter by Run type, Category, and Priority dropdowns"><span class="ann-icon"></span> Search & filter bar</div>
+      <div class="showcase-annotation ann-pos-ml ann-left" data-tip="Center — scrollable template list with checkboxes; 3 selected: VIP Order Alert, Priority Order, Payment Pending"><span class="ann-icon"></span> Template cards (3 selected)</div>
+      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Below filters — 'Showing 35 templates. 3 selected in this view.' with Select visible / Clear / Reset controls"><span class="ann-icon"></span> Selection count & controls</div>
+      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Bottom-right — green 'Add 3 workflow(s)' button to create all selected workflows at once"><span class="ann-icon"></span> 'Add 3 workflow(s)' button</div>
+    </div>
 
     <h2 id="testing-a-workflow">Testing a Workflow</h2>
-    <p>You can test without waiting for a real event: open the workflow and click <strong>Test Workflow</strong>. Pick a real order, product, or customer as test data.</p>
+    <p>You can test without waiting for a real event: open the workflow and click <span class="hover-preview popup-below"><strong>Test Workflow</strong><span class="preview-popup"><img src="images/you_can_manage_your_woek_flow_hear_.png" alt="Test Workflow" /><div class="popup-label">Run a test with real data from your store</div></span></span>. Pick a real order, product, or customer as test data.</p>
 
     <div class="callout callout-note">
-      <span class="callout-icon">📝</span>
+      <span class="callout-icon">ðŸ“</span>
       <div>Test runs count toward your monthly quota.</div>
     </div>
 

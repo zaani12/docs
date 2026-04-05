@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FAQ &amp; Troubleshooting — OpsPilot</title>
+  <title>FAQ &amp; Troubleshooting â€” OpsPilot</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -22,7 +22,33 @@
     <a href="dashboard.html">Dashboard</a>
     <a href="notes.html">Notes</a>
     <a href="tasks.html">Tasks</a>
-    <a href="workflows.html">Workflows</a>
+    <div class="nav-tree">
+      <a href="workflows.html">Workflows</a>
+      <div class="tree-branch">
+        <div class="tree-node">
+          <div class="tree-toggle" onclick="toggleTree(this)">
+            <span class="tree-arrow">â–¸</span> Event-based
+          </div>
+          <div class="tree-children">
+            <a href="workflows.html#event-based-triggers">Triggers</a>
+            <a href="workflows.html#conditions">Conditions</a>
+            <a href="workflows.html#actions">Actions</a>
+            <a href="workflows.html#template-variables">Template Variables</a>
+            <a href="workflows.html#delayed-actions">Delayed Actions</a>
+            <a href="workflows.html#deduplication">Deduplication</a>
+          </div>
+        </div>
+        <div class="tree-node">
+          <div class="tree-toggle" onclick="toggleTree(this)">
+            <span class="tree-arrow">â–¸</span> Scheduled
+          </div>
+          <div class="tree-children">
+            <a href="workflows.html#scheduled-trigger">Scheduled Trigger</a>
+            <a href="workflows.html#scheduled-workflows">Scheduled Workflows</a>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="section-label">Configuration</div>
     <a href="settings.html">Settings</a>
     <a href="integrations.html">Integrations</a>
@@ -42,6 +68,25 @@
       <p>Common questions, known issues, and how to get help.</p>
     </div>
 
+    <!-- Feature Showcase -->
+    <div class="feature-showcase">
+      <div class="blob-tr"></div>
+      <div class="blob-bl"></div>
+      <div class="showcase-logo"><span class="showcase-logo-dot"></span> OpsPilot</div>
+      <div class="showcase-title">Answers at Your Fingertips.</div>
+      <div class="showcase-subtitle">Quick solutions to common questions â€” from setup to troubleshooting workflows.</div>
+      <div class="showcase-body">
+        <img class="showcase-image" src="images/costmized_workflow_wizard_.png" alt="OpsPilot FAQ" loading="lazy" />
+      </div>
+      <!-- Floating annotations -->
+      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Arrow at the sidebar area overlapping the 'Event-based' card — top-left of the wizard dialog. FAQ covers choosing between event and scheduled workflows"><span class="ann-icon"></span> Workflow type selection</div>
+      <div class="showcase-annotation ann-pos-ml ann-left" data-tip="Arrow at 'Apps' section of the Shopify sidebar — mid-left. FAQ explains installation, setup, and app access"><span class="ann-icon"></span> Installation &amp; setup FAQ</div>
+      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Arrow near the 'Scheduled' card — lower-left of the dialog. FAQ covers cron expressions and scheduling"><span class="ann-icon"></span> Scheduled workflow FAQ</div>
+      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Arrow at 'Total workflows', 'Active', 'Success rate' stats — top-right above dialog. FAQ explains metrics and plan limits"><span class="ann-icon"></span> Workflow stats &amp; limits</div>
+      <div class="showcase-annotation ann-pos-mr ann-right" data-tip="Arrow at the right side of the 'Event-based' card — mid-right. FAQ covers triggers, conditions, and action types"><span class="ann-icon"></span> Event-based triggers FAQ</div>
+      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Arrow at the 'Close' button — bottom-right of the dialog. FAQ explains how to manage, pause, and delete workflows"><span class="ann-icon"></span> Manage &amp; delete workflows</div>
+    </div>
+
     <h2 id="general-questions">General Questions</h2>
 
     <h3 id="what-is-opspilot">What is OpsPilot?</h3>
@@ -59,10 +104,10 @@
     <p>Unlimited on all plans (including Free).</p>
 
     <h3 id="attach-files">Can I attach files to notes?</h3>
-    <p>Yes. You can upload images, PDFs, and documents. See the <a href="notes.html#attaching-files">Notes → Attaching Files</a> guide for details.</p>
+    <p>Yes. You can upload images, PDFs, and documents. See the <a href="notes.html#attaching-files">Notes â†’ Attaching Files</a> guide for details.</p>
 
     <h3 id="convert-note-to-task">Can I convert a note to a task?</h3>
-    <p>Yes. Select notes and click <strong>Convert to Tasks</strong>. Each note becomes a <a href="tasks.html">task</a> and they remain linked.</p>
+    <p>Yes. Select notes and click <span class="hover-preview"><strong>Convert to Tasks</strong><span class="preview-popup"><img src="images/Screenshot_2026-04-01_162559.png" alt="Convert to Tasks" /><div class="popup-label">Turn selected notes into tasks â€” they stay linked</div></span></span>. Each note becomes a <a href="tasks.html">task</a> and they remain linked.</p>
 
     <h3 id="recover-deleted-note">I deleted a note by mistake. Can I recover it?</h3>
     <p>Notes move to a soft-deleted state and can be restored. Check the note list for a "Deleted" filter.</p>
@@ -73,41 +118,41 @@
     <ul>
       <li><strong><a href="tasks.html#table-view">Table View</a>:</strong> Click the status badge on the task row</li>
       <li><strong><a href="tasks.html#kanban-board-view">Kanban View</a>:</strong> Drag the task card to a different column</li>
-      <li><strong>Detail View:</strong> Open the task → Edit → change the status</li>
+      <li><strong>Detail View:</strong> Open the task â†’ Edit â†’ change the status</li>
     </ul>
 
     <h3 id="custom-statuses">Can I create custom task statuses?</h3>
-    <p>Yes. Go to <strong><a href="settings.html#creating-custom-statuses">Settings → Task Statuses</a></strong> and click <strong>Add Status</strong>.</p>
+    <p>Yes. Go to <strong><a href="settings.html#creating-custom-statuses">Settings â†’ Task Statuses</a></strong> and click <span class="hover-preview"><strong>Add Status</strong><span class="preview-popup"><img src="images/Screenshot_2026-04-01_162559.png" alt="Add Status" /><div class="popup-label">Create a new custom status for your task workflow</div></span></span>.</p>
 
     <h3 id="table-vs-kanban">What's the difference between Table and Kanban view?</h3>
-    <p><strong><a href="tasks.html#table-view">Table</a></strong> shows tasks in a spreadsheet-style list — good for sorting. <strong><a href="tasks.html#kanban-board-view">Kanban</a></strong> shows cards on a board organized by status — good for visual tracking and drag-and-drop.</p>
+    <p><strong><a href="tasks.html#table-view">Table</a></strong> shows tasks in a spreadsheet-style list â€” good for sorting. <strong><a href="tasks.html#kanban-board-view">Kanban</a></strong> shows cards on a board organized by status â€” good for visual tracking and drag-and-drop.</p>
 
     <h2 id="workflows-faq">Workflows FAQ</h2>
 
     <h3 id="workflow-not-triggering">My workflow isn't triggering. Why?</h3>
     <ol>
-      <li><strong>Workflow is not active</strong> — Make sure the toggle is set to Active</li>
-      <li><strong><a href="workflows.html#conditions">Conditions</a> are too restrictive</strong> — Temporarily remove conditions to test</li>
-      <li><strong>Wrong <a href="workflows.html#triggers">trigger</a> type</strong> — Verify the trigger matches the event you expect</li>
-      <li><strong><a href="billing.html#usage-limits">Plan limit reached</a></strong> — Check if you've hit your monthly run limit</li>
-      <li><strong>Paused due to failures</strong> — Check for a "Paused Due to Failure" badge</li>
+      <li><strong>Workflow is not active</strong> â€” Make sure the toggle is set to Active</li>
+      <li><strong><a href="workflows.html#conditions">Conditions</a> are too restrictive</strong> â€” Temporarily remove conditions to test</li>
+      <li><strong>Wrong <a href="workflows.html#triggers">trigger</a> type</strong> â€” Verify the trigger matches the event you expect</li>
+      <li><strong><a href="billing.html#usage-limits">Plan limit reached</a></strong> â€” Check if you've hit your monthly run limit</li>
+      <li><strong>Paused due to failures</strong> â€” Check for a "Paused Due to Failure" badge</li>
     </ol>
 
     <h3 id="paused-due-to-failure">My workflow shows "Paused Due to Failure." How do I fix it?</h3>
-    <p>This means the workflow failed 4 times in a row. Check the <strong>Execution History</strong> for error messages, fix the root cause, then click <strong>Re-enable</strong>.</p>
+    <p>This means the workflow failed 4 times in a row. Check the <strong>Execution History</strong> for error messages, fix the root cause, then click <span class="hover-preview"><strong>Re-enable</strong><span class="preview-popup"><img src="images/workflows_list_.png" alt="Re-enable" /><div class="popup-label">Reactivate a paused workflow after fixing the failure</div></span></span>.</p>
 
     <h3 id="test-workflow">Can I test a workflow without waiting for a real event?</h3>
-    <p>Yes. Open the workflow and click <strong>Test Workflow</strong>. Pick a real order, product, or customer as test data. Test runs count toward your <a href="billing.html#usage-limits">monthly quota</a>.</p>
+    <p>Yes. Open the workflow and click <span class="hover-preview"><strong>Test Workflow</strong><span class="preview-popup"><img src="images/costmized_workflow_wizard_.png" alt="Test Workflow" /><div class="popup-label">Run the workflow with real data to verify it works correctly</div></span></span>. Pick a real order, product, or customer as test data. Test runs count toward your <a href="billing.html#usage-limits">monthly quota</a>.</p>
 
     <h3 id="what-are-template-variables">What are template variables?</h3>
-    <p><a href="workflows.html#template-variables">Template variables</a> let you insert dynamic data into actions. For example, <code>{{order_number}}</code> inserts the actual order number. See the <a href="workflows.html#template-variables">Workflows → Template Variables</a> guide for all variables.</p>
+    <p><a href="workflows.html#template-variables">Template variables</a> let you insert dynamic data into actions. For example, <code>{{order_number}}</code> inserts the actual order number. See the <a href="workflows.html#template-variables">Workflows â†’ Template Variables</a> guide for all variables.</p>
 
     <h3 id="emails-not-sent">Emails from my workflow aren't being sent. Why?</h3>
     <ol>
-      <li><strong><a href="integrations.html#email-integration">Email integration</a> not configured</strong> — Set up your domain in Settings</li>
-      <li><strong>Domain not verified</strong> — DNS records might not have propagated yet</li>
-      <li><strong>On <a href="billing.html#plans-comparison">Free plan</a></strong> — Email actions require Starter or Growth</li>
-      <li><strong><a href="workflows.html#deduplication">Deduplication</a></strong> — Same email may have been sent in the last 24 hours</li>
+      <li><strong><a href="integrations.html#email-integration">Email integration</a> not configured</strong> â€” Set up your domain in Settings</li>
+      <li><strong>Domain not verified</strong> â€” DNS records might not have propagated yet</li>
+      <li><strong>On <a href="billing.html#plans-comparison">Free plan</a></strong> â€” Email actions require Starter or Growth</li>
+      <li><strong><a href="workflows.html#deduplication">Deduplication</a></strong> â€” Same email may have been sent in the last 24 hours</li>
     </ol>
 
     <h2 id="billing-faq">Billing FAQ</h2>
@@ -123,8 +168,8 @@
 
     <h2 id="still-need-help">Still Need Help?</h2>
     <div class="callout callout-tip">
-      <span class="callout-icon">📧</span>
-      <div>Contact our support team at <strong>support@opspilot.app</strong> — we usually respond within 24 hours.</div>
+      <span class="callout-icon">ðŸ“§</span>
+      <div>Contact our support team at <strong>support@opspilot.app</strong> â€” we usually respond within 24 hours.</div>
     </div>
 
   </div>

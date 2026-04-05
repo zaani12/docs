@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tasks — OpsPilot</title>
+  <title>Tasks â€” OpsPilot</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -22,7 +22,33 @@
     <a href="dashboard.html">Dashboard</a>
     <a href="notes.html">Notes</a>
     <a href="tasks.html" class="active">Tasks</a>
-    <a href="workflows.html">Workflows</a>
+    <div class="nav-tree">
+      <a href="workflows.html">Workflows</a>
+      <div class="tree-branch">
+        <div class="tree-node">
+          <div class="tree-toggle" onclick="toggleTree(this)">
+            <span class="tree-arrow">â–¸</span> Event-based
+          </div>
+          <div class="tree-children">
+            <a href="workflows.html#event-based-triggers">Triggers</a>
+            <a href="workflows.html#conditions">Conditions</a>
+            <a href="workflows.html#actions">Actions</a>
+            <a href="workflows.html#template-variables">Template Variables</a>
+            <a href="workflows.html#delayed-actions">Delayed Actions</a>
+            <a href="workflows.html#deduplication">Deduplication</a>
+          </div>
+        </div>
+        <div class="tree-node">
+          <div class="tree-toggle" onclick="toggleTree(this)">
+            <span class="tree-arrow">â–¸</span> Scheduled
+          </div>
+          <div class="tree-children">
+            <a href="workflows.html#scheduled-trigger">Scheduled Trigger</a>
+            <a href="workflows.html#scheduled-workflows">Scheduled Workflows</a>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="section-label">Configuration</div>
     <a href="settings.html">Settings</a>
     <a href="integrations.html">Integrations</a>
@@ -42,13 +68,44 @@
       <p>Track what needs to be done, who's responsible, and when it's due. Create tasks manually, from notes, or automatically via workflows.</p>
     </div>
 
+    <!-- Feature Showcase -->
+    <div class="feature-showcase">
+      <div class="blob-tr"></div>
+      <div class="blob-bl"></div>
+      <div class="showcase-logo"><span class="showcase-logo-dot"></span> OpsPilot</div>
+      <div class="showcase-title">Track Every Action.</div>
+      <div class="showcase-subtitle">Assign, prioritize, and complete tasks â€” manually or auto-created by workflows.</div>
+      <div class="showcase-body">
+        <img class="showcase-image" src="images/Screenshot_2026-04-01_162559.png" alt="OpsPilot Tasks overview" loading="lazy" />
+      </div>
+      <!-- Floating annotations -->
+      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Arrow at the 'Attention required' alert banner — top-left of the dashboard"><span class="ann-icon"></span> Create tasks in one click</div>
+      <div class="showcase-annotation ann-pos-ml ann-left" data-tip="Arrow at the 'Checkout risk' KPI card — mid-left of the dashboard"><span class="ann-icon"></span> 4 priority levels</div>
+      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Arrow at the 'Today's tasks' card showing task counts — lower-left of the dashboard"><span class="ann-icon"></span> Table &amp; Kanban views</div>
+      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Arrow at header buttons 'Refresh data', 'Getting started', 'Quick actions' — top-right"><span class="ann-icon"></span> Assign to team members</div>
+      <div class="showcase-annotation ann-pos-mr ann-right" data-tip="Arrow at the 'Inventory' KPI card — mid-right of the dashboard"><span class="ann-icon"></span> Auto-created by workflows</div>
+      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Arrow at the 'Automation performance' card — lower-right of the dashboard"><span class="ann-icon"></span> Full task timeline &amp; history</div>
+    </div>
+
     <h2 id="creating-a-task">Creating a Task</h2>
     <div class="steps">
       <div class="step"><div class="step-content">Click <strong>Tasks</strong> in the sidebar</div></div>
-      <div class="step"><div class="step-content">Click the <strong>Create Task</strong> button</div></div>
-      <div class="step"><div class="step-content">Fill in the <strong>Title</strong>, choose a <strong>Priority</strong>, set a <strong>Due Date</strong>, and optionally <strong>Assign To</strong> a team member</div></div>
+      <div class="step"><div class="step-content">Click the <span class="hover-preview popup-below"><strong>Create Task</strong><span class="preview-popup"><img src="images/Screenshot_2026-04-01_162559.png" alt="Create Task button" /><div class="popup-label">Opens the task form to create a new task</div></span></span> button</div></div>
+      <div class="step"><div class="step-content">Fill in the <strong>Title</strong>, choose a <span class="hover-preview popup-below"><strong>Priority</strong><span class="preview-popup"><img src="images/Screenshot_2026-04-01_162559.png" alt="Priority selector" /><div class="popup-label">Set priority: Low, Medium, High, or Urgent</div></span></span>, set a <strong>Due Date</strong>, and optionally <span class="hover-preview popup-below"><strong>Assign To</strong><span class="preview-popup"><img src="images/Screenshot_2026-04-01_162559.png" alt="Assign To dropdown" /><div class="popup-label">Assign the task to a specific team member</div></span></span> a team member</div></div>
       <div class="step"><div class="step-content">Add a <strong>Description</strong> with detailed instructions (supports rich text)</div></div>
       <div class="step"><div class="step-content">Click <strong>Save</strong></div></div>
+    </div>
+
+    <div class="feature-showcase">
+      <div class="blob-tr"></div>
+      <div class="blob-bl"></div>
+      <div class="showcase-body">
+        <img class="showcase-image" src="images/Screenshot_2026-04-01_162559.png" alt="Create a task in OpsPilot" loading="lazy" />
+      </div>
+      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Arrow at the 'Attention required' alert banner — top-left of the dashboard"><span class="ann-icon"></span> Task title &amp; description</div>
+      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Arrow at the 'Today's tasks' card — lower-left of the dashboard"><span class="ann-icon"></span> Set due date</div>
+      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Arrow at header buttons — top-right of the dashboard"><span class="ann-icon"></span> Priority level selector</div>
+      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Arrow at the 'Automation performance' card — lower-right of the dashboard"><span class="ann-icon"></span> Assign to team member</div>
     </div>
 
     <h2 id="priority-levels">Priority Levels</h2>
@@ -68,8 +125,8 @@
       <tbody>
         <tr><td><strong>Pending</strong></td><td>Task hasn't been started yet</td><td>No</td></tr>
         <tr><td><strong>In Progress</strong></td><td>Someone is working on it</td><td>No</td></tr>
-        <tr><td><strong>On Hold</strong></td><td>Paused — waiting for something</td><td>No</td></tr>
-        <tr><td><strong>Completed</strong></td><td>Task is done ✅</td><td>Yes</td></tr>
+        <tr><td><strong>On Hold</strong></td><td>Paused â€” waiting for something</td><td>No</td></tr>
+        <tr><td><strong>Completed</strong></td><td>Task is done âœ…</td><td>Yes</td></tr>
         <tr><td><strong>Cancelled</strong></td><td>Task was cancelled</td><td>Yes</td></tr>
         <tr><td><strong>Archived</strong></td><td>Old task moved to archive</td><td>Yes</td></tr>
       </tbody>
@@ -79,23 +136,57 @@
     <h2 id="table-view">Table View</h2>
     <p>The default view shows tasks in a table with columns for title, status, priority, assignee, due date, and created date. Click column headers to sort.</p>
 
+    <div class="feature-showcase">
+      <div class="blob-tr"></div>
+      <div class="blob-bl"></div>
+      <div class="showcase-body">
+        <img class="showcase-image" src="images/Screenshot_2026-04-01_162559.png" alt="Tasks table view" loading="lazy" />
+      </div>
+      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Arrow at the 'Attention required' alert banner — top-left of the dashboard"><span class="ann-icon"></span> Sortable column headers</div>
+      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Arrow at the 'Today's tasks' card showing open and overdue counts — lower-left"><span class="ann-icon"></span> Status &amp; priority badges</div>
+      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Arrow at header buttons 'Refresh data', 'Quick actions' — top-right of the dashboard"><span class="ann-icon"></span> Assignee column</div>
+      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Arrow at the 'Automation performance' card — lower-right of the dashboard"><span class="ann-icon"></span> Due date tracking</div>
+    </div>
+
     <h2 id="kanban-board-view">Kanban Board View</h2>
-    <p>Switch to the Kanban view for a visual board — tasks appear as cards organized by status. <strong>Drag and drop</strong> cards between columns to change their status.</p>
+    <p>Switch to the <span class="hover-preview">Kanban view<span class="preview-popup"><img src="images/Screenshot_2026-04-01_162559.png" alt="Kanban board" /><div class="popup-label">Visual board with drag-and-drop task cards by status</div></span></span> for a visual board â€” tasks appear as cards organized by status. <strong>Drag and drop</strong> cards between columns to change their status.</p>
+
+    <div class="feature-showcase">
+      <div class="blob-tr"></div>
+      <div class="blob-bl"></div>
+      <div class="showcase-body">
+        <img class="showcase-image" src="images/Screenshot_2026-04-01_162559.png" alt="Tasks Kanban board view" loading="lazy" />
+      </div>
+      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Arrow at the 'Attention required' alert banner — top-left of the dashboard"><span class="ann-icon"></span> Status columns</div>
+      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Arrow at the 'Today's tasks' card — lower-left of the dashboard"><span class="ann-icon"></span> Drag &amp; drop between columns</div>
+      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Arrow at header buttons — top-right of the dashboard"><span class="ann-icon"></span> Visual task cards</div>
+      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Arrow at the 'Automation performance' card — lower-right of the dashboard"><span class="ann-icon"></span> Instant status updates</div>
+    </div>
 
     <div class="callout callout-tip">
-      <span class="callout-icon">💡</span>
-      <div>To set the default view for your store, go to <strong><a href="settings.html#default-view">Settings → Task Preferences → Default View</a></strong>.</div>
+      <span class="callout-icon">ðŸ’¡</span>
+      <div>To set the default view for your store, go to <strong><a href="settings.html#default-view">Settings â†’ Task Preferences â†’ Default View</a></strong>.</div>
     </div>
 
     <h2 id="task-timeline">Task Timeline</h2>
-    <p>Every task has a timeline that shows its full history — when it was created, every status change, every edit, and if it was created by a <a href="workflows.html">workflow</a> (shows which workflow and what triggered it).</p>
+    <p>Every task has a timeline that shows its full history â€” when it was created, every status change, every edit, and if it was created by a <a href="workflows.html">workflow</a> (shows which workflow and what triggered it).</p>
 
     <h2 id="linking-tasks-to-notes">Linking Tasks to Notes</h2>
     <p>Tasks and <a href="notes.html">notes</a> can be connected. When creating a task, search for existing notes to link in the <strong>Notes</strong> section. You can also <a href="notes.html#converting-notes-to-tasks">convert notes to tasks</a> from the Notes page.</p>
 
     <h2 id="auto-created-tasks">Auto-Created Tasks (From Workflows)</h2>
-    <p>When a <a href="workflows.html">workflow</a> has a "<a href="workflows.html#create-task">Create Task</a>" action, tasks are created automatically. These tasks show an <strong>"Auto-created"</strong> badge and include a timeline entry showing which workflow created them.</p>
-
+    <p>When a <a href="workflows.html">workflow</a> has a â€œ<span class="hover-preview"><a href="workflows.html#create-task">Create Task</a><span class="preview-popup"><img src="images/the_action_tipe_.png" alt="Create Task action" /><div class="popup-label">Workflow action that auto-creates tasks when triggered</div></span></span>â€ action, tasks are created automatically. These tasks show an <strong>â€œAuto-createdâ€</strong> badge and include a timeline entry showing which workflow created them.</p>
+    <div class="feature-showcase">
+      <div class="blob-tr"></div>
+      <div class="blob-bl"></div>
+      <div class="showcase-body">
+        <img class="showcase-image" src="images/the_action_tipe_.png" alt="Auto-created task from workflow" loading="lazy" />
+      </div>
+      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Arrow at the 'Action type' dropdown showing 'Create task' — top of the Edit action dialog"><span class="ann-icon"></span> 'Action type' dropdown</div>
+      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Arrow at the 'Priority: Medium' and 'Status: Pending' dropdowns — lower-left of the dialog"><span class="ann-icon"></span> Priority &amp; Status fields</div>
+      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Arrow at the dropdown options: Create task, Create note, Send email, Send Slack, Add to Google Sheet — top-right"><span class="ann-icon"></span> Action type options list</div>
+      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Arrow at the 'Cancel' and 'Save' buttons — bottom-right of the Edit action dialog"><span class="ann-icon"></span> 'Cancel' &amp; 'Save' buttons</div>
+    </div>
     <h2 id="filtering-searching">Filtering &amp; Searching</h2>
     <table>
       <thead><tr><th>Filter</th><th>Options</th></tr></thead>

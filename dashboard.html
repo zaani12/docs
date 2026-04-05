@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard — OpsPilot</title>
+  <title>Dashboard â€” OpsPilot</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -22,7 +22,33 @@
     <a href="dashboard.html" class="active">Dashboard</a>
     <a href="notes.html">Notes</a>
     <a href="tasks.html">Tasks</a>
-    <a href="workflows.html">Workflows</a>
+    <div class="nav-tree">
+      <a href="workflows.html">Workflows</a>
+      <div class="tree-branch">
+        <div class="tree-node">
+          <div class="tree-toggle" onclick="toggleTree(this)">
+            <span class="tree-arrow">â–¸</span> Event-based
+          </div>
+          <div class="tree-children">
+            <a href="workflows.html#event-based-triggers">Triggers</a>
+            <a href="workflows.html#conditions">Conditions</a>
+            <a href="workflows.html#actions">Actions</a>
+            <a href="workflows.html#template-variables">Template Variables</a>
+            <a href="workflows.html#delayed-actions">Delayed Actions</a>
+            <a href="workflows.html#deduplication">Deduplication</a>
+          </div>
+        </div>
+        <div class="tree-node">
+          <div class="tree-toggle" onclick="toggleTree(this)">
+            <span class="tree-arrow">â–¸</span> Scheduled
+          </div>
+          <div class="tree-children">
+            <a href="workflows.html#scheduled-trigger">Scheduled Trigger</a>
+            <a href="workflows.html#scheduled-workflows">Scheduled Workflows</a>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="section-label">Configuration</div>
     <a href="settings.html">Settings</a>
     <a href="integrations.html">Integrations</a>
@@ -39,32 +65,70 @@
     <div class="section-hero">
       <h1>Dashboard</h1>
       <div class="last-updated">Last updated on 1 April 2026</div>
-      <p>Your command center — get a quick snapshot of your store's health, team workload, and automation performance.</p>
+      <p>Your command center â€” get a quick snapshot of your store's health, team workload, and automation performance.</p>
     </div>
 
-    <figure class="screenshot has-image">
-      <img src="images/Screenshot_2026-04-01_162559.png" alt="OpsPilot Dashboard overview" loading="lazy" />
-      <figcaption class="screenshot-caption">Dashboard overview showing attention alerts, KPI cards, today's tasks, and automation performance.</figcaption>
-    </figure>
+    <!-- Feature Showcase -->
+    <div class="feature-showcase">
+      <div class="blob-tr"></div>
+      <div class="blob-bl"></div>
+      <div class="showcase-logo"><span class="showcase-logo-dot"></span> OpsPilot</div>
+      <div class="showcase-title">Real-Time Operational Health.</div>
+      <div class="showcase-subtitle">Prioritize risks and monitor store activity at a glance.</div>
+      <div class="showcase-body">
+        <img class="showcase-image" src="images/Screenshot_2026-04-01_162559.png" alt="OpsPilot Dashboard overview" loading="lazy" />
+      </div>
+      <!-- Floating annotations -->
+      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Top red banner — shows open critical issues with 'Open issue center' and 'Open orders' action buttons"><span class="ann-icon"></span> Attention required alerts</div>
+      <div class="showcase-annotation ann-pos-ml ann-left" data-tip="Left KPI card in the middle row — displays checkout risk count, risk signal status, and 'Open checkouts' link"><span class="ann-icon"></span> Checkout risk card</div>
+      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Bottom-left card — shows tasks due today, overdue count, open total, upcoming tasks, and next urgent task preview"><span class="ann-icon"></span> Today's tasks card</div>
+      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Top-right toolbar — Refresh data, Getting started, Rate our app, Last week date filter, and Quick actions buttons"><span class="ann-icon"></span> Actions & date filter</div>
+      <div class="showcase-annotation ann-pos-mr ann-right" data-tip="Right KPI card in the middle row — monitors out-of-stock and low-inventory counts with 'Open inventory' link"><span class="ann-icon"></span> Inventory health card</div>
+      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Bottom-right card — tracks total workflow runs, success rate, auto-created tasks, and estimated time saved"><span class="ann-icon"></span> Automation performance</div>
+    </div>
+
+    <div class="feature-showcase">
+      <div class="blob-tr"></div>
+      <div class="blob-bl"></div>
+      <div class="showcase-body">
+        <img class="showcase-image" src="images/Screenshot_2026-04-01_162559.png" alt="OpsPilot Dashboard overview" loading="lazy" />
+      </div>
+      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Top red banner — 'Attention required' section with Critical badge, open issue count, and quick-action buttons"><span class="ann-icon"></span> Attention required section</div>
+      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Bottom-left card — 'Today's tasks' showing due-today count, overdue items, open total, and next urgent task"><span class="ann-icon"></span> Today's tasks summary</div>
+      <div class="showcase-annotation ann-pos-mr ann-right" data-tip="Middle row right side — three KPI cards: Checkout risk (left), Fulfillment with Action badge (center), Inventory (right)"><span class="ann-icon"></span> KPI health cards</div>
+      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Bottom-right card — 'Automation performance' with run count, success rate, tasks created, and time saved"><span class="ann-icon"></span> Automation performance stats</div>
+    </div>
 
     <h2 id="kpi-quick-stats">KPI Quick Stats</h2>
-    <p>At the top of the dashboard, you'll see a row of KPI cards showing important store metrics:</p>
+    <p>At the top of the dashboard, you'll see a row of <span class="hover-preview">KPI cards<span class="preview-popup"><img src="images/Screenshot_2026-04-01_162559.png" alt="Dashboard KPI cards" /><div class="popup-label">KPI cards at the top of your dashboard</div></span></span> showing important store metrics:</p>
 
     <table>
       <thead><tr><th>KPI</th><th>What It Means</th></tr></thead>
       <tbody>
-        <tr><td>🔔 <strong>Attention Required</strong></td><td>Items that need your immediate action</td></tr>
-        <tr><td>📦 <strong>Overdue Fulfillment</strong></td><td>Orders that should have been fulfilled but haven't</td></tr>
-        <tr><td>🛒 <strong>Abandoned Checkouts</strong></td><td>Customers who didn't complete their purchase</td></tr>
-        <tr><td>💰 <strong>Pending Payment</strong></td><td>Orders with payment still pending</td></tr>
-        <tr><td>🚫 <strong>Out of Stock</strong></td><td>Products completely out of stock</td></tr>
-        <tr><td>⚠️ <strong>Low Inventory</strong></td><td>Products running low on stock</td></tr>
+        <tr><td>ðŸ”” <strong>Attention Required</strong></td><td>Items that need your immediate action</td></tr>
+        <tr><td>ðŸ“¦ <strong>Overdue Fulfillment</strong></td><td>Orders that should have been fulfilled but haven't</td></tr>
+        <tr><td>ðŸ›’ <strong>Abandoned Checkouts</strong></td><td>Customers who didn't complete their purchase</td></tr>
+        <tr><td>ðŸ’° <strong>Pending Payment</strong></td><td>Orders with payment still pending</td></tr>
+        <tr><td>ðŸš« <strong>Out of Stock</strong></td><td>Products completely out of stock</td></tr>
+        <tr><td>âš ï¸ <strong>Low Inventory</strong></td><td>Products running low on stock</td></tr>
       </tbody>
     </table>
 
+    <div class="feature-showcase">
+      <div class="blob-tr"></div>
+      <div class="blob-bl"></div>
+      <div class="showcase-body">
+        <img class="showcase-image" src="images/Screenshot_2026-04-01_162559.png" alt="Dashboard KPI cards row" loading="lazy" />
+      </div>
+      <div class="showcase-annotation ann-pos-ml ann-left" data-tip="Left card in the KPI row — shows 0 checkout risk items, green 'Healthy' badge, and 'Open checkouts' link"><span class="ann-icon"></span> Checkout risk card</div>
+      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Top red banner — 'Attention required' with 1 open issue, 'Critical 1' badge, and 'Open issue center' button"><span class="ann-icon"></span> Attention required banner</div>
+      <div class="showcase-annotation ann-pos-mr ann-right" data-tip="Right card in the KPI row — shows 0 inventory risk items, green 'Healthy' badge, and 'Open inventory' link"><span class="ann-icon"></span> Inventory health card</div>
+      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Top-right toolbar — 'Last week' date filter controls which date range the KPI calculations use"><span class="ann-icon"></span> KPI date range filter</div>
+    </div>
+
     <div class="callout callout-tip">
-      <span class="callout-icon">💡</span>
-      <div>Click on any KPI card to see more details or take action.</div>
+      <span class="callout-icon">ðŸ’¡</span>
+      <div>Click on any <span class="hover-preview">KPI card<span class="preview-popup"><img src="images/Screenshot_2026-04-01_162559.png" alt="Dashboard KPI cards" /><div class="popup-label">Click any card to drill into details</div></span></span> to see more details or take action.</div>
     </div>
 
     <h2 id="task-overview">Task Overview</h2>
@@ -77,6 +141,18 @@
       </tbody>
     </table>
 
+    <div class="feature-showcase">
+      <div class="blob-tr"></div>
+      <div class="blob-bl"></div>
+      <div class="showcase-body">
+        <img class="showcase-image" src="images/Screenshot_2026-04-01_162559.png" alt="Dashboard task overview section" loading="lazy" />
+      </div>
+      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Top red banner — 'Attention required' with 1 open issue flagged for immediate action, linking to overdue tasks"><span class="ann-icon"></span> Attention-required alerts</div>
+      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Bottom-left card — 2 tasks due today, 6 open total, 2 overdue, 4 upcoming; next urgent task: 'Order updated' due Mar 28"><span class="ann-icon"></span> Today's tasks card</div>
+      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Top-right toolbar — 'Quick actions' button for fast task creation, 'Refresh data', and 'Getting started' guide link"><span class="ann-icon"></span> Quick actions toolbar</div>
+      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Bottom-right 'Automation performance' card — 3 tasks auto-created by workflows last week, 100% success rate"><span class="ann-icon"></span> Automation-created tasks</div>
+    </div>
+
     <h2 id="automation-impact">Automation Impact</h2>
     <p>See how much work your <a href="workflows.html">workflows</a> are doing for you:</p>
     <table>
@@ -88,22 +164,46 @@
       </tbody>
     </table>
 
+    <div class="feature-showcase">
+      <div class="blob-tr"></div>
+      <div class="blob-bl"></div>
+      <div class="showcase-body">
+        <img class="showcase-image" src="images/Screenshot_2026-04-01_162559.png" alt="Dashboard automation impact metrics" loading="lazy" />
+      </div>
+      <div class="showcase-annotation ann-pos-ml ann-left" data-tip="Center-left area — 'Operational summary' section showing 2 active workflows, 6 open tasks, 3 automation runs last week"><span class="ann-icon"></span> Operational summary</div>
+      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Bottom-left 'Today's tasks' card — auto-created task count visible alongside open, overdue, and upcoming task stats"><span class="ann-icon"></span> Auto-created tasks impact</div>
+      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Top-right toolbar — 'Last week' date filter and 'View workflows' link control which automation stats are displayed"><span class="ann-icon"></span> Workflow run controls</div>
+      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Bottom-right 'Automation performance' card — success rate 100%, estimated time saved 0.3h, 4 recent executions tracked"><span class="ann-icon"></span> Time saved & run history</div>
+    </div>
+
     <h2 id="charts">Charts</h2>
     <p>The dashboard includes visual charts to help you understand patterns:</p>
     <h3 id="task-charts">Task Charts</h3>
     <ul>
-      <li><strong>Task Priority Distribution</strong> — Bar chart showing Low, Medium, High, and Urgent tasks</li>
-      <li><strong>Task Status Breakdown</strong> — How many tasks are in each status</li>
-      <li><strong>Staff Workload</strong> — How many tasks each team member has assigned</li>
-      <li><strong>Completion Rate</strong> — Donut chart showing completed vs. open tasks</li>
+      <li><strong>Task Priority Distribution</strong> â€” Bar chart showing Low, Medium, High, and Urgent tasks</li>
+      <li><strong>Task Status Breakdown</strong> â€” How many tasks are in each status</li>
+      <li><strong>Staff Workload</strong> â€” How many tasks each team member has assigned</li>
+      <li><strong>Completion Rate</strong> â€” Donut chart showing completed vs. open tasks</li>
     </ul>
 
     <h3 id="workflow-charts">Workflow Charts</h3>
     <ul>
-      <li><strong>7-Day Workflow Trends</strong> — Daily success vs. failure chart</li>
-      <li><strong>Workflow Success Rate</strong> — Overall success rate over time</li>
-      <li><strong>Failure Trends</strong> — Spot if a workflow is failing repeatedly</li>
+      <li><strong>7-Day Workflow Trends</strong> â€” Daily success vs. failure chart</li>
+      <li><strong>Workflow Success Rate</strong> â€” Overall success rate over time</li>
+      <li><strong>Failure Trends</strong> â€” Spot if a workflow is failing repeatedly</li>
     </ul>
+
+    <div class="feature-showcase">
+      <div class="blob-tr"></div>
+      <div class="blob-bl"></div>
+      <div class="showcase-body">
+        <img class="showcase-image" src="images/Screenshot_2026-04-01_162559.png" alt="Dashboard charts area" loading="lazy" />
+      </div>
+      <div class="showcase-annotation ann-pos-ml ann-left" data-tip="Arrow at the Checkout risk KPI card area — charts section is below the fold; this chart shows tasks by Low/Medium/High/Urgent"><span class="ann-icon"></span> Task priority distribution</div>
+      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Arrow at the Today's tasks card area — charts below fold; this chart shows task count per team member"><span class="ann-icon"></span> Staff workload breakdown</div>
+      <div class="showcase-annotation ann-pos-mr ann-right" data-tip="Arrow at the Inventory KPI card area — charts below fold; this chart tracks daily workflow successes vs failures"><span class="ann-icon"></span> 7-day workflow trends</div>
+      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Arrow at the Automation performance card area — charts below fold; this donut shows completed vs open task ratio"><span class="ann-icon"></span> Completion rate donut</div>
+    </div>
 
     <h2 id="changing-the-date-range">Changing the Date Range</h2>
     <p>By default, the dashboard shows data from the last 7 days. To change this:</p>
@@ -111,6 +211,18 @@
       <div class="step"><div class="step-content">Go to <strong><a href="settings.html#dashboard-date-range">Settings</a></strong></div></div>
       <div class="step"><div class="step-content">Find <strong><a href="settings.html#dashboard-date-range">Dashboard Stats Date Range</a></strong></div></div>
       <div class="step"><div class="step-content">Choose from: <strong>Today</strong>, <strong>Last Week</strong>, <strong>Last Month</strong>, or <strong>Last 3 Months</strong></div></div>
+    </div>
+
+    <div class="feature-showcase">
+      <div class="blob-tr"></div>
+      <div class="blob-bl"></div>
+      <div class="showcase-body">
+        <img class="showcase-image" src="images/Screenshot_2026-04-01_162559.png" alt="Dashboard with date range applied" loading="lazy" />
+      </div>
+      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Dashboard title area (top-left) — shows greeting, current date, and all data below updates based on the selected date range"><span class="ann-icon"></span> Dashboard header</div>
+      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Every KPI card, task count, and automation stat on the page refreshes instantly when the date range is changed"><span class="ann-icon"></span> All metrics update live</div>
+      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="'Last week' dropdown in the top-right header — switch between Today, Last Week, Last Month, and Last 3 Months"><span class="ann-icon"></span> Date range dropdown</div>
+      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Default date range is configured under Settings → Dashboard Stats Date Range so it persists across sessions"><span class="ann-icon"></span> Set default in Settings</div>
     </div>
 
   </div>
