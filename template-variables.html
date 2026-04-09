@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Template Variables &mdash; OpsPilot</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="sidebar-overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <a class="logo" href="index.html"><span class="back-arrow">&lsaquo;</span> OpsPilot Help Center</a>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <div class="section-label">Getting Started</div>
+    <a href="getting-started.html">Getting Started</a>
+    <div class="section-label">Features</div>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="notes.html">Notes</a>
+    <a href="tasks.html">Tasks</a>
+    <div class="nav-tree">
+      <a href="workflows.html">Workflows</a>
+      <div class="tree-branch">
+        <div class="tree-node">
+          <div class="tree-toggle" onclick="toggleTree(this)">
+            <span class="tree-arrow">&#9656;</span> Event-based
+          </div>
+          <div class="tree-children">
+            <a href="workflows.html#event-based-triggers">Triggers</a>
+            <a href="workflows.html#conditions">Conditions</a>
+            <a href="workflows.html#actions">Actions</a>
+            <a href="template-variables.html" class="active">Template Variables</a>
+            <a href="workflows.html#delayed-actions">Delayed Actions</a>
+            <a href="workflows.html#deduplication">Deduplication</a>
+          </div>
+        </div>
+        <div class="tree-node">
+          <div class="tree-toggle" onclick="toggleTree(this)">
+            <span class="tree-arrow">&#9656;</span> Scheduled
+          </div>
+          <div class="tree-children">
+            <a href="workflows.html#scheduled-trigger">Scheduled Trigger</a>
+            <a href="workflows.html#scheduled-workflows">Scheduled Workflows</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section-label">Configuration</div>
+    <a href="settings.html">Settings</a>
+    <a href="integrations.html">Integrations</a>
+    <div class="section-label">Help</div>
+    <a href="faq.html">FAQ &amp; Troubleshooting</a>
+  </nav>
+</aside>
+
+<div class="main">
+  <button class="hamburger" onclick="toggleSidebar()">&#9776;</button>
+  <div class="content">
+
+    <div class="section-hero">
+      <h1>Template Variables</h1>
+      <p class="subtitle">Insert dynamic data into your <a href="workflows.html#actions">workflow actions</a> &mdash; emails, Slack messages, task titles, note content, and Google Sheets rows. Wrap any variable in double curly braces: <code>{{variable_name}}</code>.</p>
+    </div>
+
+    <!-- How to use -->
+    <h2 id="how-to-use">How to Use Template Variables</h2>
+    <div class="steps">
+      <div class="step"><div class="step-number">1</div><div class="step-content">Open any <a href="workflows.html#actions">action</a> in your workflow (Send Email, Create Task, etc.)</div></div>
+      <div class="step"><div class="step-number">2</div><div class="step-content">Click the <strong>{} Variables</strong> button to see all available variables for your trigger type</div></div>
+      <div class="step"><div class="step-number">3</div><div class="step-content">Click a variable to insert it, or type it manually: <code>{{variable_name}}</code></div></div>
+    </div>
+
+    <div class="pro-showcase">
+      <div class="pro-showcase-grid cols-1">
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/ation_informations.png" alt="Task action fields with template variable support" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Action Fields &amp; Template Variables</div>
+            <p class="pro-card-desc">Task title and description fields support <code>{{variables}}</code>. Click the <strong>{} Variables</strong> button to browse and insert available variables for your trigger type.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout callout-tip">
+      <span class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b873e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></span>
+      <div>Variables resolve at execution time using real data from the triggering event. If a variable has no value (e.g., customer has no email), it resolves to an empty string.</div>
+    </div>
+
+    <!-- Global Variables -->
+    <h2 id="global-variables">Global Variables</h2>
+    <p>Available in <strong>every</strong> trigger type.</p>
+    <table>
+      <thead><tr><th>Variable</th><th>Description</th><th>Example Value</th></tr></thead>
+      <tbody>
+        <tr><td><code>{{store_name}}</code></td><td>Your Shopify store name</td><td>My Awesome Store</td></tr>
+        <tr><td><code>{{store_domain}}</code></td><td>Your myshopify.com domain</td><td>my-awesome-store.myshopify.com</td></tr>
+        <tr><td><code>{{event_timestamp}}</code></td><td>Date &amp; time the event occurred</td><td>2026-04-09T14:30:00Z</td></tr>
+        <tr><td><code>{{event_type}}</code></td><td>The trigger event that fired</td><td>ORDER_CREATED</td></tr>
+        <tr><td><code>{{workflow_name}}</code></td><td>Name of the workflow being executed</td><td>VIP Order Alert</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Order Variables -->
+    <h2 id="order-variables">Order Variables</h2>
+    <p>Available when the trigger is <strong><a href="workflows.html#event-based-triggers">Order Created</a></strong> or <strong>Order Updated</strong>.</p>
+    <table>
+      <thead><tr><th>Variable</th><th>Description</th><th>Example Value</th></tr></thead>
+      <tbody>
+        <tr><td><code>{{order_id}}</code></td><td>Shopify order ID</td><td>5765432198765</td></tr>
+        <tr><td><code>{{order_number}}</code></td><td>Order number (display)</td><td>#1234</td></tr>
+        <tr><td><code>{{order_name}}</code></td><td>Full order name</td><td>#1234</td></tr>
+        <tr><td><code>{{order_total}}</code></td><td>Total price including tax &amp; shipping</td><td>149.99</td></tr>
+        <tr><td><code>{{order_subtotal}}</code></td><td>Subtotal before tax &amp; shipping</td><td>129.99</td></tr>
+        <tr><td><code>{{order_currency}}</code></td><td>Currency code</td><td>USD</td></tr>
+        <tr><td><code>{{order_financial_status}}</code></td><td>Payment status</td><td>paid</td></tr>
+        <tr><td><code>{{order_fulfillment_status}}</code></td><td>Fulfillment status</td><td>unfulfilled</td></tr>
+        <tr><td><code>{{order_tags}}</code></td><td>Comma-separated order tags</td><td>vip, rush</td></tr>
+        <tr><td><code>{{order_note}}</code></td><td>Order note left by customer</td><td>Please gift wrap</td></tr>
+        <tr><td><code>{{order_link}}</code></td><td>Direct link to order in Shopify admin</td><td>https://admin.shopify.com/store/&hellip;/orders/123</td></tr>
+        <tr><td><code>{{order_created_at}}</code></td><td>Order creation timestamp</td><td>2026-04-09T14:30:00Z</td></tr>
+        <tr><td><code>{{order_item_count}}</code></td><td>Number of line items</td><td>3</td></tr>
+        <tr><td><code>{{order_discount_total}}</code></td><td>Total discount amount</td><td>10.00</td></tr>
+        <tr><td><code>{{order_shipping_method}}</code></td><td>Shipping method name</td><td>Standard Shipping</td></tr>
+        <tr><td><code>{{order_shipping_address}}</code></td><td>Full shipping address</td><td>123 Main St, New York, NY 10001</td></tr>
+        <tr><td><code>{{order_billing_address}}</code></td><td>Full billing address</td><td>123 Main St, New York, NY 10001</td></tr>
+        <tr><td><code>{{order_payment_method}}</code></td><td>Payment gateway used</td><td>shopify_payments</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Customer Variables -->
+    <h2 id="customer-variables">Customer Variables</h2>
+    <p>Available for <strong><a href="workflows.html#event-based-triggers">Customer Created</a></strong> and all <strong>Order</strong> triggers (pulled from the order&rsquo;s customer).</p>
+    <table>
+      <thead><tr><th>Variable</th><th>Description</th><th>Example Value</th></tr></thead>
+      <tbody>
+        <tr><td><code>{{customer_id}}</code></td><td>Shopify customer ID</td><td>7654321098765</td></tr>
+        <tr><td><code>{{customer_name}}</code></td><td>Full name (first + last)</td><td>Jane Smith</td></tr>
+        <tr><td><code>{{customer_first_name}}</code></td><td>First name</td><td>Jane</td></tr>
+        <tr><td><code>{{customer_last_name}}</code></td><td>Last name</td><td>Smith</td></tr>
+        <tr><td><code>{{customer_email}}</code></td><td>Email address</td><td>jane@example.com</td></tr>
+        <tr><td><code>{{customer_phone}}</code></td><td>Phone number</td><td>+1 555-0100</td></tr>
+        <tr><td><code>{{customer_tags}}</code></td><td>Comma-separated customer tags</td><td>vip, wholesale</td></tr>
+        <tr><td><code>{{customer_orders_count}}</code></td><td>Total number of orders placed</td><td>12</td></tr>
+        <tr><td><code>{{customer_total_spent}}</code></td><td>Lifetime spending</td><td>1,249.50</td></tr>
+        <tr><td><code>{{customer_created_at}}</code></td><td>Account creation date</td><td>2025-01-15T10:00:00Z</td></tr>
+        <tr><td><code>{{customer_note}}</code></td><td>Internal note on customer</td><td>Prefers express shipping</td></tr>
+        <tr><td><code>{{customer_link}}</code></td><td>Link to customer in Shopify admin</td><td>https://admin.shopify.com/store/&hellip;/customers/123</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Product Variables -->
+    <h2 id="product-variables">Product Variables</h2>
+    <p>Available when the trigger is <strong><a href="workflows.html#event-based-triggers">Product Updated</a></strong>.</p>
+    <table>
+      <thead><tr><th>Variable</th><th>Description</th><th>Example Value</th></tr></thead>
+      <tbody>
+        <tr><td><code>{{product_id}}</code></td><td>Shopify product ID</td><td>8765432109876</td></tr>
+        <tr><td><code>{{product_title}}</code></td><td>Product name</td><td>Classic T-Shirt</td></tr>
+        <tr><td><code>{{product_type}}</code></td><td>Product type</td><td>Apparel</td></tr>
+        <tr><td><code>{{product_vendor}}</code></td><td>Vendor / brand</td><td>My Brand</td></tr>
+        <tr><td><code>{{product_tags}}</code></td><td>Comma-separated product tags</td><td>sale, summer</td></tr>
+        <tr><td><code>{{product_status}}</code></td><td>Product status</td><td>active</td></tr>
+        <tr><td><code>{{product_price}}</code></td><td>Default variant price</td><td>29.99</td></tr>
+        <tr><td><code>{{product_compare_at_price}}</code></td><td>Compare-at price (original)</td><td>39.99</td></tr>
+        <tr><td><code>{{product_sku}}</code></td><td>Default variant SKU</td><td>TSHIRT-BLK-M</td></tr>
+        <tr><td><code>{{product_inventory_quantity}}</code></td><td>Total inventory count</td><td>254</td></tr>
+        <tr><td><code>{{product_link}}</code></td><td>Link to product in Shopify admin</td><td>https://admin.shopify.com/store/&hellip;/products/123</td></tr>
+        <tr><td><code>{{product_image_url}}</code></td><td>URL of the product&rsquo;s featured image</td><td>https://cdn.shopify.com/&hellip;/shirt.jpg</td></tr>
+        <tr><td><code>{{product_created_at}}</code></td><td>Product creation timestamp</td><td>2025-06-01T08:00:00Z</td></tr>
+        <tr><td><code>{{product_updated_at}}</code></td><td>Last updated timestamp</td><td>2026-04-09T14:30:00Z</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Inventory Variables -->
+    <h2 id="inventory-variables">Inventory Variables</h2>
+    <p>Available when the trigger is <strong><a href="workflows.html#event-based-triggers">Inventory Level Updated</a></strong>.</p>
+    <table>
+      <thead><tr><th>Variable</th><th>Description</th><th>Example Value</th></tr></thead>
+      <tbody>
+        <tr><td><code>{{inventory_item_id}}</code></td><td>Shopify inventory item ID</td><td>9876543210987</td></tr>
+        <tr><td><code>{{inventory_location_id}}</code></td><td>Location ID where change occurred</td><td>1234567890</td></tr>
+        <tr><td><code>{{inventory_available}}</code></td><td>Available quantity after change</td><td>5</td></tr>
+        <tr><td><code>{{inventory_previous_quantity}}</code></td><td>Quantity before the change</td><td>25</td></tr>
+        <tr><td><code>{{inventory_change}}</code></td><td>Quantity difference (+/&minus;)</td><td>-20</td></tr>
+        <tr><td><code>{{product_title}}</code></td><td>Product name (from linked product)</td><td>Classic T-Shirt</td></tr>
+        <tr><td><code>{{product_sku}}</code></td><td>SKU of the variant</td><td>TSHIRT-BLK-M</td></tr>
+        <tr><td><code>{{product_link}}</code></td><td>Link to product in Shopify admin</td><td>https://admin.shopify.com/store/&hellip;/products/123</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Checkout Variables -->
+    <h2 id="checkout-variables">Checkout Variables</h2>
+    <p>Available when the trigger is <strong><a href="workflows.html#event-based-triggers">Checkout Abandoned</a></strong>.</p>
+    <table>
+      <thead><tr><th>Variable</th><th>Description</th><th>Example Value</th></tr></thead>
+      <tbody>
+        <tr><td><code>{{checkout_id}}</code></td><td>Shopify checkout ID</td><td>3456789012345</td></tr>
+        <tr><td><code>{{checkout_token}}</code></td><td>Checkout token</td><td>abc123def456</td></tr>
+        <tr><td><code>{{checkout_total}}</code></td><td>Cart total price</td><td>89.99</td></tr>
+        <tr><td><code>{{checkout_currency}}</code></td><td>Currency code</td><td>USD</td></tr>
+        <tr><td><code>{{checkout_item_count}}</code></td><td>Number of items in cart</td><td>2</td></tr>
+        <tr><td><code>{{checkout_abandoned_url}}</code></td><td>Recovery URL for the checkout</td><td>https://my-store.myshopify.com/checkouts/&hellip;</td></tr>
+        <tr><td><code>{{checkout_created_at}}</code></td><td>When the checkout was started</td><td>2026-04-09T12:00:00Z</td></tr>
+        <tr><td><code>{{customer_name}}</code></td><td>Customer name (if provided)</td><td>Jane Smith</td></tr>
+        <tr><td><code>{{customer_email}}</code></td><td>Customer email (if provided)</td><td>jane@example.com</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Scheduled Trigger Variables -->
+    <h2 id="scheduled-variables">Scheduled Trigger Variables</h2>
+    <p>Available when the trigger is <strong><a href="workflows.html#scheduled-trigger">Scheduled</a></strong>. Scheduled workflows process multiple entities per run.</p>
+    <table>
+      <thead><tr><th>Variable</th><th>Description</th><th>Example Value</th></tr></thead>
+      <tbody>
+        <tr><td><code>{{schedule_type}}</code></td><td>Schedule interval</td><td>daily</td></tr>
+        <tr><td><code>{{entity_count}}</code></td><td>Number of entities processed in this run</td><td>12</td></tr>
+        <tr><td><code>{{store_name}}</code></td><td>Your store name</td><td>My Awesome Store</td></tr>
+        <tr><td><code>{{event_timestamp}}</code></td><td>Execution timestamp</td><td>2026-04-09T00:00:00Z</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout-note">
+      <span class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1473e6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></span>
+      <div>Scheduled workflows process each entity individually &mdash; one task or action is created per entity. The entity-specific variables (order, customer, product) are also available within each iteration.</div>
+    </div>
+
+    <!-- Trigger Compatibility Matrix -->
+    <h2 id="variable-availability">Variable Availability by Trigger</h2>
+    <p>Quick reference showing which variable groups are available for each trigger type.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Trigger</th>
+          <th>Global</th>
+          <th>Order</th>
+          <th>Customer</th>
+          <th>Product</th>
+          <th>Inventory</th>
+          <th>Checkout</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Order Created</td><td>&check;</td><td>&check;</td><td>&check;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td></tr>
+        <tr><td>Order Updated</td><td>&check;</td><td>&check;</td><td>&check;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td></tr>
+        <tr><td>Customer Created</td><td>&check;</td><td>&mdash;</td><td>&check;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td></tr>
+        <tr><td>Product Updated</td><td>&check;</td><td>&mdash;</td><td>&mdash;</td><td>&check;</td><td>&mdash;</td><td>&mdash;</td></tr>
+        <tr><td>Inventory Updated</td><td>&check;</td><td>&mdash;</td><td>&mdash;</td><td>&check;</td><td>&check;</td><td>&mdash;</td></tr>
+        <tr><td>Checkout Abandoned</td><td>&check;</td><td>&mdash;</td><td>&check;</td><td>&mdash;</td><td>&mdash;</td><td>&check;</td></tr>
+        <tr><td>Manual Trigger</td><td>&check;</td><td>&check;*</td><td>&check;*</td><td>&check;*</td><td>&mdash;</td><td>&mdash;</td></tr>
+        <tr><td>Scheduled</td><td>&check;</td><td>&check;*</td><td>&check;*</td><td>&check;*</td><td>&mdash;</td><td>&mdash;</td></tr>
+      </tbody>
+    </table>
+    <p><small>* Depends on the entity type selected when configuring the workflow.</small></p>
+
+    <!-- Where you can use them -->
+    <h2 id="where-to-use">Where You Can Use Variables</h2>
+    <table>
+      <thead><tr><th>Action</th><th>Supported Fields</th></tr></thead>
+      <tbody>
+        <tr><td><a href="workflows.html#send-email">Send Email</a></td><td>Subject, Body, Recipient (custom address)</td></tr>
+        <tr><td><a href="workflows.html#send-slack-message">Send Slack Message</a></td><td>Message text</td></tr>
+        <tr><td><a href="workflows.html#add-to-google-sheet">Add to Google Sheet</a></td><td>All column values</td></tr>
+        <tr><td><a href="workflows.html#actions">Create Task</a></td><td>Title, Description</td></tr>
+        <tr><td><a href="workflows.html#actions">Create Note</a></td><td>Content</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Tips -->
+    <h2 id="tips">Tips &amp; Best Practices</h2>
+    <div class="callout callout-tip">
+      <span class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b873e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></span>
+      <div>
+        <strong>Combine variables</strong> freely in text:<br />
+        <code>New order {{order_number}} from {{customer_name}} &mdash; total: {{order_currency}} {{order_total}}</code>
+      </div>
+    </div>
+
+    <div class="callout callout-warning">
+      <span class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e68619" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 10 18H2L12 2z"/><path d="M12 10v4"/><path d="M12 18h.01"/></svg></span>
+      <div>Using a variable that doesn&rsquo;t exist for the current trigger type resolves to an <strong>empty string</strong>. For example, <code>{{product_title}}</code> in an Order Created workflow will be blank.</div>
+    </div>
+
+    <div class="callout callout-tip">
+      <span class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b873e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></span>
+      <div>Use the <span class="hover-preview"><strong>&ldquo;Test with latest order&rdquo;</strong><span class="preview-popup"><img src="images/you_can_manage_your_woek_flow_hear_.png" alt="Test workflow" /><div class="popup-label">Run a test using real store data to verify variables resolve correctly</div></span></span> button to preview how your variables resolve with real data before going live.</div>
+    </div>
+
+  </div>
+</div>
+
+<script src="nav.js"></script>
+</body>
+</html>

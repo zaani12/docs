@@ -33,7 +33,7 @@
             <a href="workflows.html#event-based-triggers">Triggers</a>
             <a href="workflows.html#conditions">Conditions</a>
             <a href="workflows.html#actions">Actions</a>
-            <a href="workflows.html#template-variables">Template Variables</a>
+            <a href="template-variables.html">Template Variables</a>
             <a href="workflows.html#delayed-actions">Delayed Actions</a>
             <a href="workflows.html#deduplication">Deduplication</a>
           </div>
@@ -333,36 +333,18 @@
     <p>Appends a row to a <a href="integrations.html#google-sheets-integration">Google Sheets</a> spreadsheet. Great for reports, audit trails, and dashboards. Supports <a href="#deduplication">deduplication</a> and custom styling.</p>
 
     <h2 id="template-variables">Template Variables</h2>
-    <p>Template variables let you insert <strong>dynamic data</strong> from the trigger into your actions. Wrap them in double curly braces: <code>{{variable_name}}</code>.</p>
+    <p>Template variables let you insert <strong>dynamic data</strong> from the trigger into your actions. Wrap them in double curly braces: <code>{{variable_name}}</code>. See the <a href="template-variables.html">complete Template Variables reference</a> for every variable organized by trigger type, availability matrix, and usage tips.</p>
 
     <table>
       <thead><tr><th>Variable</th><th>Value</th><th>Available For</th></tr></thead>
       <tbody>
         <tr><td><code>{{order_number}}</code></td><td>Order number (e.g., #1234)</td><td>Order triggers</td></tr>
-        <tr><td><code>{{order_total}}</code></td><td>Order total price</td><td>Order triggers</td></tr>
-        <tr><td><code>{{order_link}}</code></td><td>Link to order in Shopify admin</td><td>Order triggers</td></tr>
-        <tr><td><code>{{order_financial_status}}</code></td><td>Payment status</td><td>Order triggers</td></tr>
         <tr><td><code>{{customer_name}}</code></td><td>Customer full name</td><td>Customer / Order triggers</td></tr>
-        <tr><td><code>{{customer_email}}</code></td><td>Customer email</td><td>Customer / Order triggers</td></tr>
         <tr><td><code>{{product_title}}</code></td><td>Product name</td><td>Product triggers</td></tr>
-        <tr><td><code>{{product_link}}</code></td><td>Link to product in Shopify admin</td><td>Product triggers</td></tr>
         <tr><td><code>{{store_name}}</code></td><td>Your store name</td><td>All triggers</td></tr>
-        <tr><td><code>{{event_timestamp}}</code></td><td>When the event occurred</td><td>All triggers</td></tr>
       </tbody>
     </table>
-
-    <!-- Template Variables Showcase -->
-    <div class="pro-showcase">
-      <div class="pro-showcase-grid cols-1">
-        <div class="pro-card">
-          <img class="pro-card-img" src="images/ation_informations.png" alt="Task action fields — title, description, priority, status, assign to, due date offset" loading="lazy" />
-          <div class="pro-card-body">
-            <div class="pro-card-label">Action Fields &amp; Template Variables</div>
-            <p class="pro-card-desc">Top: "Task title" (supports {{variables}}). Center: "Task description" rich text editor. Right: Priority (Medium) and Status (Pending) dropdowns. Bottom: "Assign to" (Unassigned) and "Due date offset (days)" input.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <p><a href="template-variables.html">&rarr; View all 60+ template variables</a></p>
 
     <div class="callout callout-tip">
       <span class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b873e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></span>
