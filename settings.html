@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Settings â€” OpsPilot</title>
+  <title>Settings — OpsPilot</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -27,7 +27,7 @@
       <div class="tree-branch">
         <div class="tree-node">
           <div class="tree-toggle" onclick="toggleTree(this)">
-            <span class="tree-arrow">â–¸</span> Event-based
+            <span class="tree-arrow">&#9656;</span> Event-based
           </div>
           <div class="tree-children">
             <a href="workflows.html#event-based-triggers">Triggers</a>
@@ -40,7 +40,7 @@
         </div>
         <div class="tree-node">
           <div class="tree-toggle" onclick="toggleTree(this)">
-            <span class="tree-arrow">â–¸</span> Scheduled
+            <span class="tree-arrow">&#9656;</span> Scheduled
           </div>
           <div class="tree-children">
             <a href="workflows.html#scheduled-trigger">Scheduled Trigger</a>
@@ -52,7 +52,6 @@
     <div class="section-label">Configuration</div>
     <a href="settings.html" class="active">Settings</a>
     <a href="integrations.html">Integrations</a>
-    <a href="billing.html">Billing &amp; Plans</a>
     <div class="section-label">Help</div>
     <a href="faq.html">FAQ &amp; Troubleshooting</a>
   </nav>
@@ -68,26 +67,38 @@
       <p>Configure task preferences, team management, custom statuses, timezone, and display options.</p>
     </div>
 
-    <!-- Feature Showcase -->
-    <div class="feature-showcase">
-      <div class="blob-tr"></div>
-      <div class="blob-bl"></div>
-      <div class="showcase-logo"><span class="showcase-logo-dot"></span> OpsPilot</div>
-      <div class="showcase-title">Your Store, Your Rules.</div>
-      <div class="showcase-subtitle">Customize statuses, views, team roles, and every detail to match your workflow.</div>
-      <div class="showcase-body">
-        <img class="showcase-image" src="images/Screenshot_2026-04-01_162559.png" alt="OpsPilot Settings" loading="lazy" />
+    <!-- Hero Showcase -->
+    <div class="pro-showcase">
+      <div class="pro-showcase-header">
+        <div class="pro-showcase-logo">OpsPilot</div>
+        <div class="pro-showcase-title">Your Store, Your Rules.</div>
+        <div class="pro-showcase-subtitle">Customize statuses, views, team roles, and every detail to match your workflow.</div>
       </div>
-      <!-- Floating annotations -->
-      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Arrow at 'Attention required' banner — top-left. Settings control which alerts trigger on the dashboard"><span class="ann-icon"></span> Alert thresholds</div>
-      <div class="showcase-annotation ann-pos-ml ann-left" data-tip="Arrow at 'Checkout risk' KPI card — mid-left. The dashboard date range setting controls the time period for these KPI calculations"><span class="ann-icon"></span> KPI date range</div>
-      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Arrow at 'Today's tasks' card — lower-left. Customize the status labels and ordering shown in this card"><span class="ann-icon"></span> Custom task statuses</div>
-      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Arrow at header toolbar — top-right. Default view and dashboard preferences are configured in Settings"><span class="ann-icon"></span> Default view preferences</div>
-      <div class="showcase-annotation ann-pos-mr ann-right" data-tip="Arrow at 'Inventory' KPI card — mid-right. Your timezone setting affects when scheduled stats refresh"><span class="ann-icon"></span> Timezone control</div>
-      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Arrow at 'Automation performance' card — lower-right. Team management in Settings controls who can manage workflows"><span class="ann-icon"></span> Team management</div>
+      <div class="pro-showcase-grid cols-1">
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/sitings/Screenshot%202026-04-08%20175929.png" alt="Settings overview with jump-to-section bar" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Settings Overview</div>
+            <p class="pro-card-desc">Jump-to-section bar with quick links to Integrations, Slack, Google Sheets, Email, Team, Task preferences, Activity history, and Billing. Each integration has a "Setup guide" link and Save/Verify buttons.</p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <h2 id="task-preferences">Task Preferences</h2>
+
+    <!-- Task Preferences Showcase -->
+    <div class="pro-showcase">
+      <div class="pro-showcase-grid cols-1">
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/sitings/Screenshot%202026-04-08%20181809.png" alt="Task preferences: Default assignment, Default view, Date range, Timezone" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Task Preferences</div>
+            <p class="pro-card-desc">Default Task Assignment (Leave unassigned), Default View (Kanban), Dashboard stats date range (Last week), and Scheduled workflow timezone (Africa/Bissau).</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <h3 id="default-task-assignment">Default Task Assignment</h3>
     <table>
@@ -110,38 +121,66 @@
     <h3 id="auto-archive">Auto-Archive Completed Tasks</h3>
     <p>Automatically move completed tasks to "Archived" after a set period (e.g., 7 days, 14 days, 30 days). Keeps your active task list clean.</p>
 
+    <!-- Auto-Archive Showcase -->
+    <div class="pro-showcase">
+      <div class="pro-showcase-grid cols-1">
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/sitings/Screenshot%202026-04-08%20181837.png" alt="Auto-archive setting with day count and dropdown" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Auto-Archive</div>
+            <p class="pro-card-desc">Enter the number of days, choose a period from the dropdown (or "Don't auto-archive"), then click Save.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <h2 id="task-statuses">Task Statuses</h2>
     <p>Customize the status options available for your tasks.</p>
 
     <h3 id="creating-custom-statuses">Creating Custom Statuses</h3>
     <div class="steps">
-      <div class="step"><div class="step-content">Scroll to the <strong>Task Statuses</strong> section in Settings</div></div>
-      <div class="step"><div class="step-content">Click <span class="hover-preview popup-below"><strong>Add Status</strong><span class="preview-popup"><img src="images/Screenshot_2026-04-01_162559.png" alt="Add Status" /><div class="popup-label">Create a new custom status for your tasks</div></span></span></div></div>
-      <div class="step"><div class="step-content">Enter a <strong>label</strong> (e.g., "Waiting for Customer")</div></div>
-      <div class="step"><div class="step-content">Choose if it's a <strong>Closed</strong> status</div></div>
-      <div class="step"><div class="step-content">Click <strong>Save</strong></div></div>
+      <div class="step"><div class="step-content">Scroll to the <strong>Task Statuses</strong> section in Settings — you will see all built-in statuses (Pending, In Progress, Completed, Cancelled, On Hold, Archived) listed with their current task counts</div></div>
+      <div class="step"><div class="step-content">At the bottom of the list, find the <span class="hover-preview popup-below"><strong>Add custom status</strong><span class="preview-popup"><img src="images/sitings/Screenshot%202026-04-08%20181909.png" alt="Add custom status form" /><div class="popup-label">The 'Add custom status' form sits below the built-in statuses list</div></span></span> form</div></div>
+      <div class="step"><div class="step-content">Enter a <strong>Display name</strong> (e.g., "In Review") — the <strong>Internal value</strong> field auto-generates from the display name (e.g., IN_REVIEW) but you can override it</div></div>
+      <div class="step"><div class="step-content">Tick the <strong>Counts as closed</strong> checkbox if this status should mark tasks as resolved</div></div>
+      <div class="step"><div class="step-content">Click the green <strong>Add status</strong> button to save — the new status appears immediately in the list above</div></div>
     </div>
 
-    <div class="feature-showcase">
-      <div class="blob-tr"></div>
-      <div class="blob-bl"></div>
-      <div class="showcase-body">
-        <img class="showcase-image" src="images/Screenshot_2026-04-01_162559.png" alt="Add custom status in Settings" loading="lazy" />
+    <!-- Task Statuses Showcase -->
+    <div class="pro-showcase">
+      <div class="pro-showcase-grid cols-1">
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/sitings/Screenshot%202026-04-08%20181909.png" alt="Task statuses panel with Enable/Disable toggles and Add custom status form" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Task Statuses</div>
+            <p class="pro-card-desc">Built-in statuses (Pending, In Progress, Completed, Cancelled, On Hold, Archived) with Open/Closed badges, Enable/Disable toggles, task counts, and the "Add custom status" form at the bottom.</p>
+          </div>
+        </div>
       </div>
-      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Arrow at 'Attention required' banner — top-left. Custom statuses appear across alerts and task views"><span class="ann-icon"></span> Status customization</div>
-      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Arrow at 'Today's tasks' card — lower-left. Mark statuses as 'Closed' to auto-update task counts here"><span class="ann-icon"></span> Closed status toggle</div>
-      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Arrow at header toolbar — top-right. Reorder statuses to match your team's workflow priority"><span class="ann-icon"></span> Drag to reorder</div>
-      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Arrow at 'Automation performance' card — lower-right. Changes apply immediately to all existing tasks"><span class="ann-icon"></span> Save changes</div>
     </div>
 
-    <p>You can <span class="hover-preview"><strong>reorder</strong><span class="preview-popup"><img src="images/Screenshot_2026-04-01_162559.png" alt="Reorder statuses" /><div class="popup-label">Drag statuses to change their display order</div></span></span> by dragging, <span class="hover-preview"><strong>toggle</strong><span class="preview-popup"><img src="images/Screenshot_2026-04-01_162559.png" alt="Toggle status" /><div class="popup-label">Enable or disable built-in statuses</div></span></span> built-in statuses, and <span class="hover-preview"><strong>delete</strong><span class="preview-popup"><img src="images/Screenshot_2026-04-01_162559.png" alt="Delete status" /><div class="popup-label">Remove custom statuses (only if no tasks use them)</div></span></span> custom statuses (only if no tasks use them).</p>
+    <p>You can <span class="hover-preview"><strong>toggle</strong><span class="preview-popup"><img src="images/sitings/Screenshot%202026-04-08%20181909.png" alt="Enable/Disable links next to each status" /><div class="popup-label">Click Enable or Disable next to each built-in status to show or hide it from forms and Kanban</div></span></span> built-in statuses (Disable hides a status from forms but tasks keep their value), and <span class="hover-preview"><strong>delete</strong><span class="preview-popup"><img src="images/sitings/Screenshot%202026-04-08%20181909.png" alt="Remove custom statuses" /><div class="popup-label">Custom statuses with 0 tasks can be removed — built-in ones can only be disabled</div></span></span> custom statuses (only if no tasks use them).</p>
 
     <div class="callout callout-warning">
-      <span class="callout-icon">âš ï¸</span>
+      <span class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e68619" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 10 18H2L12 2z"/><path d="M12 10v4"/><path d="M12 18h.01"/></svg></span>
       <div>You must keep at least one "Closed" status active (Completed cannot be disabled).</div>
     </div>
 
     <h2 id="dashboard-date-range">Dashboard Date Range</h2>
+
+    <!-- Date Range Showcase -->
+    <div class="pro-showcase">
+      <div class="pro-showcase-grid cols-1">
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/sitings/Screenshot%202026-04-08%20181809.png" alt="Dashboard stats date range setting" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Dashboard Stats Date Range</div>
+            <p class="pro-card-desc">"Last week" dropdown with Save button — sets the default time period for dashboard statistics (tasks, notes, workflows).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <table>
       <thead><tr><th>Option</th><th>Shows Data From</th></tr></thead>
       <tbody>
@@ -153,9 +192,36 @@
     </table>
 
     <h2 id="timezone">Timezone</h2>
+
+    <div class="pro-showcase">
+      <div class="pro-showcase-grid cols-1">
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/sitings/Screenshot%202026-04-08%20181809.png" alt="Scheduled workflow timezone setting" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Timezone</div>
+            <p class="pro-card-desc">Scheduled workflow timezone dropdown set to "Africa/Bissau". Daily, weekly, monthly, and custom interval workflows run using this timezone.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <p>Set the timezone used for <a href="workflows.html#scheduled-workflows">scheduled workflows</a> and time displays. OpsPilot detects your timezone automatically based on your Shopify settings, but you can override it here.</p>
 
     <h2 id="team-management">Team Management</h2>
+
+    <!-- Team Showcase -->
+    <div class="pro-showcase">
+      <div class="pro-showcase-grid cols-1">
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/sitings/Screenshot%202026-04-08%20181715.png" alt="Team section with user roles — Admin/User toggles and Active checkboxes" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Team Management</div>
+            <p class="pro-card-desc">Each staff member listed with name, email, Admin/User role toggle, and Active checkbox. Click "Save team changes" to apply updates.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <p>OpsPilot automatically detects your Shopify staff members. From the Team Management section you can:</p>
     <ul>
       <li>View all team members and their roles</li>

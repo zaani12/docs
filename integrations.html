@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Integrations â€” OpsPilot</title>
+  <title>Integrations — OpsPilot</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -27,7 +27,7 @@
       <div class="tree-branch">
         <div class="tree-node">
           <div class="tree-toggle" onclick="toggleTree(this)">
-            <span class="tree-arrow">â–¸</span> Event-based
+            <span class="tree-arrow">&#9656;</span> Event-based
           </div>
           <div class="tree-children">
             <a href="workflows.html#event-based-triggers">Triggers</a>
@@ -40,7 +40,7 @@
         </div>
         <div class="tree-node">
           <div class="tree-toggle" onclick="toggleTree(this)">
-            <span class="tree-arrow">â–¸</span> Scheduled
+            <span class="tree-arrow">&#9656;</span> Scheduled
           </div>
           <div class="tree-children">
             <a href="workflows.html#scheduled-trigger">Scheduled Trigger</a>
@@ -52,7 +52,6 @@
     <div class="section-label">Configuration</div>
     <a href="settings.html">Settings</a>
     <a href="integrations.html" class="active">Integrations</a>
-    <a href="billing.html">Billing &amp; Plans</a>
     <div class="section-label">Help</div>
     <a href="faq.html">FAQ &amp; Troubleshooting</a>
   </nav>
@@ -68,28 +67,41 @@
       <p>Connect Email, Slack, and Google Sheets to power your workflow actions.</p>
     </div>
 
-    <!-- Feature Showcase -->
-    <div class="feature-showcase">
-      <div class="blob-tr"></div>
-      <div class="blob-bl"></div>
-      <div class="showcase-logo"><span class="showcase-logo-dot"></span> OpsPilot</div>
-      <div class="showcase-title">Connect Everything.</div>
-      <div class="showcase-subtitle">Link Email, Slack, and Google Sheets to supercharge your workflow actions.</div>
-      <div class="showcase-body">
-        <img class="showcase-image" src="images/if_uou_link_your_email_you_you_wll_not_see_this__else_add_email_to_nsad_from.png" alt="OpsPilot Integrations" loading="lazy" />
+    <!-- Hero Showcase -->
+    <div class="pro-showcase">
+      <div class="pro-showcase-header">
+        <div class="pro-showcase-logo">OpsPilot</div>
+        <div class="pro-showcase-title">Connect Everything.</div>
+        <div class="pro-showcase-subtitle">Link Email, Slack, and Google Sheets to supercharge your workflow actions.</div>
       </div>
-      <!-- Floating annotations -->
-      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Arrow at the 'From email (override)' label — top-left of the email sender configuration form"><span class="ann-icon"></span> Custom 'From' domain</div>
-      <div class="showcase-annotation ann-pos-ml ann-left" data-tip="Arrow at the 'orders@yourdomain.com' input field — mid-left of the sender override form"><span class="ann-icon"></span> Sender address override</div>
-      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Arrow at the 'Display name (override)' section showing 'Orders Team' — bottom-left of the form"><span class="ann-icon"></span> Display name branding</div>
-      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Arrow at the right edge of the 'From email' input — top-right of the form. Email, Slack, and Sheets are all configured in Settings"><span class="ann-icon"></span> Sender email input</div>
-      <div class="showcase-annotation ann-pos-mr ann-right" data-tip="Arrow at the help text 'Leave empty to use shop settings' — mid-right. Smart defaults apply to all integration channels"><span class="ann-icon"></span> Smart fallback defaults</div>
-      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Arrow at the lower help text under 'Display name' field — bottom-right of the form"><span class="ann-icon"></span> One-click connection verify</div>
+      <div class="pro-showcase-grid cols-3">
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/if_uou_link_your_email_you_you_wll_not_see_this__else_add_email_to_nsad_from.png" alt="Email sender override — From email and Display name fields" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Email Integration</div>
+            <p class="pro-card-desc">Override the sender address and display name for all automated emails.</p>
+          </div>
+        </div>
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/sitings/Screenshot%202026-04-08%20184825.png" alt="Slack setup guide — Bot Token vs Webhook" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Slack Integration</div>
+            <p class="pro-card-desc">Choose Bot Token (multi-channel) or Webhook (single channel) to post alerts.</p>
+          </div>
+        </div>
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/sitings/Screenshot%202026-04-08%20181328.png" alt="Google Sheets setup guide — Spreadsheet ID and sharing" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Google Sheets Integration</div>
+            <p class="pro-card-desc">Paste your Spreadsheet ID, share as Editor, and log workflow data automatically.</p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="callout callout-note">
-      <span class="callout-icon">ðŸ“‹</span>
-      <div>Integrations require a <strong><a href="billing.html#plans-comparison">Starter</a></strong> or <strong><a href="billing.html#plans-comparison">Growth</a></strong> plan. Free plan users cannot use <a href="workflows.html#send-email">Email</a>, <a href="workflows.html#send-slack-message">Slack</a>, or <a href="workflows.html#add-to-google-sheet">Google Sheets</a> actions in <a href="workflows.html">workflows</a>.</div>
+      <span class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1473e6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></span>
+      <div>Integrations require a <strong>Starter</strong> or <strong>Growth</strong> plan. Free plan users cannot use <a href="workflows.html#send-email">Email</a>, <a href="workflows.html#send-slack-message">Slack</a>, or <a href="workflows.html#add-to-google-sheet">Google Sheets</a> actions in <a href="workflows.html">workflows</a>.</div>
     </div>
 
     <h2 id="email-integration">Email Integration</h2>
@@ -97,21 +109,9 @@
 
     <h3 id="email-step-1">Step 1: Add Your Domain</h3>
     <div class="steps">
-      <div class="step"><div class="step-content">Go to <strong>Settings â†’ Integrations â†’ Email</strong></div></div>
+      <div class="step"><div class="step-content">Go to <strong>Settings &rarr; Integrations &rarr; Email</strong></div></div>
       <div class="step"><div class="step-content">Enter your domain (e.g., <code>yourdomain.com</code>)</div></div>
-      <div class="step"><div class="step-content">Click <span class="hover-preview popup-below"><strong>Add Domain</strong><span class="preview-popup"><img src="images/if_uou_link_your_email_you_you_wll_not_see_this__else_add_email_to_nsad_from.png" alt="Add Domain" /><div class="popup-label">Register your email domain for sending workflow emails</div></span></span> â€” OpsPilot will generate DNS records</div></div>
-    </div>
-
-    <div class="feature-showcase">
-      <div class="blob-tr"></div>
-      <div class="blob-bl"></div>
-      <div class="showcase-body">
-        <img class="showcase-image" src="images/if_uou_link_your_email_you_you_wll_not_see_this__else_add_email_to_nsad_from.png" alt="Add email domain" loading="lazy" />
-      </div>
-      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Arrow at the 'From email (override)' label — top-left of the email configuration form"><span class="ann-icon"></span> 'From email' override label</div>
-      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Arrow at the 'Display name (override)' field showing 'Orders Team' — bottom-left of the form"><span class="ann-icon"></span> 'Display name' field</div>
-      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Arrow at the email input showing 'orders@yourdomain.com' — top-right of the form"><span class="ann-icon"></span> Email address input</div>
-      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Arrow at the help text 'Leave empty to use shop settings or workflow default' — bottom-right"><span class="ann-icon"></span> Shop settings fallback</div>
+      <div class="step"><div class="step-content">Click <span class="hover-preview popup-below"><strong>Add Domain</strong><span class="preview-popup"><img src="images/if_uou_link_your_email_you_you_wll_not_see_this__else_add_email_to_nsad_from.png" alt="Add Domain" /><div class="popup-label">Register your email domain for sending workflow emails</div></span></span> &mdash; OpsPilot will generate DNS records</div></div>
     </div>
 
     <h3 id="email-step-2">Step 2: Configure DNS Records</h3>
@@ -128,26 +128,27 @@
     </table>
 
     <h3 id="email-step-3">Step 3: Verify Your Domain</h3>
-    <p>After adding DNS records, click <span class="hover-preview"><strong>Verify Domain</strong><span class="preview-popup"><img src="images/if_uou_link_your_email_you_you_wll_not_see_this__else_add_email_to_nsad_from.png" alt="Verify Domain" /><div class="popup-label">Check DNS records and confirm domain verification</div></span></span>. Status will show Verified âœ…, Pending â³, or Failed âŒ.</p>
+    <p>After adding DNS records, click <span class="hover-preview"><strong>Verify Domain</strong><span class="preview-popup"><img src="images/if_uou_link_your_email_you_you_wll_not_see_this__else_add_email_to_nsad_from.png" alt="Verify Domain" /><div class="popup-label">Check DNS records and confirm domain verification</div></span></span>. Status will show Verified, Pending, or Failed.</p>
 
     <div class="callout callout-tip">
-      <span class="callout-icon">ðŸ’¡</span>
+      <span class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b873e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></span>
       <div>DNS changes can take up to 48 hours to propagate. If verification fails, wait and try again.</div>
     </div>
 
     <h3 id="email-step-4">Step 4: Configure Sender</h3>
     <p>Set your <strong>Sender Email</strong> (must use your verified domain), optional <strong>Sender Name</strong>, and <strong>Reply-To Email</strong>.</p>
 
-    <div class="feature-showcase">
-      <div class="blob-tr"></div>
-      <div class="blob-bl"></div>
-      <div class="showcase-body">
-        <img class="showcase-image" src="images/if_uou_link_your_email_you_you_wll_not_see_this__else_add_email_to_nsad_from.png" alt="Email sender override settings" loading="lazy" />
+    <!-- Email Sender Showcase -->
+    <div class="pro-showcase">
+      <div class="pro-showcase-grid cols-1">
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/if_uou_link_your_email_you_you_wll_not_see_this__else_add_email_to_nsad_from.png" alt="Email sender override — From email, Display name, and fallback helper text" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Email Sender Configuration</div>
+            <p class="pro-card-desc">"From email (override)" sets the sender address (e.g. orders@yourdomain.com). "Display name (override)" sets the sender name (e.g. Orders Team). Leave empty to use shop settings.</p>
+          </div>
+        </div>
       </div>
-      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Arrow at the 'From email (override)' label — sender address configuration at top-left of the form"><span class="ann-icon"></span> Sender email address</div>
-      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Arrow at the 'Display name (override)' field with 'Orders Team' value — bottom-left of the form"><span class="ann-icon"></span> Display name override</div>
-      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Arrow at the email input showing 'orders@yourdomain.com' — top-right of the form"><span class="ann-icon"></span> 'orders@yourdomain.com' input</div>
-      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Arrow at the help text 'Leave empty to use shop settings or workflow default' — bottom-right of the form"><span class="ann-icon"></span> Fallback to shop settings</div>
     </div>
 
     <h3 id="email-step-5">Step 5: Customize Branding (Optional)</h3>
@@ -161,20 +162,21 @@
       <div class="step"><div class="step-content">Create a Slack App at <strong>api.slack.com/apps</strong></div></div>
       <div class="step"><div class="step-content">Under OAuth &amp; Permissions, add scopes: <code>chat:write</code> and <code>chat:write.public</code></div></div>
       <div class="step"><div class="step-content">Install the app to your workspace and copy the <strong>Bot User OAuth Token</strong></div></div>
-      <div class="step"><div class="step-content">In OpsPilot: <strong>Settings â†’ Integrations â†’ Slack</strong>, paste the token</div></div>
-      <div class="step"><div class="step-content">Set a <strong>Default Channel</strong> and click <span class="hover-preview popup-below"><strong>Verify</strong><span class="preview-popup"><img src="images/add_the_email_content_.png" alt="Verify Slack" /><div class="popup-label">Test the Slack connection to confirm it works</div></span></span></div></div>
+      <div class="step"><div class="step-content">In OpsPilot: <strong>Settings &rarr; Integrations &rarr; Slack</strong>, paste the token</div></div>
+      <div class="step"><div class="step-content">Set a <strong>Default Channel</strong> (e.g., <code>#all-zazni</code>) and click <span class="hover-preview popup-below"><strong>Save Slack settings</strong><span class="preview-popup"><img src="images/sitings/Screenshot%202026-04-08%20184825.png" alt="Slack setup guide" /><div class="popup-label">Click 'Setup guide' next to Slack to see step-by-step instructions</div></span></span>, then <strong>Verify connection</strong></div></div>
     </div>
 
-    <div class="feature-showcase">
-      <div class="blob-tr"></div>
-      <div class="blob-bl"></div>
-      <div class="showcase-body">
-        <img class="showcase-image" src="images/add_the_email_content_.png" alt="Slack integration settings" loading="lazy" />
+    <!-- Slack Showcase -->
+    <div class="pro-showcase">
+      <div class="pro-showcase-grid cols-1">
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/sitings/Screenshot%202026-04-08%20184825.png" alt="How to configure Slack — Option A: Bot Token (recommended) with chat:write scopes, Option B: Incoming Webhook" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Slack Setup Guide</div>
+            <p class="pro-card-desc"><strong>Option A — Bot Token:</strong> Go to api.slack.com/apps, add chat:write and chat:write.public scopes, install, and copy the Bot User OAuth Token (xoxb-). <strong>Option B — Webhook:</strong> Activate Incoming Webhooks, add a new webhook, and copy the URL. Bot Token enables multi-channel posting; Webhook is simpler but single-channel only.</p>
+          </div>
+        </div>
       </div>
-      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Arrow at the 'Apply template' button and 'View variables' link — top-left of the message content editor"><span class="ann-icon"></span> Message templates</div>
-      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Arrow at the 'Preview with sample values' section — bottom-left of the message editor"><span class="ann-icon"></span> Preview with sample data</div>
-      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Arrow at the 'Subject' text input (marked Required) — upper-right of the message editor"><span class="ann-icon"></span> Subject / title field</div>
-      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Arrow at the rich text body editor with formatting toolbar (B, I, *, 1.) — lower-right of the editor"><span class="ann-icon"></span> Rich text message body</div>
     </div>
 
     <h3 id="slack-webhook">Option B: Webhook URL (Simpler)</h3>
@@ -183,20 +185,20 @@
     <table>
       <thead><tr><th>Feature</th><th>Bot Token</th><th>Webhook</th></tr></thead>
       <tbody>
-        <tr><td>Post to multiple channels</td><td>âœ… Yes</td><td>âŒ One channel only</td></tr>
-        <tr><td>Per-workflow channel override</td><td>âœ… Yes</td><td>âŒ No</td></tr>
+        <tr><td>Post to multiple channels</td><td>Yes</td><td>One channel only</td></tr>
+        <tr><td>Per-workflow channel override</td><td>Yes</td><td>No</td></tr>
         <tr><td>Setup complexity</td><td>Medium</td><td>Easy</td></tr>
       </tbody>
     </table>
 
     <h2 id="google-sheets-integration">Google Sheets Integration</h2>
-    <p>Log data from <a href="workflows.html">workflows</a> directly into Google Sheets â€” great for reports and audit trails.</p>
+    <p>Log data from <a href="workflows.html">workflows</a> directly into Google Sheets &mdash; great for reports and audit trails.</p>
 
     <h3 id="sheets-step-1">Step 1: Create a Service Account</h3>
     <div class="steps">
       <div class="step"><div class="step-content">Go to <strong>Google Cloud Console</strong> and create a project</div></div>
       <div class="step"><div class="step-content">Enable the <strong>Google Sheets API</strong></div></div>
-      <div class="step"><div class="step-content">Go to <strong>IAM &amp; Admin â†’ Service Accounts</strong> and create one</div></div>
+      <div class="step"><div class="step-content">Go to <strong>IAM &amp; Admin &rarr; Service Accounts</strong> and create one</div></div>
       <div class="step"><div class="step-content">Create a <strong>JSON key</strong> and download it</div></div>
     </div>
 
@@ -205,9 +207,24 @@
 
     <h3 id="sheets-step-3">Step 3: Add to OpsPilot</h3>
     <div class="steps">
-      <div class="step"><div class="step-content">Go to <strong>Settings â†’ Integrations â†’ Google Sheets</strong></div></div>
-      <div class="step"><div class="step-content">Upload the JSON key file or paste the credentials</div></div>
-      <div class="step"><div class="step-content">Click <span class="hover-preview popup-below"><strong>Verify</strong><span class="preview-popup"><img src="images/add_the_email_content_.png" alt="Verify Google Sheets" /><div class="popup-label">Test the Google Sheets connection</div></span></span> to test the connection</div></div>
+      <div class="step"><div class="step-content">Go to <strong>Settings &rarr; Integrations &rarr; Google Sheets</strong></div></div>
+      <div class="step"><div class="step-content">Click <span class="hover-preview popup-below"><strong>Setup guide</strong><span class="preview-popup"><img src="images/sitings/Screenshot%202026-04-08%20181328.png" alt="Google Sheets setup guide" /><div class="popup-label">Click 'Setup guide' next to Google Sheets for step-by-step connection instructions</div></span></span> for full instructions &mdash; open your Google Sheet URL and copy the <strong>Spreadsheet ID</strong> (the long string between <code>/d/</code> and <code>/edit</code>)</div></div>
+      <div class="step"><div class="step-content">Share the sheet: click <strong>Share</strong>, set General access to <strong>"Anyone with the link"</strong>, and set the permission to <strong>"Editor"</strong></div></div>
+      <div class="step"><div class="step-content">Paste the Spreadsheet ID into the <strong>Default Spreadsheet ID</strong> field and click <strong>Save default spreadsheet</strong></div></div>
+      <div class="step"><div class="step-content">Click <strong>Verify connection</strong> to confirm OpsPilot can write to your sheet</div></div>
+    </div>
+
+    <!-- Google Sheets Showcase -->
+    <div class="pro-showcase">
+      <div class="pro-showcase-grid cols-1">
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/sitings/Screenshot%202026-04-08%20181328.png" alt="How to connect Google Sheets — get Spreadsheet ID from URL, share as Editor, paste ID, save and verify" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Google Sheets Setup Guide</div>
+            <p class="pro-card-desc"><strong>Step 1:</strong> Copy the Spreadsheet ID from your Google Sheet URL (between /d/ and /edit). <strong>Step 2:</strong> Share the sheet with "Anyone with the link" as Editor. <strong>Step 3:</strong> Paste the ID into OpsPilot, click Save, then Verify connection.</p>
+          </div>
+        </div>
+      </div>
     </div>
 
   </div>

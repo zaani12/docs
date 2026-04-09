@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard â€” OpsPilot</title>
+  <title>Dashboard — OpsPilot</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -27,7 +27,7 @@
       <div class="tree-branch">
         <div class="tree-node">
           <div class="tree-toggle" onclick="toggleTree(this)">
-            <span class="tree-arrow">â–¸</span> Event-based
+            <span class="tree-arrow">&#9656;</span> Event-based
           </div>
           <div class="tree-children">
             <a href="workflows.html#event-based-triggers">Triggers</a>
@@ -40,7 +40,7 @@
         </div>
         <div class="tree-node">
           <div class="tree-toggle" onclick="toggleTree(this)">
-            <span class="tree-arrow">â–¸</span> Scheduled
+            <span class="tree-arrow">&#9656;</span> Scheduled
           </div>
           <div class="tree-children">
             <a href="workflows.html#scheduled-trigger">Scheduled Trigger</a>
@@ -52,7 +52,6 @@
     <div class="section-label">Configuration</div>
     <a href="settings.html">Settings</a>
     <a href="integrations.html">Integrations</a>
-    <a href="billing.html">Billing &amp; Plans</a>
     <div class="section-label">Help</div>
     <a href="faq.html">FAQ &amp; Troubleshooting</a>
   </nav>
@@ -64,71 +63,66 @@
 
     <div class="section-hero">
       <h1>Dashboard</h1>
-      <div class="last-updated">Last updated on 1 April 2026</div>
-      <p>Your command center â€” get a quick snapshot of your store's health, team workload, and automation performance.</p>
+      <div class="last-updated">Last updated on 8 April 2026</div>
+      <p>Your command center — get a quick snapshot of your store's health, team workload, and automation performance.</p>
     </div>
 
-    <!-- Feature Showcase -->
-    <div class="feature-showcase">
-      <div class="blob-tr"></div>
-      <div class="blob-bl"></div>
-      <div class="showcase-logo"><span class="showcase-logo-dot"></span> OpsPilot</div>
-      <div class="showcase-title">Real-Time Operational Health.</div>
-      <div class="showcase-subtitle">Prioritize risks and monitor store activity at a glance.</div>
-      <div class="showcase-body">
-        <img class="showcase-image" src="images/Screenshot_2026-04-01_162559.png" alt="OpsPilot Dashboard overview" loading="lazy" />
+    <!-- Hero Showcase -->
+    <div class="pro-showcase">
+      <div class="pro-showcase-header">
+        <div class="pro-showcase-logo">OpsPilot</div>
+        <div class="pro-showcase-title">Real-Time Operational Health.</div>
+        <div class="pro-showcase-subtitle">Prioritize risks and monitor store activity at a glance.</div>
       </div>
-      <!-- Floating annotations -->
-      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Top red banner — shows open critical issues with 'Open issue center' and 'Open orders' action buttons"><span class="ann-icon"></span> Attention required alerts</div>
-      <div class="showcase-annotation ann-pos-ml ann-left" data-tip="Left KPI card in the middle row — displays checkout risk count, risk signal status, and 'Open checkouts' link"><span class="ann-icon"></span> Checkout risk card</div>
-      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Bottom-left card — shows tasks due today, overdue count, open total, upcoming tasks, and next urgent task preview"><span class="ann-icon"></span> Today's tasks card</div>
-      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Top-right toolbar — Refresh data, Getting started, Rate our app, Last week date filter, and Quick actions buttons"><span class="ann-icon"></span> Actions & date filter</div>
-      <div class="showcase-annotation ann-pos-mr ann-right" data-tip="Right KPI card in the middle row — monitors out-of-stock and low-inventory counts with 'Open inventory' link"><span class="ann-icon"></span> Inventory health card</div>
-      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Bottom-right card — tracks total workflow runs, success rate, auto-created tasks, and estimated time saved"><span class="ann-icon"></span> Automation performance</div>
-    </div>
-
-    <div class="feature-showcase">
-      <div class="blob-tr"></div>
-      <div class="blob-bl"></div>
-      <div class="showcase-body">
-        <img class="showcase-image" src="images/Screenshot_2026-04-01_162559.png" alt="OpsPilot Dashboard overview" loading="lazy" />
+      <div class="pro-showcase-grid cols-2">
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/dashbord/Screenshot%202026-04-08%20183754.png" alt="KPI cards: Checkout risk, Fulfillment, Inventory" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">KPI Quick Stats</div>
+            <p class="pro-card-desc">Three cards showing Checkout risk (Healthy), Fulfillment (Action — 1 overdue), and Inventory (Healthy).</p>
+          </div>
+        </div>
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/dashbord/Screenshot%202026-04-08%20183713.png" alt="Attention required banner with open issue count" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Attention Required</div>
+            <p class="pro-card-desc">Flags critical issues: open issue count, severity badge, and quick-access "Open issue center" button.</p>
+          </div>
+        </div>
       </div>
-      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Top red banner — 'Attention required' section with Critical badge, open issue count, and quick-action buttons"><span class="ann-icon"></span> Attention required section</div>
-      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Bottom-left card — 'Today's tasks' showing due-today count, overdue items, open total, and next urgent task"><span class="ann-icon"></span> Today's tasks summary</div>
-      <div class="showcase-annotation ann-pos-mr ann-right" data-tip="Middle row right side — three KPI cards: Checkout risk (left), Fulfillment with Action badge (center), Inventory (right)"><span class="ann-icon"></span> KPI health cards</div>
-      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Bottom-right card — 'Automation performance' with run count, success rate, tasks created, and time saved"><span class="ann-icon"></span> Automation performance stats</div>
     </div>
 
     <h2 id="kpi-quick-stats">KPI Quick Stats</h2>
-    <p>At the top of the dashboard, you'll see a row of <span class="hover-preview">KPI cards<span class="preview-popup"><img src="images/Screenshot_2026-04-01_162559.png" alt="Dashboard KPI cards" /><div class="popup-label">KPI cards at the top of your dashboard</div></span></span> showing important store metrics:</p>
+    <p>At the top of the dashboard, you'll see a row of <span class="hover-preview">KPI cards<span class="preview-popup"><img src="images/dashbord/Screenshot%202026-04-08%20183754.png" alt="KPI cards showing Checkout risk, Fulfillment, and Inventory" /><div class="popup-label">KPI cards: Checkout risk (0, Healthy), Fulfillment (1 overdue — Action), Inventory (0, Healthy)</div></span></span> showing important store metrics:</p>
 
     <table>
       <thead><tr><th>KPI</th><th>What It Means</th></tr></thead>
       <tbody>
-        <tr><td>ðŸ”” <strong>Attention Required</strong></td><td>Items that need your immediate action</td></tr>
-        <tr><td>ðŸ“¦ <strong>Overdue Fulfillment</strong></td><td>Orders that should have been fulfilled but haven't</td></tr>
-        <tr><td>ðŸ›’ <strong>Abandoned Checkouts</strong></td><td>Customers who didn't complete their purchase</td></tr>
-        <tr><td>ðŸ’° <strong>Pending Payment</strong></td><td>Orders with payment still pending</td></tr>
-        <tr><td>ðŸš« <strong>Out of Stock</strong></td><td>Products completely out of stock</td></tr>
-        <tr><td>âš ï¸ <strong>Low Inventory</strong></td><td>Products running low on stock</td></tr>
+        <tr><td>&#128276; <strong>Attention Required</strong></td><td>Items that need your immediate action</td></tr>
+        <tr><td>&#128230; <strong>Overdue Fulfillment</strong></td><td>Orders that should have been fulfilled but haven't</td></tr>
+        <tr><td>&#128722; <strong>Abandoned Checkouts</strong></td><td>Customers who didn't complete their purchase</td></tr>
+        <tr><td>&#128176; <strong>Pending Payment</strong></td><td>Orders with payment still pending</td></tr>
+        <tr><td>&#128683; <strong>Out of Stock</strong></td><td>Products completely out of stock</td></tr>
+        <tr><td>&#9888;&#65039; <strong>Low Inventory</strong></td><td>Products running low on stock</td></tr>
       </tbody>
     </table>
 
-    <div class="feature-showcase">
-      <div class="blob-tr"></div>
-      <div class="blob-bl"></div>
-      <div class="showcase-body">
-        <img class="showcase-image" src="images/Screenshot_2026-04-01_162559.png" alt="Dashboard KPI cards row" loading="lazy" />
+    <!-- KPI Cards Showcase -->
+    <div class="pro-showcase">
+      <div class="pro-showcase-grid cols-1">
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/dashbord/Screenshot%202026-04-08%20183754.png" alt="Dashboard KPI cards row" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">KPI Card Row</div>
+            <p class="pro-card-desc">Each card has an icon, count, colored badge (green "Healthy" or red "Action"), detail lines, and a quick-action link.</p>
+          </div>
+        </div>
       </div>
-      <div class="showcase-annotation ann-pos-ml ann-left" data-tip="Left card in the KPI row — shows 0 checkout risk items, green 'Healthy' badge, and 'Open checkouts' link"><span class="ann-icon"></span> Checkout risk card</div>
-      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Top red banner — 'Attention required' with 1 open issue, 'Critical 1' badge, and 'Open issue center' button"><span class="ann-icon"></span> Attention required banner</div>
-      <div class="showcase-annotation ann-pos-mr ann-right" data-tip="Right card in the KPI row — shows 0 inventory risk items, green 'Healthy' badge, and 'Open inventory' link"><span class="ann-icon"></span> Inventory health card</div>
-      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Top-right toolbar — 'Last week' date filter controls which date range the KPI calculations use"><span class="ann-icon"></span> KPI date range filter</div>
     </div>
 
     <div class="callout callout-tip">
-      <span class="callout-icon">ðŸ’¡</span>
-      <div>Click on any <span class="hover-preview">KPI card<span class="preview-popup"><img src="images/Screenshot_2026-04-01_162559.png" alt="Dashboard KPI cards" /><div class="popup-label">Click any card to drill into details</div></span></span> to see more details or take action.</div>
+      <span class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b873e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></span>
+      <div>Click on any <span class="hover-preview">KPI card<span class="preview-popup"><img src="images/dashbord/Screenshot%202026-04-08%20183754.png" alt="KPI cards with action links" /><div class="popup-label">Each card has a quick-action link: 'Open checkouts', 'Open orders', or 'Open inventory'</div></span></span> to see more details or take action.</div>
     </div>
 
     <h2 id="task-overview">Task Overview</h2>
@@ -141,16 +135,17 @@
       </tbody>
     </table>
 
-    <div class="feature-showcase">
-      <div class="blob-tr"></div>
-      <div class="blob-bl"></div>
-      <div class="showcase-body">
-        <img class="showcase-image" src="images/Screenshot_2026-04-01_162559.png" alt="Dashboard task overview section" loading="lazy" />
+    <!-- Today's Tasks Showcase -->
+    <div class="pro-showcase">
+      <div class="pro-showcase-grid cols-1">
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/dashbord/Screenshot%202026-04-08%20183912.png" alt="Today's tasks card: 2 due today, 9 open, 2 overdue, next urgent task" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Today's Tasks</div>
+            <p class="pro-card-desc">Shows due-today count with "Needs attention" badge, stats grid (Open/Overdue/Due today/Upcoming), next urgent task preview, and "+ Add task" button.</p>
+          </div>
+        </div>
       </div>
-      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Top red banner — 'Attention required' with 1 open issue flagged for immediate action, linking to overdue tasks"><span class="ann-icon"></span> Attention-required alerts</div>
-      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Bottom-left card — 2 tasks due today, 6 open total, 2 overdue, 4 upcoming; next urgent task: 'Order updated' due Mar 28"><span class="ann-icon"></span> Today's tasks card</div>
-      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Top-right toolbar — 'Quick actions' button for fast task creation, 'Refresh data', and 'Getting started' guide link"><span class="ann-icon"></span> Quick actions toolbar</div>
-      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Bottom-right 'Automation performance' card — 3 tasks auto-created by workflows last week, 100% success rate"><span class="ann-icon"></span> Automation-created tasks</div>
     </div>
 
     <h2 id="automation-impact">Automation Impact</h2>
@@ -164,45 +159,99 @@
       </tbody>
     </table>
 
-    <div class="feature-showcase">
-      <div class="blob-tr"></div>
-      <div class="blob-bl"></div>
-      <div class="showcase-body">
-        <img class="showcase-image" src="images/Screenshot_2026-04-01_162559.png" alt="Dashboard automation impact metrics" loading="lazy" />
+    <!-- Automation Performance Showcase -->
+    <div class="pro-showcase">
+      <div class="pro-showcase-grid cols-1">
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/dashbord/Screenshot%202026-04-08%20183923.png" alt="Automation performance: 76 runs, 100% success, 0.3h saved, trending up +16" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Automation Performance</div>
+            <p class="pro-card-desc">76 total workflow runs with green trend spark (+16), 100% success rate, 4 tasks created, 0.3h saved. Links to "View workflows" and "+ Add workflow".</p>
+          </div>
+        </div>
       </div>
-      <div class="showcase-annotation ann-pos-ml ann-left" data-tip="Center-left area — 'Operational summary' section showing 2 active workflows, 6 open tasks, 3 automation runs last week"><span class="ann-icon"></span> Operational summary</div>
-      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Bottom-left 'Today's tasks' card — auto-created task count visible alongside open, overdue, and upcoming task stats"><span class="ann-icon"></span> Auto-created tasks impact</div>
-      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Top-right toolbar — 'Last week' date filter and 'View workflows' link control which automation stats are displayed"><span class="ann-icon"></span> Workflow run controls</div>
-      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Bottom-right 'Automation performance' card — success rate 100%, estimated time saved 0.3h, 4 recent executions tracked"><span class="ann-icon"></span> Time saved & run history</div>
     </div>
 
     <h2 id="charts">Charts</h2>
     <p>The dashboard includes visual charts to help you understand patterns:</p>
     <h3 id="task-charts">Task Charts</h3>
     <ul>
-      <li><strong>Task Priority Distribution</strong> â€” Bar chart showing Low, Medium, High, and Urgent tasks</li>
-      <li><strong>Task Status Breakdown</strong> â€” How many tasks are in each status</li>
-      <li><strong>Staff Workload</strong> â€” How many tasks each team member has assigned</li>
-      <li><strong>Completion Rate</strong> â€” Donut chart showing completed vs. open tasks</li>
+      <li><strong>Task Priority Distribution</strong> — Bar chart showing Low, Medium, High, and Urgent tasks</li>
+      <li><strong>Task Status Breakdown</strong> — How many tasks are in each status</li>
+      <li><strong>Staff Workload</strong> — How many tasks each team member has assigned</li>
+      <li><strong>Completion Rate</strong> — Donut chart showing completed vs. open tasks</li>
     </ul>
 
     <h3 id="workflow-charts">Workflow Charts</h3>
     <ul>
-      <li><strong>7-Day Workflow Trends</strong> â€” Daily success vs. failure chart</li>
-      <li><strong>Workflow Success Rate</strong> â€” Overall success rate over time</li>
-      <li><strong>Failure Trends</strong> â€” Spot if a workflow is failing repeatedly</li>
+      <li><strong>7-Day Workflow Trends</strong> — Daily success vs. failure chart</li>
+      <li><strong>Workflow Success Rate</strong> — Overall success rate over time</li>
+      <li><strong>Failure Trends</strong> — Spot if a workflow is failing repeatedly</li>
     </ul>
 
-    <div class="feature-showcase">
-      <div class="blob-tr"></div>
-      <div class="blob-bl"></div>
-      <div class="showcase-body">
-        <img class="showcase-image" src="images/Screenshot_2026-04-01_162559.png" alt="Dashboard charts area" loading="lazy" />
+    <!-- Charts Showcase -->
+    <div class="pro-showcase">
+      <div class="pro-showcase-grid cols-2">
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/dashbord/Screenshot%202026-04-08%20183943.png" alt="Open tasks by priority bar chart: Urgent ~5, High ~3, Medium ~1" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Open Tasks by Priority</div>
+            <p class="pro-card-desc">Bar chart sorted by severity — Urgent (red, tallest), High (orange), Medium (yellow). Helps surface urgent work first.</p>
+          </div>
+        </div>
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/dashbord/Screenshot%202026-04-08%20184004.png" alt="Staff workload table showing open tasks per assignee" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Staff Workload</div>
+            <p class="pro-card-desc">Table showing open task count per team member and the unassigned queue, with quick action links.</p>
+          </div>
+        </div>
       </div>
-      <div class="showcase-annotation ann-pos-ml ann-left" data-tip="Arrow at the Checkout risk KPI card area — charts section is below the fold; this chart shows tasks by Low/Medium/High/Urgent"><span class="ann-icon"></span> Task priority distribution</div>
-      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Arrow at the Today's tasks card area — charts below fold; this chart shows task count per team member"><span class="ann-icon"></span> Staff workload breakdown</div>
-      <div class="showcase-annotation ann-pos-mr ann-right" data-tip="Arrow at the Inventory KPI card area — charts below fold; this chart tracks daily workflow successes vs failures"><span class="ann-icon"></span> 7-day workflow trends</div>
-      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Arrow at the Automation performance card area — charts below fold; this donut shows completed vs open task ratio"><span class="ann-icon"></span> Completion rate donut</div>
+    </div>
+
+    <!-- Workflow Trends Showcase -->
+    <div class="pro-showcase">
+      <div class="pro-showcase-grid cols-1">
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/dashbord/Screenshot%202026-04-08%20184024.png" alt="7-day workflow trends chart" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">7-Day Workflow Trends</div>
+            <p class="pro-card-desc">Daily success vs. failure bars from Apr 1–8 showing workflow execution volume ramping up.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2 id="recent-activity">Recent Activity</h2>
+    <p>The <strong>Recent Activity</strong> feed at the bottom of the dashboard shows the latest team and automation events in real time.</p>
+
+    <!-- Recent Activity Showcase -->
+    <div class="pro-showcase">
+      <div class="pro-showcase-grid cols-1">
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/dashbord/Screenshot%202026-04-08%20184040.png" alt="Recent activity feed with action log entries" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Activity Log</div>
+            <p class="pro-card-desc">Each row logs an action (task status update, workflow created), the user, and the time. Click "View all" for full history.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2 id="upcoming-workflows">Upcoming Scheduled Workflows</h2>
+    <p>See which <a href="workflows.html#scheduled-workflows">scheduled workflows</a> are queued to run next, along with their current status.</p>
+
+    <!-- Upcoming Workflows Showcase -->
+    <div class="pro-showcase">
+      <div class="pro-showcase-grid cols-1">
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/dashbord/Screenshot%202026-04-08%20184233.png" alt="Upcoming scheduled workflows with active badges" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Upcoming Scheduled Workflows</div>
+            <p class="pro-card-desc">Clickable workflow names with "Active" badges. "View all" link to manage all scheduled workflows.</p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <h2 id="changing-the-date-range">Changing the Date Range</h2>
@@ -213,16 +262,17 @@
       <div class="step"><div class="step-content">Choose from: <strong>Today</strong>, <strong>Last Week</strong>, <strong>Last Month</strong>, or <strong>Last 3 Months</strong></div></div>
     </div>
 
-    <div class="feature-showcase">
-      <div class="blob-tr"></div>
-      <div class="blob-bl"></div>
-      <div class="showcase-body">
-        <img class="showcase-image" src="images/Screenshot_2026-04-01_162559.png" alt="Dashboard with date range applied" loading="lazy" />
+    <!-- Operational Summary Showcase -->
+    <div class="pro-showcase">
+      <div class="pro-showcase-grid cols-1">
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/dashbord/Screenshot%202026-04-08%20183823.png" alt="Operational summary: 3 active workflows, 9 open tasks, 76 automation runs" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Operational Summary</div>
+            <p class="pro-card-desc">Snapshot of key metrics for the selected date range. Shows active workflows, open tasks, automation runs, and last update timestamp.</p>
+          </div>
+        </div>
       </div>
-      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Dashboard title area (top-left) — shows greeting, current date, and all data below updates based on the selected date range"><span class="ann-icon"></span> Dashboard header</div>
-      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Every KPI card, task count, and automation stat on the page refreshes instantly when the date range is changed"><span class="ann-icon"></span> All metrics update live</div>
-      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="'Last week' dropdown in the top-right header — switch between Today, Last Week, Last Month, and Last 3 Months"><span class="ann-icon"></span> Date range dropdown</div>
-      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Default date range is configured under Settings → Dashboard Stats Date Range so it persists across sessions"><span class="ann-icon"></span> Set default in Settings</div>
     </div>
 
   </div>

@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Notes â€” OpsPilot</title>
+  <title>Notes — OpsPilot</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -27,7 +27,7 @@
       <div class="tree-branch">
         <div class="tree-node">
           <div class="tree-toggle" onclick="toggleTree(this)">
-            <span class="tree-arrow">â–¸</span> Event-based
+            <span class="tree-arrow">&#9656;</span> Event-based
           </div>
           <div class="tree-children">
             <a href="workflows.html#event-based-triggers">Triggers</a>
@@ -40,7 +40,7 @@
         </div>
         <div class="tree-node">
           <div class="tree-toggle" onclick="toggleTree(this)">
-            <span class="tree-arrow">â–¸</span> Scheduled
+            <span class="tree-arrow">&#9656;</span> Scheduled
           </div>
           <div class="tree-children">
             <a href="workflows.html#scheduled-trigger">Scheduled Trigger</a>
@@ -52,7 +52,6 @@
     <div class="section-label">Configuration</div>
     <a href="settings.html">Settings</a>
     <a href="integrations.html">Integrations</a>
-    <a href="billing.html">Billing &amp; Plans</a>
     <div class="section-label">Help</div>
     <a href="faq.html">FAQ &amp; Troubleshooting</a>
   </nav>
@@ -68,54 +67,88 @@
       <p>Add comments, instructions, and context to your Shopify orders, products, and customers. Like sticky notes for your store data.</p>
     </div>
 
-    <!-- Feature Showcase -->
-    <div class="feature-showcase">
-      <div class="blob-tr"></div>
-      <div class="blob-bl"></div>
-      <div class="showcase-logo"><span class="showcase-logo-dot"></span> OpsPilot</div>
-      <div class="showcase-title">Your Store's Memory.</div>
-      <div class="showcase-subtitle">Attach context to every order, product, and customer â€” never lose critical info again.</div>
-      <div class="showcase-body">
-        <img class="showcase-image" src="images/Screenshot_2026-04-01_162559.png" alt="OpsPilot Notes overview" loading="lazy" />
+    <!-- Hero Showcase -->
+    <div class="pro-showcase">
+      <div class="pro-showcase-header">
+        <div class="pro-showcase-logo">OpsPilot</div>
+        <div class="pro-showcase-title">Your Store's Memory.</div>
+        <div class="pro-showcase-subtitle">Attach context to every order, product, and customer — never lose critical info again.</div>
       </div>
-      <!-- Floating annotations -->
-      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Arrow at 'Attention required' banner — top-left. Create notes to document flagged issues and share context with your team"><span class="ann-icon"></span> Capture critical alerts</div>
-      <div class="showcase-annotation ann-pos-ml ann-left" data-tip="Arrow at 'Checkout risk' KPI card — mid-left. Link notes to orders affected by risky or abandoned checkouts"><span class="ann-icon"></span> Track checkout risks</div>
-      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Arrow at 'Today's tasks' card — lower-left. Convert any note into an actionable task with one click"><span class="ann-icon"></span> Notes become tasks</div>
-      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Arrow at 'Quick actions' toolbar — top-right. Create notes instantly from the Quick actions menu"><span class="ann-icon"></span> Quick note creation</div>
-      <div class="showcase-annotation ann-pos-mr ann-right" data-tip="Arrow at 'Inventory' KPI card — mid-right. Attach restocking and supplier notes to products tracked here"><span class="ann-icon"></span> Monitor stock notes</div>
-      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Arrow at 'Automation performance' card — lower-right. Workflows can auto-create notes when store events occur"><span class="ann-icon"></span> Automated note logging</div>
+      <div class="pro-showcase-grid cols-2">
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/the_action_tipe_.png" alt="Workflow action type dropdown showing Create note option" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Auto-Create Notes</div>
+            <p class="pro-card-desc">Workflows can automatically create notes when store events fire — choose "Create note" from the action type dropdown.</p>
+          </div>
+        </div>
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/ation_informations.png" alt="Action form with title, description, priority, status, and assignee" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Notes → Tasks</div>
+            <p class="pro-card-desc">Convert any note into a tracked task — title, description, priority, status, and assignee carry over automatically.</p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <h2 id="what-are-notes">What Are Notes?</h2>
     <p>Notes let you add comments, instructions, and context to your Shopify data that your whole team can see. Think of them as sticky notes attached to your store records.</p>
     <ul>
-      <li><strong>"Customer requested gift wrapping"</strong> â†’ attached to an Order</li>
-      <li><strong>"Restock by Friday, supplier: ABC Inc."</strong> â†’ attached to a Product</li>
-      <li><strong>"VIP customer, always offer free shipping"</strong> â†’ attached to a Customer</li>
-      <li><strong>"Weekly team meeting agenda"</strong> â†’ standalone note (not attached to anything)</li>
+      <li><strong>"Customer requested gift wrapping"</strong> → attached to an Order</li>
+      <li><strong>"Restock by Friday, supplier: ABC Inc."</strong> → attached to a Product</li>
+      <li><strong>"VIP customer, always offer free shipping"</strong> → attached to a Customer</li>
+      <li><strong>"Weekly team meeting agenda"</strong> → standalone note (not attached to anything)</li>
     </ul>
 
     <h2 id="creating-a-note">Creating a Note</h2>
     <div class="steps">
       <div class="step"><div class="step-content">Click <strong>Notes</strong> in the sidebar</div></div>
-      <div class="step"><div class="step-content">Click the <span class="hover-preview popup-below"><strong>Create Note</strong><span class="preview-popup"><img src="images/Screenshot_2026-04-01_162559.png" alt="Create Note button" /><div class="popup-label">Opens the note editor to create a new note</div></span></span> button (top right)</div></div>
-      <div class="step"><div class="step-content">Choose an <span class="hover-preview popup-below"><strong>Entity Type</strong><span class="preview-popup"><img src="images/Screenshot_2026-04-01_162559.png" alt="Entity type selector" /><div class="popup-label">Link notes to Orders, Products, Customers, or keep standalone</div></span></span>: Order, Product, Customer, or None (standalone)</div></div>
+      <div class="step"><div class="step-content">Click the <strong>Create Note</strong> button (top right)</div></div>
+      <div class="step"><div class="step-content">Choose an <strong>Entity Type</strong>: Order, Product, Customer, or None (standalone)</div></div>
       <div class="step"><div class="step-content">If you chose an entity type, select a specific <strong>record</strong> from the dropdown</div></div>
       <div class="step"><div class="step-content">Add an optional <strong>Title</strong> and write your <strong>Content</strong> using the rich text editor</div></div>
       <div class="step"><div class="step-content">Click <strong>Save</strong></div></div>
     </div>
 
-    <div class="feature-showcase">
-      <div class="blob-tr"></div>
-      <div class="blob-bl"></div>
-      <div class="showcase-body">
-        <img class="showcase-image" src="images/Screenshot_2026-04-01_162559.png" alt="Create a note in OpsPilot" loading="lazy" />
+    <!-- Creating Notes Showcase -->
+    <div class="pro-showcase">
+      <div class="pro-showcase-header">
+        <div class="pro-showcase-title">How Workflows Auto-Create Notes</div>
+        <div class="pro-showcase-subtitle">Build a workflow that automatically logs a note when store events happen.</div>
       </div>
-      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Arrow at 'Attention required' banner — top-left. Attach notes to orders or products flagged with alerts"><span class="ann-icon"></span> Link to flagged issues</div>
-      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Arrow at 'Today's tasks' card — lower-left. Notes linked to tasks keep full context in one place"><span class="ann-icon"></span> Tasks from notes</div>
-      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Arrow at header toolbar — top-right. Use Quick actions to start a note from any page"><span class="ann-icon"></span> Dashboard shortcuts</div>
-      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Arrow at 'Automation performance' card — lower-right. Auto-create notes via workflow actions"><span class="ann-icon"></span> Workflow-created notes</div>
+      <div class="pro-flow">
+        <div class="pro-flow-step">
+          <div class="pro-flow-badge when">When</div>
+          <div class="pro-flow-card">
+            <img src="images/chos_a_treger_waht_shloud_hapen_to_lanch_the_workflow_.png" alt="When step — trigger summary" loading="lazy" />
+            <div class="pro-card-body">
+              <div class="pro-card-label">Trigger fires</div>
+              <p class="pro-card-desc">A store event occurs (new order, updated product, etc.)</p>
+            </div>
+          </div>
+        </div>
+        <div class="pro-flow-step">
+          <div class="pro-flow-badge if">If</div>
+          <div class="pro-flow-card">
+            <img src="images/choos_predfined_condition_.png" alt="If step — predefined condition dropdown" loading="lazy" />
+            <div class="pro-card-body">
+              <div class="pro-card-label">Condition matches</div>
+              <p class="pro-card-desc">Filter by order total, tags, status, or custom fields.</p>
+            </div>
+          </div>
+        </div>
+        <div class="pro-flow-step">
+          <div class="pro-flow-badge then">Then</div>
+          <div class="pro-flow-card">
+            <img src="images/the_action_tipe_.png" alt="Then step — Create note action type" loading="lazy" />
+            <div class="pro-card-body">
+              <div class="pro-card-label">Create Note</div>
+              <p class="pro-card-desc">A note is auto-created and attached to the triggering entity.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <h3 id="rich-text-formatting">Rich Text Formatting</h3>
@@ -128,23 +161,11 @@
     </ul>
 
     <h2 id="attaching-files">Attaching Files</h2>
-    <p>You can upload files to any note â€” great for images, PDFs, or documents.</p>
+    <p>You can upload files to any note — great for images, PDFs, or documents.</p>
     <div class="steps">
       <div class="step"><div class="step-content">When creating or editing a note, scroll down to <strong>File Attachments</strong></div></div>
-      <div class="step"><div class="step-content">Click <span class="hover-preview popup-below"><strong>Upload File</strong><span class="preview-popup"><img src="images/Screenshot_2026-04-01_162559.png" alt="Upload File area" /><div class="popup-label">Drag &amp; drop or click to attach images, PDFs, docs</div></span></span> or drag &amp; drop files into the upload area</div></div>
+      <div class="step"><div class="step-content">Click <strong>Upload File</strong> or drag &amp; drop files into the upload area</div></div>
       <div class="step"><div class="step-content">Click <strong>Save</strong> to confirm</div></div>
-    </div>
-
-    <div class="feature-showcase">
-      <div class="blob-tr"></div>
-      <div class="blob-bl"></div>
-      <div class="showcase-body">
-        <img class="showcase-image" src="images/Screenshot_2026-04-01_162559.png" alt="Upload files to a note" loading="lazy" />
-      </div>
-      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Arrow at 'Attention required' banner — top-left. Attach screenshots and files to notes about flagged issues"><span class="ann-icon"></span> Document alert evidence</div>
-      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Arrow at 'Today's tasks' card — lower-left. Files attached to notes carry over when converted to tasks"><span class="ann-icon"></span> Task-linked attachments</div>
-      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Arrow at header toolbar — top-right. Upload images, PDFs, and docs when creating notes"><span class="ann-icon"></span> Quick file uploads</div>
-      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Arrow at 'Automation performance' card — lower-right. Keep workflow audit trails with attached evidence"><span class="ann-icon"></span> Auto-log with files</div>
     </div>
 
     <p><strong>Supported files:</strong> PNG, JPG, GIF, WebP, PDF, DOC, DOCX, TXT, XLS, XLSX, CSV</p>
@@ -153,10 +174,10 @@
     <p>The Notes page shows all your notes in a table with title, content preview, entity info, author, and date. Click any note to open its detail view.</p>
 
     <h2 id="pinning-notes">Pinning Notes</h2>
-    <p>Pin important notes so they always appear at the top of your list. Click the <span class="hover-preview">ðŸ“Œ icon<span class="preview-popup"><img src="images/Screenshot_2026-04-01_162559.png" alt="Pin icon" /><div class="popup-label">Pin/unpin to keep important notes at the top</div></span></span> on any note to pin/unpin it.</p>
+    <p>Pin important notes so they always appear at the top of your list. Click the 📌 icon on any note to pin/unpin it.</p>
 
     <div class="callout callout-tip">
-      <span class="callout-icon">ðŸ’¡</span>
+      <span class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b873e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></span>
       <div>Pin notes for ongoing issues, reminders, or important customer instructions.</div>
     </div>
 
@@ -164,21 +185,29 @@
     <p>Turn notes into actionable <a href="tasks.html">tasks</a> with one click:</p>
     <div class="steps">
       <div class="step"><div class="step-content">Select one or more notes using the checkboxes</div></div>
-      <div class="step"><div class="step-content">Click <span class="hover-preview popup-below"><strong>Convert to Tasks</strong><span class="preview-popup"><img src="images/Screenshot_2026-04-01_162559.png" alt="Convert to Tasks" /><div class="popup-label">Turns selected notes into actionable tasks with one click</div></span></span></div></div>
-      <div class="step"><div class="step-content">Review the task preview â€” the note title becomes the task title, and the content becomes the description</div></div>
+      <div class="step"><div class="step-content">Click <strong>Convert to Tasks</strong></div></div>
+      <div class="step"><div class="step-content">Review the task preview — the note title becomes the task title, and the content becomes the description</div></div>
       <div class="step"><div class="step-content">Click <strong>Confirm</strong></div></div>
     </div>
 
-    <div class="feature-showcase">
-      <div class="blob-tr"></div>
-      <div class="blob-bl"></div>
-      <div class="showcase-body">
-        <img class="showcase-image" src="images/Screenshot_2026-04-01_162559.png" alt="Convert notes to tasks" loading="lazy" />
+    <!-- Convert to Tasks Showcase -->
+    <div class="pro-showcase">
+      <div class="pro-showcase-grid cols-2">
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/ation_informations.png" alt="Task details form — title, description, priority, status, assignee, due date" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Task Fields</div>
+            <p class="pro-card-desc">Converted tasks include title, rich-text description, priority level, status, assignee, and due date offset.</p>
+          </div>
+        </div>
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/dashbord/Screenshot%202026-04-08%20183912.png" alt="Today's tasks dashboard card" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Track on Dashboard</div>
+            <p class="pro-card-desc">Converted tasks appear in the "Today's tasks" dashboard card alongside manually created and workflow-generated tasks.</p>
+          </div>
+        </div>
       </div>
-      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Arrow at 'Attention required' banner — top-left. Select notes about flagged issues and convert to tasks"><span class="ann-icon"></span> Select &amp; convert alerts</div>
-      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Arrow at 'Today's tasks' card — lower-left. Converted notes appear as tasks in this card"><span class="ann-icon"></span> Converted tasks appear here</div>
-      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Arrow at header toolbar — top-right. Batch-select notes and convert with a single action"><span class="ann-icon"></span> One-click conversion</div>
-      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Arrow at 'Automation performance' card — lower-right. Task creation count reflects both manual and converted tasks"><span class="ann-icon"></span> Automated conversions</div>
     </div>
 
     <h2 id="searching-filtering">Searching &amp; Filtering</h2>
@@ -192,7 +221,7 @@
     </table>
 
     <h2 id="notes-on-entity-pages">Notes on Entity Pages (Shopify Extension)</h2>
-    <p>OpsPilot adds a quick action button to your Shopify order, product, and customer pages. Click it to quickly create a note attached to that entity â€” without leaving the page!</p>
+    <p>OpsPilot adds a quick action button to your Shopify order, product, and customer pages. Click it to quickly create a note attached to that entity — without leaving the page!</p>
 
   </div>
 </div>

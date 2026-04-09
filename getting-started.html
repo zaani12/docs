@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Getting Started â€” OpsPilot</title>
+  <title>Getting Started — OpsPilot</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -27,7 +27,7 @@
       <div class="tree-branch">
         <div class="tree-node">
           <div class="tree-toggle" onclick="toggleTree(this)">
-            <span class="tree-arrow">â–¸</span> Event-based
+            <span class="tree-arrow">&#9656;</span> Event-based
           </div>
           <div class="tree-children">
             <a href="workflows.html#event-based-triggers">Triggers</a>
@@ -40,7 +40,7 @@
         </div>
         <div class="tree-node">
           <div class="tree-toggle" onclick="toggleTree(this)">
-            <span class="tree-arrow">â–¸</span> Scheduled
+            <span class="tree-arrow">&#9656;</span> Scheduled
           </div>
           <div class="tree-children">
             <a href="workflows.html#scheduled-trigger">Scheduled Trigger</a>
@@ -52,7 +52,6 @@
     <div class="section-label">Configuration</div>
     <a href="settings.html">Settings</a>
     <a href="integrations.html">Integrations</a>
-    <a href="billing.html">Billing &amp; Plans</a>
     <div class="section-label">Help</div>
     <a href="faq.html">FAQ &amp; Troubleshooting</a>
   </nav>
@@ -68,23 +67,29 @@
       <p>Install OpsPilot, take a quick tour, and create your first note, task, and workflow in minutes.</p>
     </div>
 
-    <!-- Feature Showcase -->
-    <div class="feature-showcase">
-      <div class="blob-tr"></div>
-      <div class="blob-bl"></div>
-      <div class="showcase-logo"><span class="showcase-logo-dot"></span> OpsPilot</div>
-      <div class="showcase-title">Up and Running in Minutes.</div>
-      <div class="showcase-subtitle">Install, set up, and start automating your Shopify store â€” no coding required.</div>
-      <div class="showcase-body">
-        <img class="showcase-image" src="images/Screenshot_2026-04-01_162458.png" alt="OpsPilot Getting Started" loading="lazy" />
+    <!-- Hero Showcase -->
+    <div class="pro-showcase">
+      <div class="pro-showcase-header">
+        <div class="pro-showcase-logo">OpsPilot</div>
+        <div class="pro-showcase-title">Up and Running in Minutes.</div>
+        <div class="pro-showcase-subtitle">Install, set up, and start automating your Shopify store — no coding required.</div>
       </div>
-      <!-- Floating annotations -->
-      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Arrow at Shopify admin sidebar near 'Home', 'Orders', 'Products' — top-left of the admin page"><span class="ann-icon"></span> One-click Shopify install</div>
-      <div class="showcase-annotation ann-pos-ml ann-left" data-tip="Arrow at 'OpsPilot' listed under 'Apps' in the sidebar — mid-left of the admin page"><span class="ann-icon"></span> OpsPilot in Apps sidebar</div>
-      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Arrow at 'Sidekick conversations' — lower-left of the sidebar. Notes, Tasks, and Workflows are added to this navigation"><span class="ann-icon"></span> Quick sidebar access</div>
-      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Arrow at the stats row — Sessions, Total sales, Orders, Conversion rate — top-right of the Shopify home page"><span class="ann-icon"></span> Store overview stats</div>
-      <div class="showcase-annotation ann-pos-mr ann-right" data-tip="Arrow at 'New insights and guides' area — mid-right. OpsPilot workflow templates are available after installation"><span class="ann-icon"></span> Insights &amp; guides area</div>
-      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Arrow at the promo card — bottom-right. OpsPilot auto-detects your Shopify staff for team management"><span class="ann-icon"></span> Team auto-detection</div>
+      <div class="pro-showcase-grid cols-2">
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/Screenshot_2026-04-01_162458.png" alt="Shopify admin with OpsPilot in the Apps sidebar" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Shopify Integration</div>
+            <p class="pro-card-desc">OpsPilot appears in your Shopify Admin sidebar under Apps — one-click access, no separate login.</p>
+          </div>
+        </div>
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/dashbord/Screenshot%202026-04-08%20183754.png" alt="Dashboard KPI cards — Checkout risk, Fulfillment, Inventory" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Your Dashboard</div>
+            <p class="pro-card-desc">After install, your dashboard shows real-time store health: KPIs, tasks, and automation performance.</p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <h2 id="installing-opspilot">Installing OpsPilot</h2>
@@ -96,21 +101,9 @@
       <div class="step"><div class="step-content">You'll be redirected to the OpsPilot dashboard inside your Shopify Admin</div></div>
     </div>
 
-    <div class="feature-showcase">
-      <div class="blob-tr"></div>
-      <div class="blob-bl"></div>
-      <div class="showcase-body">
-        <img class="showcase-image" src="images/Screenshot_2026-04-01_162458.png" alt="Shopify admin with OpsPilot installed" loading="lazy" />
-      </div>
-      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Arrow at Shopify sidebar near 'Home', 'Orders', 'Products' — top-left of the admin navigation"><span class="ann-icon"></span> Shopify admin navigation</div>
-      <div class="showcase-annotation ann-pos-ml ann-left" data-tip="Arrow at 'OpsPilot' listed under 'Apps' in the left sidebar — confirms successful installation"><span class="ann-icon"></span> OpsPilot in Apps sidebar</div>
-      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Arrow at the stats row showing Sessions, Total sales, Orders, and Conversion rate — top-right"><span class="ann-icon"></span> Store analytics overview</div>
-      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Arrow at 'Discover more of Shopify' promo section with setup guides — bottom-right"><span class="ann-icon"></span> Getting started resources</div>
-    </div>
-
     <div class="callout callout-tip">
-      <span class="callout-icon">ðŸ’¡</span>
-      <div>OpsPilot runs inside your Shopify Admin â€” there's no separate website to log in to. Just click the app from your Shopify sidebar.</div>
+      <span class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b873e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></span>
+      <div>OpsPilot runs inside your Shopify Admin — there's no separate website to log in to. Just click the app from your Shopify sidebar.</div>
     </div>
 
     <h2 id="first-time-setup">First-Time Setup</h2>
@@ -128,13 +121,12 @@
     <table>
       <thead><tr><th>Menu Item</th><th>What It Does</th></tr></thead>
       <tbody>
-        <tr><td>ðŸ“Š <strong><a href="dashboard.html">Dashboard</a></strong></td><td>Your store health overview: KPIs, task stats, workflow performance</td></tr>
-        <tr><td>ðŸ“ <strong><a href="notes.html">Notes</a></strong></td><td>Create and manage notes attached to orders, products &amp; customers</td></tr>
-        <tr><td>âœ… <strong><a href="tasks.html">Tasks</a></strong></td><td>Create tasks, assign to team members, track progress</td></tr>
-        <tr><td>âš¡ <strong><a href="workflows.html">Workflows</a></strong></td><td>Set up automations that run when events happen in your store</td></tr>
-        <tr><td>âš™ï¸ <strong><a href="settings.html">Settings</a></strong></td><td>Manage your team, task preferences, integrations &amp; more</td></tr>
-        <tr><td>ðŸ’³ <strong><a href="billing.html">Billing</a></strong></td><td>View your current plan and upgrade options</td></tr>
-        <tr><td>ðŸ“‹ <strong>History</strong></td><td>Activity log â€” see everything that happened in the app</td></tr>
+        <tr><td>📊 <strong><a href="dashboard.html">Dashboard</a></strong></td><td>Your store health overview: KPIs, task stats, workflow performance</td></tr>
+        <tr><td>📝 <strong><a href="notes.html">Notes</a></strong></td><td>Create and manage notes attached to orders, products &amp; customers</td></tr>
+        <tr><td>✅ <strong><a href="tasks.html">Tasks</a></strong></td><td>Create tasks, assign to team members, track progress</td></tr>
+        <tr><td>⚡ <strong><a href="workflows.html">Workflows</a></strong></td><td>Set up automations that run when events happen in your store</td></tr>
+        <tr><td>⚙️ <strong><a href="settings.html">Settings</a></strong></td><td>Manage your team, task preferences, integrations &amp; more</td></tr>
+        <tr><td> <strong>History</strong></td><td>Activity log — see everything that happened in the app</td></tr>
       </tbody>
     </table>
 
@@ -142,56 +134,92 @@
     <p>Create your first note in under 30 seconds:</p>
     <div class="steps">
       <div class="step"><div class="step-content">Click <strong>Notes</strong> in the sidebar</div></div>
-      <div class="step"><div class="step-content">Click the <span class="hover-preview popup-below"><strong>Create Note</strong><span class="preview-popup"><img src="images/Screenshot_2026-04-01_162559.png" alt="Create Note" /><div class="popup-label">Opens the note editor for your first note</div></span></span> button</div></div>
+      <div class="step"><div class="step-content">Click the <strong>Create Note</strong> button</div></div>
       <div class="step"><div class="step-content">Choose an entity type (e.g., <strong>Order</strong>)</div></div>
       <div class="step"><div class="step-content">Select a specific order from the dropdown</div></div>
-      <div class="step"><div class="step-content">Type your note content â€” you can use <strong>bold</strong>, <em>italic</em>, lists, and more</div></div>
+      <div class="step"><div class="step-content">Type your note content — you can use <strong>bold</strong>, <em>italic</em>, lists, and more</div></div>
       <div class="step"><div class="step-content">Click <strong>Save</strong></div></div>
     </div>
 
     <h2 id="your-first-task">Your First Task</h2>
     <div class="steps">
       <div class="step"><div class="step-content">Click <strong>Tasks</strong> in the sidebar</div></div>
-      <div class="step"><div class="step-content">Click <span class="hover-preview popup-below"><strong>Create Task</strong><span class="preview-popup"><img src="images/Screenshot_2026-04-01_162559.png" alt="Create Task" /><div class="popup-label">Opens the task form to create your first task</div></span></span></div></div>
+      <div class="step"><div class="step-content">Click <strong>Create Task</strong></div></div>
       <div class="step"><div class="step-content">Fill in the <strong>Title</strong> (e.g., "Follow up with customer about refund"), <strong>Priority</strong>, <strong>Due Date</strong>, and <strong>Assign To</strong></div></div>
       <div class="step"><div class="step-content">Click <strong>Save</strong></div></div>
     </div>
 
-    <div class="feature-showcase">
-      <div class="blob-tr"></div>
-      <div class="blob-bl"></div>
-      <div class="showcase-body">
-        <img class="showcase-image" src="images/Screenshot_2026-04-01_162559.png" alt="OpsPilot task creation" loading="lazy" />
+    <!-- First Task Showcase — using real task form -->
+    <div class="pro-showcase">
+      <div class="pro-showcase-grid cols-2">
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/ation_informations.png" alt="Task form — title, description, priority, status, assignee, due date" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Task Form</div>
+            <p class="pro-card-desc">Fill in title, description, priority, status, assignee, and due date — then click Save.</p>
+          </div>
+        </div>
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/dashbord/Screenshot%202026-04-08%20183912.png" alt="Today's tasks card on dashboard" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">See It on the Dashboard</div>
+            <p class="pro-card-desc">Your new task appears in the "Today's tasks" card showing open and overdue counts.</p>
+          </div>
+        </div>
       </div>
-      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Arrow at 'Attention required' banner — top-left. Task titles help document issues flagged in these alerts"><span class="ann-icon"></span> Start creating tasks</div>
-      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Arrow at 'Today's tasks' card — lower-left. Tasks you create with priorities and due dates appear in this card"><span class="ann-icon"></span> Priority &amp; due dates</div>
-      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Arrow at header toolbar — top-right. Use 'Quick actions' to create tasks from anywhere in the dashboard"><span class="ann-icon"></span> Quick task creation</div>
-      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Arrow at 'Automation performance' card — lower-right. Assigned tasks help distribute workflow-triggered work"><span class="ann-icon"></span> Assign team members</div>
     </div>
 
     <h2 id="your-first-workflow">Your First Workflow</h2>
     <div class="steps">
       <div class="step"><div class="step-content">Click <strong>Workflows</strong> in the sidebar</div></div>
-      <div class="step"><div class="step-content">Click <span class="hover-preview popup-below"><strong>Create Workflow</strong><span class="preview-popup"><img src="images/costmized_workflow_wizard_.png" alt="Create Workflow" /><div class="popup-label">Opens the workflow wizard â€” choose Event-based or Scheduled</div></span></span></div></div>
-      <div class="step"><div class="step-content">Choose a <span class="hover-preview popup-below"><strong>template</strong><span class="preview-popup"><img src="images/use_a_tamplate_.png" alt="Workflow templates" /><div class="popup-label">Pick from 28+ pre-built workflow templates</div></span></span> (e.g., "New Order â†’ Create Task") or start from scratch</div></div>
+      <div class="step"><div class="step-content">Click <span class="hover-preview popup-below"><strong>Create Workflow</strong><span class="preview-popup"><img src="images/costmized_workflow_wizard_.png" alt="Create Workflow" /><div class="popup-label">Opens the workflow wizard — choose Event-based or Scheduled</div></span></span></div></div>
+      <div class="step"><div class="step-content">Choose a <span class="hover-preview popup-below"><strong>template</strong><span class="preview-popup"><img src="images/use_a_tamplate_.png" alt="Workflow templates" /><div class="popup-label">Pick from 28+ pre-built workflow templates</div></span></span> (e.g., "New Order → Create Task") or start from scratch</div></div>
       <div class="step"><div class="step-content">Configure the <strong><a href="workflows.html#triggers">Trigger</a></strong> (what starts the workflow), <strong><a href="workflows.html#conditions">Conditions</a></strong> (optional filters), and <strong><a href="workflows.html#actions">Actions</a></strong> (what happens)</div></div>
       <div class="step"><div class="step-content">Click <span class="hover-preview popup-below"><strong>Save &amp; Activate</strong><span class="preview-popup"><img src="images/workflows_list_.png" alt="Save &amp; Activate" /><div class="popup-label">Save your workflow and set it to active immediately</div></span></span></div></div>
     </div>
 
-    <div class="feature-showcase">
-      <div class="blob-tr"></div>
-      <div class="blob-bl"></div>
-      <div class="showcase-body">
-        <img class="showcase-image" src="images/costmized_workflow_wizard_.png" alt="Workflow creation wizard" loading="lazy" />
+    <!-- First Workflow Showcase -->
+    <div class="pro-showcase">
+      <div class="pro-showcase-header">
+        <div class="pro-showcase-title">Build Your First Automation</div>
+        <div class="pro-showcase-subtitle">Choose a type, pick a template, and activate — your workflow runs 24/7.</div>
       </div>
-      <div class="showcase-annotation ann-pos-tl ann-left" data-tip="Arrow at sidebar area — 'Event-based' card visible at center-top of the wizard dialog. Choose event-based for reactionary workflows"><span class="ann-icon"></span> Choose workflow type</div>
-      <div class="showcase-annotation ann-pos-bl ann-left" data-tip="Arrow near the 'Scheduled' card — lower portion of the wizard dialog. Choose scheduled for recurring daily/weekly/monthly tasks"><span class="ann-icon"></span> 'Scheduled' option</div>
-      <div class="showcase-annotation ann-pos-tr ann-right" data-tip="Arrow at 'Total workflows', 'Active', 'Success rate' stats cards — top-right above the dialog"><span class="ann-icon"></span> Workflow stats overview</div>
-      <div class="showcase-annotation ann-pos-br ann-right" data-tip="Arrow at the 'Close' button — bottom-right of the dialog. Or click 'Use a template' for pre-built workflows"><span class="ann-icon"></span> Templates or from scratch</div>
+      <div class="pro-flow">
+        <div class="pro-flow-step">
+          <div class="pro-flow-badge step-num">1</div>
+          <div class="pro-flow-card">
+            <img src="images/costmized_workflow_wizard_.png" alt="Create new workflow — Event-based or Scheduled" loading="lazy" />
+            <div class="pro-card-body">
+              <div class="pro-card-label">Choose Type</div>
+              <p class="pro-card-desc">Event-based (reacts to store events) or Scheduled (runs on a timer).</p>
+            </div>
+          </div>
+        </div>
+        <div class="pro-flow-step">
+          <div class="pro-flow-badge step-num">2</div>
+          <div class="pro-flow-card">
+            <img src="images/use_a_tamplate_.png" alt="Choose a starting point — template list" loading="lazy" />
+            <div class="pro-card-body">
+              <div class="pro-card-label">Pick a Template</div>
+              <p class="pro-card-desc">28+ pre-built templates for common scenarios, or start from scratch.</p>
+            </div>
+          </div>
+        </div>
+        <div class="pro-flow-step">
+          <div class="pro-flow-badge step-num">3</div>
+          <div class="pro-flow-card">
+            <img src="images/you_can_manage_your_woek_flow_hear_.png" alt="Workflow detail page with operational summary and flow" loading="lazy" />
+            <div class="pro-card-body">
+              <div class="pro-card-label">Manage &amp; Monitor</div>
+              <p class="pro-card-desc">View summary, run tests, check history, and pause or edit anytime.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="callout callout-tip">
-      <span class="callout-icon">ðŸ’¡</span>
+      <span class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b873e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></span>
       <div>Use the <span class="hover-preview"><strong>"Test with latest order"</strong><span class="preview-popup"><img src="images/you_can_manage_your_woek_flow_hear_.png" alt="Test workflow" /><div class="popup-label">Run a test using real store data without waiting for an event</div></span></span> button to try your workflow without waiting for a real event.</div>
     </div>
 
@@ -200,7 +228,20 @@
     <div class="steps">
       <div class="step"><div class="step-content">Go to <strong>Settings</strong> in the sidebar</div></div>
       <div class="step"><div class="step-content">Scroll to <strong>Team Management</strong></div></div>
-      <div class="step"><div class="step-content">Your Shopify staff members appear automatically â€” assign roles and permissions as needed</div></div>
+      <div class="step"><div class="step-content">Your Shopify staff members appear automatically — assign roles and permissions as needed</div></div>
+    </div>
+
+    <!-- Team Showcase -->
+    <div class="pro-showcase">
+      <div class="pro-showcase-grid cols-1">
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/sitings/Screenshot%202026-04-08%20181715.png" alt="Team management — user roles with Admin/User toggles" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Team Management</div>
+            <p class="pro-card-desc">Staff members are auto-detected from Shopify. Toggle roles between Admin and User to control access.</p>
+          </div>
+        </div>
+      </div>
     </div>
 
   </div>
