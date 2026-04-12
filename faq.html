@@ -14,6 +14,10 @@
   <div class="sidebar-header">
     <a class="logo" href="index.html"><span class="back-arrow">&lsaquo;</span> OpsPilot Help Center</a>
   </div>
+  <div class="sidebar-search">
+    <input type="text" id="doc-search" placeholder="Search docs…" autocomplete="off" />
+    <div id="search-results" class="search-results" style="display:none;"></div>
+  </div>
   <nav>
     <a href="index.html">Home</a>
     <div class="section-label">Getting Started</div>
@@ -49,11 +53,14 @@
         </div>
       </div>
     </div>
+    <a href="activity.html">Activity History</a>
     <div class="section-label">Configuration</div>
     <a href="settings.html">Settings</a>
     <a href="integrations.html">Integrations</a>
     <div class="section-label">Help</div>
     <a href="faq.html" class="active">FAQ &amp; Troubleshooting</a>
+    <a href="troubleshooting.html">Advanced Troubleshooting</a>
+    <a href="api-reference.html">API Reference</a>
   </nav>
 </aside>
 
@@ -63,7 +70,7 @@
 
     <div class="section-hero">
       <h1>FAQ &amp; Troubleshooting</h1>
-      <div class="last-updated">Last updated on 1 April 2026</div>
+      <div class="last-updated">Last updated on 10 April 2026</div>
       <p>Common questions, known issues, and how to get help.</p>
     </div>
 
@@ -134,7 +141,7 @@
     </ul>
 
     <h3 id="custom-statuses">Can I create custom task statuses?</h3>
-    <p>Yes. Go to <strong><a href="settings.html#creating-custom-statuses">Settings &rarr; Task Statuses</a></strong> and click <span class="hover-preview"><strong>Add Status</strong><span class="preview-popup"><img src="images/sitings/Screenshot%202026-04-08%20181909.png" alt="Task statuses configuration" /><div class="popup-label">Create a new custom status for your task workflow</div></span></span>.</p>
+    <p>Yes. Go to <strong><a href="settings.html#creating-custom-statuses">Settings &rarr; Task Statuses</a></strong> and click <span class="hover-preview"><strong>Add Status</strong><span class="preview-popup"><img src="images/settings/Screenshot%202026-04-08%20181909.png" alt="Task statuses configuration" /><div class="popup-label">Create a new custom status for your task workflow</div></span></span>.</p>
 
     <h3 id="table-vs-kanban">What's the difference between Table and Kanban view?</h3>
     <p><strong><a href="tasks.html#table-view">Table</a></strong> shows tasks in a spreadsheet-style list — good for sorting. <strong><a href="tasks.html#kanban-board-view">Kanban</a></strong> shows cards on a board organized by status — good for visual tracking and drag-and-drop.</p>
@@ -175,6 +182,10 @@
 
   </div>
 </div>
+    <div class="page-nav">
+      <a class="page-nav-btn page-nav-prev" href="activity.html">&#8592; Activity History</a>
+      <a class="page-nav-btn page-nav-next" href="troubleshooting.html">Advanced Troubleshooting &#8594;</a>
+    </div>
 
 <script src="nav.js"></script>
 </body>

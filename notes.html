@@ -14,6 +14,10 @@
   <div class="sidebar-header">
     <a class="logo" href="index.html"><span class="back-arrow">&lsaquo;</span> OpsPilot Help Center</a>
   </div>
+  <div class="sidebar-search">
+    <input type="text" id="doc-search" placeholder="Search docs…" autocomplete="off" />
+    <div id="search-results" class="search-results" style="display:none;"></div>
+  </div>
   <nav>
     <a href="index.html">Home</a>
     <div class="section-label">Getting Started</div>
@@ -49,11 +53,14 @@
         </div>
       </div>
     </div>
+    <a href="activity.html">Activity History</a>
     <div class="section-label">Configuration</div>
     <a href="settings.html">Settings</a>
     <a href="integrations.html">Integrations</a>
     <div class="section-label">Help</div>
     <a href="faq.html">FAQ &amp; Troubleshooting</a>
+    <a href="troubleshooting.html">Advanced Troubleshooting</a>
+    <a href="api-reference.html">API Reference</a>
   </nav>
 </aside>
 
@@ -63,7 +70,7 @@
 
     <div class="section-hero">
       <h1>Notes</h1>
-      <div class="last-updated">Last updated on 1 April 2026</div>
+      <div class="last-updated">Last updated on 10 April 2026</div>
       <p>Add comments, instructions, and context to your Shopify orders, products, and customers. Like sticky notes for your store data.</p>
     </div>
 
@@ -201,7 +208,7 @@
           </div>
         </div>
         <div class="pro-card">
-          <img class="pro-card-img" src="images/dashbord/Screenshot%202026-04-08%20183912.png" alt="Today's tasks dashboard card" loading="lazy" />
+          <img class="pro-card-img" src="images/dashboard/Screenshot%202026-04-08%20183912.png" alt="Today's tasks dashboard card" loading="lazy" />
           <div class="pro-card-body">
             <div class="pro-card-label">Track on Dashboard</div>
             <p class="pro-card-desc">Converted tasks appear in the "Today's tasks" dashboard card alongside manually created and workflow-generated tasks.</p>
@@ -225,6 +232,10 @@
 
   </div>
 </div>
+    <div class="page-nav">
+      <a class="page-nav-btn page-nav-prev" href="dashboard.html">&#8592; Dashboard</a>
+      <a class="page-nav-btn page-nav-next" href="tasks.html">Tasks &#8594;</a>
+    </div>
 
 <script src="nav.js"></script>
 </body>

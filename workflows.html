@@ -14,6 +14,10 @@
   <div class="sidebar-header">
     <a class="logo" href="index.html"><span class="back-arrow">&lsaquo;</span> OpsPilot Help Center</a>
   </div>
+  <div class="sidebar-search">
+    <input type="text" id="doc-search" placeholder="Search docs…" autocomplete="off" />
+    <div id="search-results" class="search-results" style="display:none;"></div>
+  </div>
   <nav>
     <a href="index.html">Home</a>
     <div class="section-label">Getting Started</div>
@@ -54,11 +58,14 @@
         <a href="workflows.html#testing-a-workflow" style="padding-left:28px;font-size:13px;color:var(--text-muted);">Testing</a>
       </div>
     </div>
+    <a href="activity.html">Activity History</a>
     <div class="section-label">Configuration</div>
     <a href="settings.html">Settings</a>
     <a href="integrations.html">Integrations</a>
     <div class="section-label">Help</div>
     <a href="faq.html">FAQ &amp; Troubleshooting</a>
+    <a href="troubleshooting.html">Advanced Troubleshooting</a>
+    <a href="api-reference.html">API Reference</a>
   </nav>
 </aside>
 
@@ -68,7 +75,7 @@
 
     <div class="section-hero">
       <h1>Workflows</h1>
-      <div class="last-updated">Last updated on 1 April 2026</div>
+      <div class="last-updated">Last updated on 10 April 2026</div>
       <p>Automate repetitive operations &mdash; when something happens in your store, OpsPilot can create tasks, send emails, post to Slack, and more.</p>
     </div>
 
@@ -383,21 +390,49 @@
     </ul>
 
     <h2 id="scheduled-workflows">Scheduled Workflows</h2>
-    <p>Run workflows on a repeating schedule instead of reacting to events. Choose a data source (orders, products, customers, or none), set a filter, and pick a frequency.</p>
+    <p>Scheduled workflows run on a repeating timer instead of reacting to store events. They are ideal for batch operations: checking unfulfilled orders every morning, sending a weekly summary note, or reviewing low inventory on a set schedule.</p>
 
+    <h3 id="creating-a-scheduled-workflow">Setting Up a Scheduled Workflow</h3>
+    <div class="steps">
+      <div class="step"><div class="step-content">Click <strong>New Workflow</strong> and choose <strong>Scheduled</strong></div></div>
+      <div class="step"><div class="step-content">Give it a name (e.g., "Daily Unfulfilled Orders Check")</div></div>
+      <div class="step"><div class="step-content">Choose a <strong>Data Source</strong>: Orders, Products, Customers, or None (for reminders with no entity)</div></div>
+      <div class="step"><div class="step-content">Optionally add <strong>Conditions</strong> to filter which records are processed (e.g., only unfulfilled orders)</div></div>
+      <div class="step"><div class="step-content">Set the <strong>Frequency</strong> (see table below) and the <strong>Timezone</strong> (configured in <a href="settings.html#timezone">Settings &rarr; Timezone</a>)</div></div>
+      <div class="step"><div class="step-content">Add <strong>Actions</strong> — Create Task, Send Email, Slack message, etc.</div></div>
+      <div class="step"><div class="step-content">Click <strong>Save &amp; Activate</strong></div></div>
+    </div>
+
+    <h3 id="scheduled-frequency-options">Frequency Options</h3>
     <table>
-      <thead><tr><th>Frequency</th><th>Configuration</th></tr></thead>
+      <thead><tr><th>Frequency</th><th>Configuration</th><th>Example Use</th></tr></thead>
       <tbody>
-        <tr><td><strong>Hourly</strong></td><td>Runs every hour</td></tr>
-        <tr><td><strong>Daily</strong></td><td>Pick one or more times</td></tr>
-        <tr><td><strong>Weekly</strong></td><td>Pick a day and time</td></tr>
-        <tr><td><strong>Monthly</strong></td><td>Pick a day of month and time</td></tr>
-        <tr><td><strong>Custom Interval</strong></td><td>Every X hours/days/weeks</td></tr>
+        <tr><td><strong>Hourly</strong></td><td>Runs every hour</td><td>Check for new abandoned checkouts every hour</td></tr>
+        <tr><td><strong>Daily</strong></td><td>Pick a time (or multiple)</td><td>9 AM daily unfulfilled orders review</td></tr>
+        <tr><td><strong>Weekly</strong></td><td>Pick a day and time</td><td>Monday 8 AM weekly summary note</td></tr>
+        <tr><td><strong>Monthly</strong></td><td>Pick a day of month and time</td><td>1st of month inventory restock check</td></tr>
+        <tr><td><strong>Custom Interval</strong></td><td>Every X hours/days/weeks</td><td>Every 4 hours, every 2 days</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout-note">
+      <span class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1473e6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></span>
+      <div><strong>Aggregate execution:</strong> When a scheduled workflow has a data source (e.g., Orders), it processes each matching record and creates one task/note per entity. The timezone used for "daily", "weekly", and "monthly" schedules is set in <a href="settings.html#timezone">Settings &rarr; Timezone</a>.</div>
+    </div>
+
+    <h3 id="scheduled-vs-event">Scheduled vs. Event-Based</h3>
+    <table>
+      <thead><tr><th></th><th>Event-Based</th><th>Scheduled</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Fires when</strong></td><td>Instantly on a store event</td><td>On a fixed timer</td></tr>
+        <tr><td><strong>Best for</strong></td><td>Real-time reactions</td><td>Batch checks &amp; digests</td></tr>
+        <tr><td><strong>Data source</strong></td><td>The event payload (one record)</td><td>Queried at run time (many records)</td></tr>
+        <tr><td><strong>Conditions</strong></td><td>Filter the event payload</td><td>Filter the queried records</td></tr>
       </tbody>
     </table>
 
     <h2 id="workflow-templates">Workflow Templates</h2>
-    <p>OpsPilot includes <span class="hover-preview"><strong>28+ pre-built templates</strong><span class="preview-popup"><img src="images/use_a_tamplate_.png" alt="Template gallery" /><div class="popup-label">Browse and select from pre-built workflow templates</div></span></span> to get you started quickly. Browse the template gallery when creating a new workflow.</p>
+    <p>OpsPilot includes <span class="hover-preview"><strong>40+ pre-built templates</strong><span class="preview-popup"><img src="images/use_a_tamplate_.png" alt="Template gallery" /><div class="popup-label">Browse and select from pre-built workflow templates</div></span></span> to get you started quickly. Browse the template gallery when creating a new workflow.</p>
 
     <!-- Templates Showcase -->
     <div class="pro-showcase">
@@ -418,6 +453,79 @@
         </div>
       </div>
     </div>
+
+    <h3 id="template-catalog">Template Catalog</h3>
+    <p>All templates are fully customizable after adding them. Click <strong>Use template</strong> to load a template, then edit it as needed.</p>
+
+    <h4>Order Management</h4>
+    <table>
+      <thead><tr><th>Template</th><th>Trigger</th><th>What It Does</th></tr></thead>
+      <tbody>
+        <tr><td><strong>VIP Order Alert</strong></td><td>Order Created</td><td>Creates a high-priority task and Slack alert for orders above a set value</td></tr>
+        <tr><td><strong>Priority Order</strong></td><td>Order Created</td><td>Creates an urgent task when an order is tagged at creation</td></tr>
+        <tr><td><strong>Priority Tag Added</strong></td><td>Order Updated</td><td>Fires when a priority tag is added to an existing order</td></tr>
+        <tr><td><strong>Payment Pending Review</strong></td><td>Order Created</td><td>Creates a task to review orders with pending payment status</td></tr>
+        <tr><td><strong>Refunded Order Follow-Up</strong></td><td>Order Updated</td><td>Creates a follow-up task and sends a customer email on refund</td></tr>
+        <tr><td><strong>Order Fulfillment Reminder</strong></td><td>Order Created</td><td>Sets a delayed task reminder if order is still unfulfilled after X hours</td></tr>
+        <tr><td><strong>Unfulfilled Orders Monitor</strong></td><td>Scheduled (Daily)</td><td>Daily digest task listing all open unfulfilled orders</td></tr>
+        <tr><td><strong>Unpaid COD Confirmation</strong></td><td>Scheduled (Daily)</td><td>Monitors cash-on-delivery orders waiting for payment confirmation</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Customer Management</h4>
+    <table>
+      <thead><tr><th>Template</th><th>Trigger</th><th>What It Does</th></tr></thead>
+      <tbody>
+        <tr><td><strong>New Customer Welcome</strong></td><td>Customer Created</td><td>Sends a welcome email to new customers</td></tr>
+        <tr><td><strong>High-Value Customer Alert</strong></td><td>Customer Created</td><td>Creates a VIP task and Slack alert for high-lifetime-value customers</td></tr>
+        <tr><td><strong>New Customer Task</strong></td><td>Customer Created</td><td>Creates an onboarding task for every new customer account</td></tr>
+        <tr><td><strong>Customer Tag VIP Note</strong></td><td>Customer Created</td><td>Auto-creates a pinned note when a customer is tagged as VIP</td></tr>
+        <tr><td><strong>New Customers Daily Digest</strong></td><td>Scheduled (Daily)</td><td>Sends a daily note summarizing new customer signups</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Product &amp; Inventory</h4>
+    <table>
+      <thead><tr><th>Template</th><th>Trigger</th><th>What It Does</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Product Update Review</strong></td><td>Product Updated</td><td>Creates a QA review task whenever a product is modified</td></tr>
+        <tr><td><strong>Product Draft Review</strong></td><td>Product Updated</td><td>Task created when a product is moved to Draft status</td></tr>
+        <tr><td><strong>Weekly Product Review</strong></td><td>Scheduled (Weekly)</td><td>Weekly note summarizing products changed in the past 7 days</td></tr>
+        <tr><td><strong>Inventory Critical Restock</strong></td><td>Inventory Updated</td><td>Urgent task + Slack alert when stock drops to a critical level</td></tr>
+        <tr><td><strong>Low Stock Notification</strong></td><td>Inventory Updated</td><td>Email alert when a product falls below a low-stock threshold</td></tr>
+        <tr><td><strong>Low Inventory Monitor</strong></td><td>Scheduled (Daily)</td><td>Daily digest of all products currently below par level</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Checkout &amp; Recovery</h4>
+    <table>
+      <thead><tr><th>Template</th><th>Trigger</th><th>What It Does</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Abandoned Checkout Recovery</strong></td><td>Checkout Abandoned</td><td>Sends a recovery email after a configurable delay</td></tr>
+        <tr><td><strong>High-Value Checkout Escalation</strong></td><td>Checkout Abandoned</td><td>Creates a high-priority task for abandoned checkouts above a set value</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Scheduled Reports &amp; Reminders</h4>
+    <table>
+      <thead><tr><th>Template</th><th>Schedule</th><th>What It Does</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Daily Review Task</strong></td><td>Daily</td><td>Creates a daily review task at a set time each morning</td></tr>
+        <tr><td><strong>Weekly Summary Note</strong></td><td>Weekly</td><td>Auto-creates a note summarizing the week's activity</td></tr>
+        <tr><td><strong>Inbox Cleanup Reminder</strong></td><td>Weekly</td><td>Reminds team to review and close stale tasks</td></tr>
+        <tr><td><strong>Recent Orders Digest</strong></td><td>Scheduled</td><td>Logs recent orders to a Google Sheet for reporting</td></tr>
+        <tr><td><strong>Recent Customers Review</strong></td><td>Scheduled</td><td>Logs new customer data to a Google Sheet</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Manual Workflows</h4>
+    <table>
+      <thead><tr><th>Template</th><th>Trigger</th><th>What It Does</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Manual Escalation</strong></td><td>Manual Trigger</td><td>On-demand urgent task creation + Slack notification</td></tr>
+        <tr><td><strong>Manual Quick Task</strong></td><td>Manual Trigger</td><td>Quickly create a standard task with pre-filled fields</td></tr>
+      </tbody>
+    </table>
 
     <h2 id="workflow-management">Workflow Management Screens</h2>
 
@@ -451,6 +559,10 @@
 
   </div>
 </div>
+    <div class="page-nav">
+      <a class="page-nav-btn page-nav-prev" href="tasks.html">&#8592; Tasks</a>
+      <a class="page-nav-btn page-nav-next" href="template-variables.html">Template Variables &#8594;</a>
+    </div>
 
 <script src="nav.js"></script>
 </body>

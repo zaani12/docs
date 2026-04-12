@@ -14,6 +14,10 @@
   <div class="sidebar-header">
     <a class="logo" href="index.html"><span class="back-arrow">&lsaquo;</span> OpsPilot Help Center</a>
   </div>
+  <div class="sidebar-search">
+    <input type="text" id="doc-search" placeholder="Search docs…" autocomplete="off" />
+    <div id="search-results" class="search-results" style="display:none;"></div>
+  </div>
   <nav>
     <a href="index.html">Home</a>
     <div class="section-label">Getting Started</div>
@@ -49,11 +53,14 @@
         </div>
       </div>
     </div>
+    <a href="activity.html">Activity History</a>
     <div class="section-label">Configuration</div>
     <a href="settings.html">Settings</a>
     <a href="integrations.html" class="active">Integrations</a>
     <div class="section-label">Help</div>
     <a href="faq.html">FAQ &amp; Troubleshooting</a>
+    <a href="troubleshooting.html">Advanced Troubleshooting</a>
+    <a href="api-reference.html">API Reference</a>
   </nav>
 </aside>
 
@@ -63,7 +70,7 @@
 
     <div class="section-hero">
       <h1>Integrations</h1>
-      <div class="last-updated">Last updated on 1 April 2026</div>
+      <div class="last-updated">Last updated on 10 April 2026</div>
       <p>Connect Email, Slack, and Google Sheets to power your workflow actions.</p>
     </div>
 
@@ -83,14 +90,14 @@
           </div>
         </div>
         <div class="pro-card">
-          <img class="pro-card-img" src="images/sitings/Screenshot%202026-04-08%20184825.png" alt="Slack setup guide — Bot Token vs Webhook" loading="lazy" />
+          <img class="pro-card-img" src="images/settings/Screenshot%202026-04-08%20184825.png" alt="Slack setup guide — Bot Token vs Webhook" loading="lazy" />
           <div class="pro-card-body">
             <div class="pro-card-label">Slack Integration</div>
             <p class="pro-card-desc">Choose Bot Token (multi-channel) or Webhook (single channel) to post alerts.</p>
           </div>
         </div>
         <div class="pro-card">
-          <img class="pro-card-img" src="images/sitings/Screenshot%202026-04-08%20181328.png" alt="Google Sheets setup guide — Spreadsheet ID and sharing" loading="lazy" />
+          <img class="pro-card-img" src="images/settings/Screenshot%202026-04-08%20181328.png" alt="Google Sheets setup guide — Spreadsheet ID and sharing" loading="lazy" />
           <div class="pro-card-body">
             <div class="pro-card-label">Google Sheets Integration</div>
             <p class="pro-card-desc">Paste your Spreadsheet ID, share as Editor, and log workflow data automatically.</p>
@@ -163,14 +170,14 @@
       <div class="step"><div class="step-content">Under OAuth &amp; Permissions, add scopes: <code>chat:write</code> and <code>chat:write.public</code></div></div>
       <div class="step"><div class="step-content">Install the app to your workspace and copy the <strong>Bot User OAuth Token</strong></div></div>
       <div class="step"><div class="step-content">In OpsPilot: <strong>Settings &rarr; Integrations &rarr; Slack</strong>, paste the token</div></div>
-      <div class="step"><div class="step-content">Set a <strong>Default Channel</strong> (e.g., <code>#all-zazni</code>) and click <span class="hover-preview popup-below"><strong>Save Slack settings</strong><span class="preview-popup"><img src="images/sitings/Screenshot%202026-04-08%20184825.png" alt="Slack setup guide" /><div class="popup-label">Click 'Setup guide' next to Slack to see step-by-step instructions</div></span></span>, then <strong>Verify connection</strong></div></div>
+      <div class="step"><div class="step-content">Set a <strong>Default Channel</strong> (e.g., <code>#all-zazni</code>) and click <span class="hover-preview popup-below"><strong>Save Slack settings</strong><span class="preview-popup"><img src="images/settings/Screenshot%202026-04-08%20184825.png" alt="Slack setup guide" /><div class="popup-label">Click 'Setup guide' next to Slack to see step-by-step instructions</div></span></span>, then <strong>Verify connection</strong></div></div>
     </div>
 
     <!-- Slack Showcase -->
     <div class="pro-showcase">
       <div class="pro-showcase-grid cols-1">
         <div class="pro-card">
-          <img class="pro-card-img" src="images/sitings/Screenshot%202026-04-08%20184825.png" alt="How to configure Slack — Option A: Bot Token (recommended) with chat:write scopes, Option B: Incoming Webhook" loading="lazy" />
+          <img class="pro-card-img" src="images/settings/Screenshot%202026-04-08%20184825.png" alt="How to configure Slack — Option A: Bot Token (recommended) with chat:write scopes, Option B: Incoming Webhook" loading="lazy" />
           <div class="pro-card-body">
             <div class="pro-card-label">Slack Setup Guide</div>
             <p class="pro-card-desc"><strong>Option A — Bot Token:</strong> Go to api.slack.com/apps, add chat:write and chat:write.public scopes, install, and copy the Bot User OAuth Token (xoxb-). <strong>Option B — Webhook:</strong> Activate Incoming Webhooks, add a new webhook, and copy the URL. Bot Token enables multi-channel posting; Webhook is simpler but single-channel only.</p>
@@ -208,7 +215,7 @@
     <h3 id="sheets-step-3">Step 3: Add to OpsPilot</h3>
     <div class="steps">
       <div class="step"><div class="step-content">Go to <strong>Settings &rarr; Integrations &rarr; Google Sheets</strong></div></div>
-      <div class="step"><div class="step-content">Click <span class="hover-preview popup-below"><strong>Setup guide</strong><span class="preview-popup"><img src="images/sitings/Screenshot%202026-04-08%20181328.png" alt="Google Sheets setup guide" /><div class="popup-label">Click 'Setup guide' next to Google Sheets for step-by-step connection instructions</div></span></span> for full instructions &mdash; open your Google Sheet URL and copy the <strong>Spreadsheet ID</strong> (the long string between <code>/d/</code> and <code>/edit</code>)</div></div>
+      <div class="step"><div class="step-content">Click <span class="hover-preview popup-below"><strong>Setup guide</strong><span class="preview-popup"><img src="images/settings/Screenshot%202026-04-08%20181328.png" alt="Google Sheets setup guide" /><div class="popup-label">Click 'Setup guide' next to Google Sheets for step-by-step connection instructions</div></span></span> for full instructions &mdash; open your Google Sheet URL and copy the <strong>Spreadsheet ID</strong> (the long string between <code>/d/</code> and <code>/edit</code>)</div></div>
       <div class="step"><div class="step-content">Share the sheet: click <strong>Share</strong>, set General access to <strong>"Anyone with the link"</strong>, and set the permission to <strong>"Editor"</strong></div></div>
       <div class="step"><div class="step-content">Paste the Spreadsheet ID into the <strong>Default Spreadsheet ID</strong> field and click <strong>Save default spreadsheet</strong></div></div>
       <div class="step"><div class="step-content">Click <strong>Verify connection</strong> to confirm OpsPilot can write to your sheet</div></div>
@@ -218,7 +225,7 @@
     <div class="pro-showcase">
       <div class="pro-showcase-grid cols-1">
         <div class="pro-card">
-          <img class="pro-card-img" src="images/sitings/Screenshot%202026-04-08%20181328.png" alt="How to connect Google Sheets — get Spreadsheet ID from URL, share as Editor, paste ID, save and verify" loading="lazy" />
+          <img class="pro-card-img" src="images/settings/Screenshot%202026-04-08%20181328.png" alt="How to connect Google Sheets — get Spreadsheet ID from URL, share as Editor, paste ID, save and verify" loading="lazy" />
           <div class="pro-card-body">
             <div class="pro-card-label">Google Sheets Setup Guide</div>
             <p class="pro-card-desc"><strong>Step 1:</strong> Copy the Spreadsheet ID from your Google Sheet URL (between /d/ and /edit). <strong>Step 2:</strong> Share the sheet with "Anyone with the link" as Editor. <strong>Step 3:</strong> Paste the ID into OpsPilot, click Save, then Verify connection.</p>
@@ -229,6 +236,10 @@
 
   </div>
 </div>
+    <div class="page-nav">
+      <a class="page-nav-btn page-nav-prev" href="settings.html">&#8592; Settings</a>
+      <a class="page-nav-btn page-nav-next" href="activity.html">Activity History &#8594;</a>
+    </div>
 
 <script src="nav.js"></script>
 </body>

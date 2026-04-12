@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Activity History — OpsPilot</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="sidebar-overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <a class="logo" href="index.html"><span class="back-arrow">&lsaquo;</span> OpsPilot Help Center</a>
+  </div>
+  <div class="sidebar-search">
+    <input type="text" id="doc-search" placeholder="Search docs…" autocomplete="off" />
+    <div id="search-results" class="search-results" style="display:none;"></div>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <div class="section-label">Getting Started</div>
+    <a href="getting-started.html">Getting Started</a>
+    <div class="section-label">Features</div>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="notes.html">Notes</a>
+    <a href="tasks.html">Tasks</a>
+    <div class="nav-tree">
+      <a href="workflows.html">Workflows</a>
+      <div class="tree-branch">
+        <div class="tree-node">
+          <div class="tree-toggle" onclick="toggleTree(this)">
+            <span class="tree-arrow">&#9656;</span> Event-based
+          </div>
+          <div class="tree-children">
+            <a href="workflows.html#event-based-triggers">Triggers</a>
+            <a href="workflows.html#conditions">Conditions</a>
+            <a href="workflows.html#actions">Actions</a>
+            <a href="template-variables.html">Template Variables</a>
+            <a href="workflows.html#delayed-actions">Delayed Actions</a>
+            <a href="workflows.html#deduplication">Deduplication</a>
+          </div>
+        </div>
+        <div class="tree-node">
+          <div class="tree-toggle" onclick="toggleTree(this)">
+            <span class="tree-arrow">&#9656;</span> Scheduled
+          </div>
+          <div class="tree-children">
+            <a href="workflows.html#scheduled-trigger">Scheduled Trigger</a>
+            <a href="workflows.html#scheduled-workflows">Scheduled Workflows</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="activity.html" class="active">Activity History</a>
+    <div class="section-label">Configuration</div>
+    <a href="settings.html">Settings</a>
+    <a href="integrations.html">Integrations</a>
+    <div class="section-label">Help</div>
+    <a href="faq.html">FAQ &amp; Troubleshooting</a>
+    <a href="troubleshooting.html">Advanced Troubleshooting</a>
+    <a href="api-reference.html">API Reference</a>
+  </nav>
+</aside>
+
+<div class="main">
+  <button class="hamburger" onclick="toggleSidebar()">&#9776;</button>
+  <div class="content">
+
+    <div class="section-hero">
+      <h1>Activity History</h1>
+      <div class="last-updated">Last updated on 10 April 2026</div>
+      <p>A full audit log of everything that happens inside OpsPilot — task changes, workflow executions, notes, team actions, and more.</p>
+    </div>
+
+    <!-- Hero Showcase -->
+    <div class="pro-showcase">
+      <div class="pro-showcase-header">
+        <div class="pro-showcase-logo">OpsPilot</div>
+        <div class="pro-showcase-title">Complete Visibility.</div>
+        <div class="pro-showcase-subtitle">See who did what, when, and why — across every feature of your store operations.</div>
+      </div>
+      <div class="pro-showcase-grid cols-1">
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/history/Screenshot%202026-04-09%20143316.png" alt="Recent activity feed showing action log entries with user, action, and time" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Activity Feed</div>
+            <p class="pro-card-desc">Each row shows the action performed, the user who performed it, the entity affected, and the timestamp. Click any row to see full detail.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2 id="what-is-activity-history">What Is Activity History?</h2>
+    <p>Activity History is your store's operational audit log. Every significant action taken in OpsPilot is recorded here — whether it was done by a team member manually, or automatically by a workflow.</p>
+    <p>Use it to:</p>
+    <ul>
+      <li>Track who created, updated, or deleted tasks and notes</li>
+      <li>See every workflow execution with its result and payload</li>
+      <li>Audit integration actions (emails sent, Slack messages posted, Sheets rows added)</li>
+      <li>Investigate unexpected behavior or missed automations</li>
+      <li>Demonstrate operational activity to stakeholders</li>
+    </ul>
+
+    <h2 id="accessing-activity-history">Accessing Activity History</h2>
+    <div class="steps">
+      <div class="step"><div class="step-content">Click <strong>History</strong> in the OpsPilot sidebar (inside Shopify Admin)</div></div>
+      <div class="step"><div class="step-content">The Activity History page loads showing the most recent events first</div></div>
+      <div class="step"><div class="step-content">Use the filters to narrow down events by type, user, entity, or date</div></div>
+    </div>
+
+    <div class="callout callout-note">
+      <span class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1473e6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></span>
+      <div>You can also see a <strong>preview</strong> of recent activity on the <a href="dashboard.html#recent-activity">Dashboard &rarr; Recent Activity</a> feed. Click "View all" to go to the full Activity History.</div>
+    </div>
+
+    <h2 id="activity-log-entries">Activity Log Entries</h2>
+    <p>Each entry in the activity log contains:</p>
+    <table>
+      <thead><tr><th>Field</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Timestamp</strong></td><td>Exact date and time the action occurred (in your store timezone)</td></tr>
+        <tr><td><strong>User / Source</strong></td><td>The team member who acted, or "Automation" for workflow-triggered actions</td></tr>
+        <tr><td><strong>Action</strong></td><td>What was done (e.g., "Task created", "Workflow executed", "Note deleted")</td></tr>
+        <tr><td><strong>Entity</strong></td><td>The specific task, note, workflow, order, or customer involved</td></tr>
+        <tr><td><strong>Result / Status</strong></td><td>For workflow runs: SUCCESS, FAILED, SKIPPED, or QUEUED</td></tr>
+        <tr><td><strong>Details</strong></td><td>Expanded payload: field values changed, action results, error messages</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="filtering-activity">Filtering Activity</h2>
+    <p>Use the filter bar to narrow down entries:</p>
+    <table>
+      <thead><tr><th>Filter</th><th>Options</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Entity Type</strong></td><td>Task, Note, Workflow, Order, Customer, Product</td></tr>
+        <tr><td><strong>Action Type</strong></td><td>Created, Updated, Deleted, Executed, Sent, Failed, Skipped</td></tr>
+        <tr><td><strong>User</strong></td><td>Any team member, or "Automation" for workflow-triggered actions</td></tr>
+        <tr><td><strong>Date Range</strong></td><td>Today, last 7 days, last 30 days, or custom date picker</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="workflow-execution-logs">Workflow Execution Logs</h2>
+    <p>Workflow executions are the most detailed entries in Activity History. Each run logs:</p>
+    <ul>
+      <li>The <strong>workflow name</strong> and trigger type</li>
+      <li>The <strong>triggering entity</strong> (order ID, customer ID, etc.)</li>
+      <li>Overall <strong>run status</strong>: SUCCESS, FAILED, SKIPPED, or QUEUED</li>
+      <li>Each <strong>action result</strong> individually (a workflow with 3 actions shows 3 sub-results)</li>
+      <li>Any <strong>error messages</strong> with the reason for failure or skip</li>
+      <li>A <strong>payload snapshot</strong> — the data available when the workflow ran</li>
+    </ul>
+
+    <h3 id="workflow-run-statuses">Workflow Run Statuses</h3>
+    <table>
+      <thead><tr><th>Status</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td><span class="badge badge-green">SUCCESS</span></td><td>All actions completed without error</td></tr>
+        <tr><td><span class="badge badge-red">FAILED</span></td><td>One or more actions encountered a permanent error (e.g., invalid workflow schema, missing integration credentials)</td></tr>
+        <tr><td><span class="badge badge-yellow">SKIPPED</span></td><td>Conditions were not met, plan limit reached, deduplication active, or all actions were filtered by plan tier</td></tr>
+        <tr><td><span class="badge badge-blue">QUEUED</span></td><td>A delayed action is waiting to run at a future time</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout-tip">
+      <span class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b873e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></span>
+      <div>SKIPPED is not an error — it means the workflow ran and determined it didn't need to act (conditions not met, dedup window active, etc.). Check <a href="troubleshooting.html#workflow-errors">Advanced Troubleshooting</a> if you expected it to run.</div>
+    </div>
+
+    <h2 id="task-timeline">Task Timeline vs. Activity History</h2>
+    <p>OpsPilot has two complementary audit views:</p>
+    <table>
+      <thead><tr><th></th><th>Task Timeline</th><th>Activity History</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Scope</strong></td><td>A single task — shows every status change and edit on that task</td><td>Entire app — all tasks, notes, workflows, and integrations</td></tr>
+        <tr><td><strong>Where</strong></td><td>Inside the task detail view</td><td>History page in the sidebar</td></tr>
+        <tr><td><strong>Best for</strong></td><td>Investigating one specific task's history</td><td>Cross-feature audit, compliance, debugging automations</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="exporting-activity">Exporting Activity</h2>
+    <p>To export activity data for reporting or compliance purposes, use a <a href="workflows.html#add-to-google-sheet">Google Sheets workflow action</a> to automatically log activity to a spreadsheet as it happens — this is the recommended approach for ongoing audit trails.</p>
+
+    <div class="page-nav">
+      <a class="page-nav-btn page-nav-prev" href="integrations.html">&#8592; Integrations</a>
+      <a class="page-nav-btn page-nav-next" href="faq.html">FAQ &amp; Troubleshooting &#8594;</a>
+    </div>
+
+</div>
+</div>
+
+<script src="nav.js"></script>
+</body>
+</html>

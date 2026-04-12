@@ -14,6 +14,10 @@
   <div class="sidebar-header">
     <a class="logo" href="index.html"><span class="back-arrow">&lsaquo;</span> OpsPilot Help Center</a>
   </div>
+  <div class="sidebar-search">
+    <input type="text" id="doc-search" placeholder="Search docs…" autocomplete="off" />
+    <div id="search-results" class="search-results" style="display:none;"></div>
+  </div>
   <nav>
     <a href="index.html">Home</a>
     <div class="section-label">Getting Started</div>
@@ -49,11 +53,14 @@
         </div>
       </div>
     </div>
+    <a href="activity.html">Activity History</a>
     <div class="section-label">Configuration</div>
     <a href="settings.html">Settings</a>
     <a href="integrations.html">Integrations</a>
     <div class="section-label">Help</div>
     <a href="faq.html">FAQ &amp; Troubleshooting</a>
+    <a href="troubleshooting.html">Advanced Troubleshooting</a>
+    <a href="api-reference.html">API Reference</a>
   </nav>
 </aside>
 
@@ -63,7 +70,7 @@
 
     <div class="section-hero">
       <h1>Getting Started</h1>
-      <div class="last-updated">Last updated on 1 April 2026</div>
+      <div class="last-updated">Last updated on 10 April 2026</div>
       <p>Install OpsPilot, take a quick tour, and create your first note, task, and workflow in minutes.</p>
     </div>
 
@@ -83,7 +90,7 @@
           </div>
         </div>
         <div class="pro-card">
-          <img class="pro-card-img" src="images/dashbord/Screenshot%202026-04-08%20183754.png" alt="Dashboard KPI cards — Checkout risk, Fulfillment, Inventory" loading="lazy" />
+          <img class="pro-card-img" src="images/dashboard/Screenshot%202026-04-08%20183754.png" alt="Dashboard KPI cards — Checkout risk, Fulfillment, Inventory" loading="lazy" />
           <div class="pro-card-body">
             <div class="pro-card-label">Your Dashboard</div>
             <p class="pro-card-desc">After install, your dashboard shows real-time store health: KPIs, tasks, and automation performance.</p>
@@ -126,7 +133,7 @@
         <tr><td>✅ <strong><a href="tasks.html">Tasks</a></strong></td><td>Create tasks, assign to team members, track progress</td></tr>
         <tr><td>⚡ <strong><a href="workflows.html">Workflows</a></strong></td><td>Set up automations that run when events happen in your store</td></tr>
         <tr><td>⚙️ <strong><a href="settings.html">Settings</a></strong></td><td>Manage your team, task preferences, integrations &amp; more</td></tr>
-        <tr><td> <strong>History</strong></td><td>Activity log — see everything that happened in the app</td></tr>
+        <tr><td> <strong><a href="activity.html">Activity History</a></strong></td><td>Activity log — see everything that happened in the app</td></tr>
       </tbody>
     </table>
 
@@ -160,7 +167,7 @@
           </div>
         </div>
         <div class="pro-card">
-          <img class="pro-card-img" src="images/dashbord/Screenshot%202026-04-08%20183912.png" alt="Today's tasks card on dashboard" loading="lazy" />
+          <img class="pro-card-img" src="images/dashboard/Screenshot%202026-04-08%20183912.png" alt="Today's tasks card on dashboard" loading="lazy" />
           <div class="pro-card-body">
             <div class="pro-card-label">See It on the Dashboard</div>
             <p class="pro-card-desc">Your new task appears in the "Today's tasks" card showing open and overdue counts.</p>
@@ -173,7 +180,7 @@
     <div class="steps">
       <div class="step"><div class="step-content">Click <strong>Workflows</strong> in the sidebar</div></div>
       <div class="step"><div class="step-content">Click <span class="hover-preview popup-below"><strong>Create Workflow</strong><span class="preview-popup"><img src="images/costmized_workflow_wizard_.png" alt="Create Workflow" /><div class="popup-label">Opens the workflow wizard — choose Event-based or Scheduled</div></span></span></div></div>
-      <div class="step"><div class="step-content">Choose a <span class="hover-preview popup-below"><strong>template</strong><span class="preview-popup"><img src="images/use_a_tamplate_.png" alt="Workflow templates" /><div class="popup-label">Pick from 28+ pre-built workflow templates</div></span></span> (e.g., "New Order → Create Task") or start from scratch</div></div>
+      <div class="step"><div class="step-content">Choose a <span class="hover-preview popup-below"><strong>template</strong><span class="preview-popup"><img src="images/use_a_tamplate_.png" alt="Workflow templates" /><div class="popup-label">Pick from 40+ pre-built workflow templates</div></span></span> (e.g., "New Order → Create Task") or start from scratch</div></div>
       <div class="step"><div class="step-content">Configure the <strong><a href="workflows.html#triggers">Trigger</a></strong> (what starts the workflow), <strong><a href="workflows.html#conditions">Conditions</a></strong> (optional filters), and <strong><a href="workflows.html#actions">Actions</a></strong> (what happens)</div></div>
       <div class="step"><div class="step-content">Click <span class="hover-preview popup-below"><strong>Save &amp; Activate</strong><span class="preview-popup"><img src="images/workflows_list_.png" alt="Save &amp; Activate" /><div class="popup-label">Save your workflow and set it to active immediately</div></span></span></div></div>
     </div>
@@ -201,7 +208,7 @@
             <img src="images/use_a_tamplate_.png" alt="Choose a starting point — template list" loading="lazy" />
             <div class="pro-card-body">
               <div class="pro-card-label">Pick a Template</div>
-              <p class="pro-card-desc">28+ pre-built templates for common scenarios, or start from scratch.</p>
+              <p class="pro-card-desc">40+ pre-built templates for common scenarios, or start from scratch.</p>
             </div>
           </div>
         </div>
@@ -235,7 +242,7 @@
     <div class="pro-showcase">
       <div class="pro-showcase-grid cols-1">
         <div class="pro-card">
-          <img class="pro-card-img" src="images/sitings/Screenshot%202026-04-08%20181715.png" alt="Team management — user roles with Admin/User toggles" loading="lazy" />
+          <img class="pro-card-img" src="images/settings/Screenshot%202026-04-08%20181715.png" alt="Team management — user roles with Admin/User toggles" loading="lazy" />
           <div class="pro-card-body">
             <div class="pro-card-label">Team Management</div>
             <p class="pro-card-desc">Staff members are auto-detected from Shopify. Toggle roles between Admin and User to control access.</p>
@@ -246,6 +253,10 @@
 
   </div>
 </div>
+    <div class="page-nav">
+      <a class="page-nav-btn page-nav-prev" href="index.html">&#8592; Home</a>
+      <a class="page-nav-btn page-nav-next" href="dashboard.html">Dashboard &#8594;</a>
+    </div>
 
 <script src="nav.js"></script>
 </body>

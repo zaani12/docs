@@ -14,6 +14,10 @@
   <div class="sidebar-header">
     <a class="logo" href="index.html"><span class="back-arrow">&lsaquo;</span> OpsPilot Help Center</a>
   </div>
+  <div class="sidebar-search">
+    <input type="text" id="doc-search" placeholder="Search docs…" autocomplete="off" />
+    <div id="search-results" class="search-results" style="display:none;"></div>
+  </div>
   <nav>
     <a href="index.html">Home</a>
     <div class="section-label">Getting Started</div>
@@ -49,11 +53,14 @@
         </div>
       </div>
     </div>
+    <a href="activity.html">Activity History</a>
     <div class="section-label">Configuration</div>
     <a href="settings.html">Settings</a>
     <a href="integrations.html">Integrations</a>
     <div class="section-label">Help</div>
     <a href="faq.html">FAQ &amp; Troubleshooting</a>
+    <a href="troubleshooting.html">Advanced Troubleshooting</a>
+    <a href="api-reference.html">API Reference</a>
   </nav>
 </aside>
 
@@ -63,7 +70,7 @@
 
     <div class="section-hero">
       <h1>Tasks</h1>
-      <div class="last-updated">Last updated on 1 April 2026</div>
+      <div class="last-updated">Last updated on 10 April 2026</div>
       <p>Track what needs to be done, who's responsible, and when it's due. Create tasks manually, from notes, or automatically via workflows.</p>
     </div>
 
@@ -76,21 +83,21 @@
       </div>
       <div class="pro-showcase-grid cols-3">
         <div class="pro-card">
-          <img class="pro-card-img" src="images/dashbord/Screenshot%202026-04-08%20183912.png" alt="Today's tasks dashboard card showing open and overdue counts" loading="lazy" />
+          <img class="pro-card-img" src="images/dashboard/Screenshot%202026-04-08%20183912.png" alt="Today's tasks dashboard card showing open and overdue counts" loading="lazy" />
           <div class="pro-card-body">
             <div class="pro-card-label">Today's Tasks</div>
             <p class="pro-card-desc">See open and overdue task counts at a glance from the dashboard.</p>
           </div>
         </div>
         <div class="pro-card">
-          <img class="pro-card-img" src="images/dashbord/Screenshot%202026-04-08%20183943.png" alt="Open tasks by priority — bar chart showing Low, Medium, High, Urgent" loading="lazy" />
+          <img class="pro-card-img" src="images/dashboard/Screenshot%202026-04-08%20183943.png" alt="Open tasks by priority — bar chart showing Low, Medium, High, Urgent" loading="lazy" />
           <div class="pro-card-body">
             <div class="pro-card-label">Priority Breakdown</div>
             <p class="pro-card-desc">Visual bar chart showing tasks grouped by priority level — Low, Medium, High, Urgent.</p>
           </div>
         </div>
         <div class="pro-card">
-          <img class="pro-card-img" src="images/dashbord/Screenshot%202026-04-08%20184004.png" alt="Staff tasks table — assignee, open tasks, overdue tasks" loading="lazy" />
+          <img class="pro-card-img" src="images/dashboard/Screenshot%202026-04-08%20184004.png" alt="Staff tasks table — assignee, open tasks, overdue tasks" loading="lazy" />
           <div class="pro-card-body">
             <div class="pro-card-label">Team Workload</div>
             <p class="pro-card-desc">Staff tasks table shows each team member's open and overdue task count.</p>
@@ -150,14 +157,14 @@
     <div class="pro-showcase">
       <div class="pro-showcase-grid cols-2">
         <div class="pro-card">
-          <img class="pro-card-img" src="images/sitings/Screenshot%202026-04-08%20181909.png" alt="Task statuses settings — Pending, In Progress, Completed, Cancelled, On Hold, Archived with Enable/Disable toggles" loading="lazy" />
+          <img class="pro-card-img" src="images/settings/Screenshot%202026-04-08%20181909.png" alt="Task statuses settings — Pending, In Progress, Completed, Cancelled, On Hold, Archived with Enable/Disable toggles" loading="lazy" />
           <div class="pro-card-body">
             <div class="pro-card-label">Built-in Statuses</div>
             <p class="pro-card-desc">Six built-in statuses with Open/Closed classification. Disable unused statuses to hide them from forms.</p>
           </div>
         </div>
         <div class="pro-card">
-          <img class="pro-card-img" src="images/sitings/Screenshot%202026-04-08%20181809.png" alt="Task preferences — default assignment, default view, dashboard date range, scheduled timezone" loading="lazy" />
+          <img class="pro-card-img" src="images/settings/Screenshot%202026-04-08%20181809.png" alt="Task preferences — default assignment, default view, dashboard date range, scheduled timezone" loading="lazy" />
           <div class="pro-card-body">
             <div class="pro-card-label">Task Preferences</div>
             <p class="pro-card-desc">Configure default assignment, default view (Table/Kanban), dashboard date range, and scheduled workflow timezone.</p>
@@ -240,6 +247,10 @@
 
   </div>
 </div>
+    <div class="page-nav">
+      <a class="page-nav-btn page-nav-prev" href="notes.html">&#8592; Notes</a>
+      <a class="page-nav-btn page-nav-next" href="workflows.html">Workflows &#8594;</a>
+    </div>
 
 <script src="nav.js"></script>
 </body>
