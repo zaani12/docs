@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -7,6 +7,20 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
+<header class="site-header">
+  <a class="site-header-logo" href="index.html"><span class="logo-ops">Ops</span><span class="logo-pilot">Pilot</span></a>
+  <div class="header-search">
+    <input type="text" id="header-doc-search" placeholder="Search docs…" autocomplete="off" />
+    <div id="header-search-results" class="header-search-results" style="display:none;"></div>
+  </div>
+  <nav class="site-header-nav">
+    <a href="getting-started.html">Docs</a>
+    <a href="workflows.html">Workflows</a>
+    <a href="faq.html">FAQ</a>
+    <a href="https://apps.shopify.com/" class="header-btn">Install App</a>
+  </nav>
+</header>
 
 <div class="sidebar-overlay" id="overlay" onclick="toggleSidebar()"></div>
 
@@ -30,9 +44,9 @@
       <a href="workflows.html">Workflows</a>
       <div class="tree-branch">
         <div class="tree-node">
-          <div class="tree-toggle" onclick="toggleTree(this)">
+          <a href="workflows.html#event-based-triggers" class="tree-toggle" onclick="toggleTree(this)">
             <span class="tree-arrow">&#9656;</span> Event-based
-          </div>
+          </a>
           <div class="tree-children">
             <a href="workflows.html#event-based-triggers">Triggers</a>
             <a href="workflows.html#conditions">Conditions</a>
@@ -43,9 +57,9 @@
           </div>
         </div>
         <div class="tree-node">
-          <div class="tree-toggle" onclick="toggleTree(this)">
+          <a href="workflows.html#scheduled-workflows" class="tree-toggle" onclick="toggleTree(this)">
             <span class="tree-arrow">&#9656;</span> Scheduled
-          </div>
+          </a>
           <div class="tree-children">
             <a href="workflows.html#scheduled-trigger">Scheduled Trigger</a>
             <a href="workflows.html#scheduled-workflows">Scheduled Workflows</a>
@@ -92,7 +106,7 @@
         <div class="pro-card">
           <img class="pro-card-img" src="images/ation_informations.png" alt="Action form with title, description, priority, status, and assignee" loading="lazy" />
           <div class="pro-card-body">
-            <div class="pro-card-label">Notes → Tasks</div>
+            <div class="pro-card-label">Notes ? Tasks</div>
             <p class="pro-card-desc">Convert any note into a tracked task — title, description, priority, status, and assignee carry over automatically.</p>
           </div>
         </div>
@@ -102,10 +116,10 @@
     <h2 id="what-are-notes">What Are Notes?</h2>
     <p>Notes let you add comments, instructions, and context to your Shopify data that your whole team can see. Think of them as sticky notes attached to your store records.</p>
     <ul>
-      <li><strong>"Customer requested gift wrapping"</strong> → attached to an Order</li>
-      <li><strong>"Restock by Friday, supplier: ABC Inc."</strong> → attached to a Product</li>
-      <li><strong>"VIP customer, always offer free shipping"</strong> → attached to a Customer</li>
-      <li><strong>"Weekly team meeting agenda"</strong> → standalone note (not attached to anything)</li>
+      <li><strong>"Customer requested gift wrapping"</strong> ? attached to an Order</li>
+      <li><strong>"Restock by Friday, supplier: ABC Inc."</strong> ? attached to a Product</li>
+      <li><strong>"VIP customer, always offer free shipping"</strong> ? attached to a Customer</li>
+      <li><strong>"Weekly team meeting agenda"</strong> ? standalone note (not attached to anything)</li>
     </ul>
 
     <h2 id="creating-a-note">Creating a Note</h2>
@@ -181,7 +195,7 @@
     <p>The Notes page shows all your notes in a table with title, content preview, entity info, author, and date. Click any note to open its detail view.</p>
 
     <h2 id="pinning-notes">Pinning Notes</h2>
-    <p>Pin important notes so they always appear at the top of your list. Click the 📌 icon on any note to pin/unpin it.</p>
+    <p>Pin important notes so they always appear at the top of your list. Click the ?? icon on any note to pin/unpin it.</p>
 
     <div class="callout callout-tip">
       <span class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b873e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></span>
@@ -230,13 +244,44 @@
     <h2 id="notes-on-entity-pages">Notes on Entity Pages (Shopify Extension)</h2>
     <p>OpsPilot adds a quick action button to your Shopify order, product, and customer pages. Click it to quickly create a note attached to that entity — without leaving the page!</p>
 
-  </div>
-</div>
     <div class="page-nav">
-      <a class="page-nav-btn page-nav-prev" href="dashboard.html">&#8592; Dashboard</a>
-      <a class="page-nav-btn page-nav-next" href="tasks.html">Tasks &#8594;</a>
+      <a class="page-nav-btn page-nav-prev" href="dashboard.html"><span class="nav-label">&#8592; Previous</span>Dashboard</a>
+      <a class="page-nav-btn page-nav-next" href="tasks.html"><span class="nav-label">Next &#8594;</span>Tasks </a>
     </div>
 
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="site-footer-brand">
+      <a class="footer-logo" href="index.html"><span>Ops</span><span class="logo-pilot">Pilot</span></a>
+      <p>Shopify automation &amp; task management. Workflows, alerts, and operations in one command center.</p>
+    </div>
+    <div class="site-footer-links">
+      <div>
+        <span class="footer-heading">Docs</span>
+        <a href="getting-started.html">Getting Started</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="workflows.html">Workflows</a>
+        <a href="tasks.html">Tasks</a>
+      </div>
+      <div>
+        <span class="footer-heading">Help</span>
+        <a href="faq.html">FAQ</a>
+        <a href="troubleshooting.html">Troubleshooting</a>
+        <a href="api-reference.html">API Reference</a>
+      </div>
+    </div>
+  </div>
+  <div class="site-footer-bottom">&copy; 2026 OpsPilot. All rights reserved.</div>
+</footer>
+
 <script src="nav.js"></script>
+<!-- Crisp Live Chat -->
+<script type="text/javascript">
+  window.$crisp=[];window.CRISP_WEBSITE_ID="6f9ec4d1-3401-45af-af1c-9f0f0315773c";
+  (function(){var d=document;var s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+</script>
 </body>
 </html>

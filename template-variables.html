@@ -8,6 +8,20 @@
 </head>
 <body>
 
+<header class="site-header">
+  <a class="site-header-logo" href="index.html"><span class="logo-ops">Ops</span><span class="logo-pilot">Pilot</span></a>
+  <div class="header-search">
+    <input type="text" id="header-doc-search" placeholder="Search docs…" autocomplete="off" />
+    <div id="header-search-results" class="header-search-results" style="display:none;"></div>
+  </div>
+  <nav class="site-header-nav">
+    <a href="getting-started.html">Docs</a>
+    <a href="workflows.html">Workflows</a>
+    <a href="faq.html">FAQ</a>
+    <a href="https://apps.shopify.com/" class="header-btn">Install App</a>
+  </nav>
+</header>
+
 <div class="sidebar-overlay" id="overlay" onclick="toggleSidebar()"></div>
 
 <aside class="sidebar" id="sidebar">
@@ -30,9 +44,9 @@
       <a href="workflows.html">Workflows</a>
       <div class="tree-branch">
         <div class="tree-node">
-          <div class="tree-toggle" onclick="toggleTree(this)">
+          <a href="workflows.html#event-based-triggers" class="tree-toggle" onclick="toggleTree(this)">
             <span class="tree-arrow">&#9656;</span> Event-based
-          </div>
+          </a>
           <div class="tree-children">
             <a href="workflows.html#event-based-triggers">Triggers</a>
             <a href="workflows.html#conditions">Conditions</a>
@@ -43,9 +57,9 @@
           </div>
         </div>
         <div class="tree-node">
-          <div class="tree-toggle" onclick="toggleTree(this)">
+          <a href="workflows.html#scheduled-workflows" class="tree-toggle" onclick="toggleTree(this)">
             <span class="tree-arrow">&#9656;</span> Scheduled
-          </div>
+          </a>
           <div class="tree-children">
             <a href="workflows.html#scheduled-trigger">Scheduled Trigger</a>
             <a href="workflows.html#scheduled-workflows">Scheduled Workflows</a>
@@ -71,6 +85,53 @@
     <div class="section-hero">
       <h1>Template Variables</h1>
       <p class="subtitle">Insert dynamic data into your <a href="workflows.html#actions">workflow actions</a> &mdash; emails, Slack messages, task titles, note content, and Google Sheets rows. Wrap any variable in double curly braces: <code>{{variable_name}}</code>.</p>
+    </div>
+
+    <!-- Hero Showcase -->
+    <div class="pro-showcase">
+      <div class="pro-showcase-header">
+        <div class="pro-showcase-logo">OpsPilot</div>
+        <div class="pro-showcase-title">Dynamic Data, Zero Code.</div>
+        <div class="pro-showcase-subtitle">Use template variables to inject live order, customer, and product data into every action.</div>
+      </div>
+      <div class="pro-showcase-grid cols-2">
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/add_the_email_content_.png" alt="Email action editor with template variables" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Variables in Actions</div>
+            <p class="pro-card-desc">Use <code>{{order_number}}</code>, <code>{{customer_name}}</code>, and more inside emails, Slack messages, and tasks.</p>
+          </div>
+        </div>
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/costmized_workflow_wizard_.png" alt="Workflow builder with customized trigger and actions" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">All Categories</div>
+            <p class="pro-card-desc">Global, Order, Customer, Product, Inventory, and Checkout variables &mdash; 50+ data points at your fingertips.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Variable search/filter -->
+    <div class="var-filter-bar">
+      <div class="var-filter-input-wrap">
+        <div class="var-filter-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </div>
+        <input type="text" id="var-filter" placeholder="Filter variables by name, description, or category…" autocomplete="off" />
+      </div>
+      <div class="var-filter-tags" id="var-filter-tags">
+        <button class="var-tag active" data-group="all">All</button>
+        <button class="var-tag" data-group="global">Global</button>
+        <button class="var-tag" data-group="order">Order</button>
+        <button class="var-tag" data-group="customer">Customer</button>
+        <button class="var-tag" data-group="product">Product</button>
+        <button class="var-tag" data-group="inventory">Inventory</button>
+        <button class="var-tag" data-group="checkout">Checkout</button>
+        <button class="var-tag" data-group="scheduled">Scheduled</button>
+      </div>
+      <div class="var-filter-count" id="var-filter-count"></div>
+      <div class="var-filter-results" id="var-filter-results"></div>
     </div>
 
     <!-- How to use -->
@@ -99,7 +160,7 @@
     </div>
 
     <!-- Global Variables -->
-    <h2 id="global-variables">Global Variables</h2>
+    <h2 id="global-variables" data-var-group="global">Global Variables</h2>
     <p>Available in <strong>every</strong> trigger type.</p>
     <table>
       <thead><tr><th>Variable</th><th>Description</th><th>Example Value</th></tr></thead>
@@ -113,7 +174,7 @@
     </table>
 
     <!-- Order Variables -->
-    <h2 id="order-variables">Order Variables</h2>
+    <h2 id="order-variables" data-var-group="order">Order Variables</h2>
     <p>Available when the trigger is <strong><a href="workflows.html#event-based-triggers">Order Created</a></strong> or <strong>Order Updated</strong>.</p>
     <table>
       <thead><tr><th>Variable</th><th>Description</th><th>Example Value</th></tr></thead>
@@ -140,7 +201,7 @@
     </table>
 
     <!-- Customer Variables -->
-    <h2 id="customer-variables">Customer Variables</h2>
+    <h2 id="customer-variables" data-var-group="customer">Customer Variables</h2>
     <p>Available for <strong><a href="workflows.html#event-based-triggers">Customer Created</a></strong> and all <strong>Order</strong> triggers (pulled from the order&rsquo;s customer).</p>
     <table>
       <thead><tr><th>Variable</th><th>Description</th><th>Example Value</th></tr></thead>
@@ -161,7 +222,7 @@
     </table>
 
     <!-- Product Variables -->
-    <h2 id="product-variables">Product Variables</h2>
+    <h2 id="product-variables" data-var-group="product">Product Variables</h2>
     <p>Available when the trigger is <strong><a href="workflows.html#event-based-triggers">Product Updated</a></strong>.</p>
     <table>
       <thead><tr><th>Variable</th><th>Description</th><th>Example Value</th></tr></thead>
@@ -184,7 +245,7 @@
     </table>
 
     <!-- Inventory Variables -->
-    <h2 id="inventory-variables">Inventory Variables</h2>
+    <h2 id="inventory-variables" data-var-group="inventory">Inventory Variables</h2>
     <p>Available when the trigger is <strong><a href="workflows.html#event-based-triggers">Inventory Level Updated</a></strong>.</p>
     <table>
       <thead><tr><th>Variable</th><th>Description</th><th>Example Value</th></tr></thead>
@@ -201,7 +262,7 @@
     </table>
 
     <!-- Checkout Variables -->
-    <h2 id="checkout-variables">Checkout Variables</h2>
+    <h2 id="checkout-variables" data-var-group="checkout">Checkout Variables</h2>
     <p>Available when the trigger is <strong><a href="workflows.html#event-based-triggers">Checkout Abandoned</a></strong>.</p>
     <table>
       <thead><tr><th>Variable</th><th>Description</th><th>Example Value</th></tr></thead>
@@ -219,7 +280,7 @@
     </table>
 
     <!-- Scheduled Trigger Variables -->
-    <h2 id="scheduled-variables">Scheduled Trigger Variables</h2>
+    <h2 id="scheduled-variables" data-var-group="scheduled">Scheduled Trigger Variables</h2>
     <p>Available when the trigger is <strong><a href="workflows.html#scheduled-trigger">Scheduled</a></strong>. Scheduled workflows process multiple entities per run.</p>
     <table>
       <thead><tr><th>Variable</th><th>Description</th><th>Example Value</th></tr></thead>
@@ -297,13 +358,146 @@
       <div>Use the <span class="hover-preview"><strong>&ldquo;Test with latest order&rdquo;</strong><span class="preview-popup"><img src="images/you_can_manage_your_woek_flow_hear_.png" alt="Test workflow" /><div class="popup-label">Run a test using real store data to verify variables resolve correctly</div></span></span> button to preview how your variables resolve with real data before going live.</div>
     </div>
 
-  </div>
-</div>
     <div class="page-nav">
-      <a class="page-nav-btn page-nav-prev" href="workflows.html">&#8592; Workflows</a>
-      <a class="page-nav-btn page-nav-next" href="settings.html">Settings &#8594;</a>
+      <a class="page-nav-btn page-nav-prev" href="workflows.html"><span class="nav-label">&#8592; Previous</span>Workflows</a>
+      <a class="page-nav-btn page-nav-next" href="settings.html"><span class="nav-label">Next &#8594;</span>Settings </a>
     </div>
 
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="site-footer-brand">
+      <a class="footer-logo" href="index.html"><span>Ops</span><span class="logo-pilot">Pilot</span></a>
+      <p>Shopify automation &amp; task management. Workflows, alerts, and operations in one command center.</p>
+    </div>
+    <div class="site-footer-links">
+      <div>
+        <span class="footer-heading">Docs</span>
+        <a href="getting-started.html">Getting Started</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="workflows.html">Workflows</a>
+        <a href="tasks.html">Tasks</a>
+      </div>
+      <div>
+        <span class="footer-heading">Help</span>
+        <a href="faq.html">FAQ</a>
+        <a href="troubleshooting.html">Troubleshooting</a>
+        <a href="api-reference.html">API Reference</a>
+      </div>
+    </div>
+  </div>
+  <div class="site-footer-bottom">&copy; 2026 OpsPilot. All rights reserved.</div>
+</footer>
+
 <script src="nav.js"></script>
+<!-- Crisp Live Chat -->
+<script type="text/javascript">
+  window.$crisp=[];window.CRISP_WEBSITE_ID="6f9ec4d1-3401-45af-af1c-9f0f0315773c";
+  (function(){var d=document;var s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+</script>
+<script>
+(function () {
+  var input = document.getElementById('var-filter');
+  var tagsWrap = document.getElementById('var-filter-tags');
+  var countEl = document.getElementById('var-filter-count');
+  var resultsEl = document.getElementById('var-filter-results');
+  if (!input) return;
+
+  // Build a flat list of all variables from the tables
+  var allVars = [];
+  document.querySelectorAll('h2[data-var-group]').forEach(function (h2) {
+    var group = h2.getAttribute('data-var-group');
+    var label = h2.textContent.trim();
+    var next = h2.nextElementSibling;
+    while (next && next.tagName !== 'H2') {
+      if (next.tagName === 'TABLE') {
+        next.querySelectorAll('tbody tr').forEach(function (row) {
+          var cells = row.querySelectorAll('td');
+          if (cells.length >= 3) {
+            allVars.push({
+              group: group,
+              label: label,
+              variable: cells[0].textContent.trim(),
+              desc: cells[1].textContent.trim(),
+              example: cells[2].textContent.trim()
+            });
+          }
+        });
+        break;
+      }
+      next = next.nextElementSibling;
+    }
+  });
+
+  var activeGroup = 'all';
+
+  tagsWrap.addEventListener('click', function (e) {
+    var btn = e.target.closest('.var-tag');
+    if (!btn) return;
+    tagsWrap.querySelectorAll('.var-tag').forEach(function (t) { t.classList.remove('active'); });
+    btn.classList.add('active');
+    activeGroup = btn.getAttribute('data-group');
+    applyFilter();
+  });
+
+  input.addEventListener('input', applyFilter);
+
+  function escHtml(s) {
+    var d = document.createElement('div'); d.textContent = s; return d.innerHTML;
+  }
+
+  function applyFilter() {
+    var q = input.value.trim().toLowerCase();
+
+    // Only show results when there's a query or a category is selected
+    if (!q && activeGroup === 'all') {
+      resultsEl.innerHTML = '';
+      resultsEl.style.display = 'none';
+      countEl.textContent = '';
+      return;
+    }
+
+    var matches = allVars.filter(function (v) {
+      var groupMatch = activeGroup === 'all' || v.group === activeGroup;
+      var textMatch = !q || (v.variable + ' ' + v.desc + ' ' + v.example).toLowerCase().indexOf(q) !== -1;
+      return groupMatch && textMatch;
+    });
+
+    countEl.textContent = matches.length + ' of ' + allVars.length + ' variables';
+
+    if (!matches.length) {
+      resultsEl.innerHTML = '<div class="vfr-empty">No variables match your filter.</div>';
+      resultsEl.style.display = 'block';
+      return;
+    }
+
+    // Group matches by category
+    var grouped = {};
+    matches.forEach(function (v) {
+      if (!grouped[v.label]) grouped[v.label] = [];
+      grouped[v.label].push(v);
+    });
+
+    var html = '';
+    for (var label in grouped) {
+      html += '<div class="vfr-group">';
+      html += '<div class="vfr-group-label">' + escHtml(label) + '</div>';
+      grouped[label].forEach(function (v) {
+        html += '<div class="vfr-item">';
+        html += '<code class="vfr-var">' + escHtml(v.variable) + '</code>';
+        html += '<span class="vfr-desc">' + escHtml(v.desc) + '</span>';
+        html += '<span class="vfr-example">' + escHtml(v.example) + '</span>';
+        html += '</div>';
+      });
+      html += '</div>';
+    }
+
+    resultsEl.innerHTML = html;
+    resultsEl.style.display = 'block';
+  }
+})();
+</script>
 </body>
 </html>

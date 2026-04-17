@@ -3,10 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>API Reference — OpsPilot</title>
+  <title>API Reference — OpsPilot</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
+<header class="site-header">
+  <a class="site-header-logo" href="index.html"><span class="logo-ops">Ops</span><span class="logo-pilot">Pilot</span></a>
+  <div class="header-search">
+    <input type="text" id="header-doc-search" placeholder="Search docs…" autocomplete="off" />
+    <div id="header-search-results" class="header-search-results" style="display:none;"></div>
+  </div>
+  <nav class="site-header-nav">
+    <a href="getting-started.html">Docs</a>
+    <a href="workflows.html">Workflows</a>
+    <a href="faq.html">FAQ</a>
+    <a href="https://apps.shopify.com/" class="header-btn">Install App</a>
+  </nav>
+</header>
 
 <div class="sidebar-overlay" id="overlay" onclick="toggleSidebar()"></div>
 
@@ -30,9 +44,9 @@
       <a href="workflows.html">Workflows</a>
       <div class="tree-branch">
         <div class="tree-node">
-          <div class="tree-toggle" onclick="toggleTree(this)">
+          <a href="workflows.html#event-based-triggers" class="tree-toggle" onclick="toggleTree(this)">
             <span class="tree-arrow">&#9656;</span> Event-based
-          </div>
+          </a>
           <div class="tree-children">
             <a href="workflows.html#event-based-triggers">Triggers</a>
             <a href="workflows.html#conditions">Conditions</a>
@@ -43,9 +57,9 @@
           </div>
         </div>
         <div class="tree-node">
-          <div class="tree-toggle" onclick="toggleTree(this)">
+          <a href="workflows.html#scheduled-workflows" class="tree-toggle" onclick="toggleTree(this)">
             <span class="tree-arrow">&#9656;</span> Scheduled
-          </div>
+          </a>
           <div class="tree-children">
             <a href="workflows.html#scheduled-trigger">Scheduled Trigger</a>
             <a href="workflows.html#scheduled-workflows">Scheduled Workflows</a>
@@ -72,6 +86,31 @@
       <h1>API Reference</h1>
       <div class="last-updated">Last updated on 10 April 2026</div>
       <p>Technical reference for OpsPilot's API endpoints, authentication, webhooks, plan limits, and system behavior for developers and store administrators.</p>
+    </div>
+
+    <!-- Hero Showcase -->
+    <div class="pro-showcase">
+      <div class="pro-showcase-header">
+        <div class="pro-showcase-logo">OpsPilot</div>
+        <div class="pro-showcase-title">Under the Hood.</div>
+        <div class="pro-showcase-subtitle">Authentication flows, webhook events, rate limits, and system architecture for developers.</div>
+      </div>
+      <div class="pro-showcase-grid cols-2">
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/workflows_list_.png" alt="Workflows list with stats and execution data" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Webhooks &amp; Events</div>
+            <p class="pro-card-desc">Shopify webhook topics, event routing, and how workflows are triggered behind the scenes.</p>
+          </div>
+        </div>
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/settings/Screenshot%202026-04-08%20175929.png" alt="Settings page with integration configuration" loading="lazy" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Auth &amp; Rate Limits</div>
+            <p class="pro-card-desc">OAuth 2.0 flow, session management, Shopify API rate limits, and plan-based quotas.</p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="callout callout-note">
@@ -115,12 +154,12 @@
       <tbody>
         <tr><td><code>/api/scheduled-workflows</code></td><td>POST</td><td>QSTASH signing key or <code>CRON_SECRET</code> Bearer token</td><td>Trigger scheduled and delayed workflow execution</td></tr>
         <tr><td><code>/api/item-actions</code></td><td>POST</td><td>CORS (Shopify admin surface)</td><td>Create tasks and notes from Shopify order/product/customer pages via the app extension</td></tr>
-        <tr><td><code>/health</code></td><td>GET</td><td>None</td><td>Health check — returns 200 OK if the service is running</td></tr>
-        <tr><td><code>/ready</code></td><td>GET</td><td>None</td><td>Readiness probe — used by infrastructure to confirm the app is ready to serve traffic</td></tr>
+        <tr><td><code>/health</code></td><td>GET</td><td>None</td><td>Health check — returns 200 OK if the service is running</td></tr>
+        <tr><td><code>/ready</code></td><td>GET</td><td>None</td><td>Readiness probe — used by infrastructure to confirm the app is ready to serve traffic</td></tr>
         <tr><td><code>/docs</code></td><td>GET</td><td>None</td><td>API documentation page (internal)</td></tr>
-        <tr><td><code>/webhooks</code></td><td>POST</td><td>Shopify HMAC signature</td><td>Generic Shopify webhook receiver — routes to appropriate handler by topic</td></tr>
-        <tr><td><code>/webhooks/app/scopes_update</code></td><td>POST</td><td>Shopify HMAC</td><td>Registered but not yet implemented — scope changes do not trigger any action</td></tr>
-        <tr><td><code>/webhooks/app/uninstalled</code></td><td>POST</td><td>Shopify HMAC</td><td>App uninstall webhook — removes all sessions for the shop</td></tr>
+        <tr><td><code>/webhooks</code></td><td>POST</td><td>Shopify HMAC signature</td><td>Generic Shopify webhook receiver — routes to appropriate handler by topic</td></tr>
+        <tr><td><code>/webhooks/app/scopes_update</code></td><td>POST</td><td>Shopify HMAC</td><td>Registered but not yet implemented — scope changes do not trigger any action</td></tr>
+        <tr><td><code>/webhooks/app/uninstalled</code></td><td>POST</td><td>Shopify HMAC</td><td>App uninstall webhook — removes all sessions for the shop</td></tr>
       </tbody>
     </table>
 
@@ -175,7 +214,7 @@
       </tbody>
     </table>
 
-    <p>New shops automatically receive a <strong>14-day STARTER trial</strong> on first install (if not previously used). After the trial, the plan reverts to FREE unless a subscription is active. Plan limits are enforced on every workflow execution — runs over the monthly limit are SKIPPED.</p>
+    <p>New shops automatically receive a <strong>14-day STARTER trial</strong> on first install (if not previously used). After the trial, the plan reverts to FREE unless a subscription is active. Plan limits are enforced on every workflow execution — runs over the monthly limit are SKIPPED.</p>
 
     <h2 id="edge-cases">Edge Cases &amp; Special Flows</h2>
 
@@ -185,17 +224,17 @@
       <tbody>
         <tr><td>Payload is not a valid object</td><td>Workflow SKIPPED with warning</td></tr>
         <tr><td>Condition schema invalid</td><td>Workflow FAILED ("Invalid workflow definition")</td></tr>
-        <tr><td>Monthly run limit exceeded</td><td>Workflow SKIPPED — checked before conditions</td></tr>
+        <tr><td>Monthly run limit exceeded</td><td>Workflow SKIPPED — checked before conditions</td></tr>
         <tr><td>No active users in shop</td><td>Execution halted with error</td></tr>
         <tr><td>Recursive workflow depth &gt; 2</td><td>Workflow SKIPPED with warning</td></tr>
         <tr><td>All actions filtered by plan/setup</td><td>Workflow SKIPPED (not FAILED)</td></tr>
         <tr><td>Payload &gt;50KB</td><td>Truncated to summary (<code>_truncated: true</code>)</td></tr>
-        <tr><td>Delayed workflow — workflow deleted/disabled before execution</td><td>Action SKIPPED</td></tr>
-        <tr><td>Delayed workflow — conditions no longer match at execution time</td><td>Action SKIPPED</td></tr>
+        <tr><td>Delayed workflow — workflow deleted/disabled before execution</td><td>Action SKIPPED</td></tr>
+        <tr><td>Delayed workflow — conditions no longer match at execution time</td><td>Action SKIPPED</td></tr>
         <tr><td>Nested delay (delay within a delayed action)</td><td>Re-queued action SKIPPED</td></tr>
         <tr><td>Concurrent delayed action workers</td><td>Atomic row claim prevents double-processing</td></tr>
         <tr><td>CREATE_ONCE_PER_ENTITY + entity in closed status</td><td>New task created instead of updating</td></tr>
-        <tr><td>24h dedup — same fingerprint detected</td><td>Action SKIPPED unless <code>forceExecuteDuplicates: true</code></td></tr>
+        <tr><td>24h dedup — same fingerprint detected</td><td>Action SKIPPED unless <code>forceExecuteDuplicates: true</code></td></tr>
         <tr><td>Aggregate scheduled workflow</td><td>One task per entity; entity ID = <code>workflow-aggregate:${workflowId}</code></td></tr>
       </tbody>
     </table>
@@ -204,8 +243,8 @@
     <table>
       <thead><tr><th>Scenario</th><th>Behavior</th></tr></thead>
       <tbody>
-        <tr><td>App already installed — user re-opens</td><td>Existing session reused; no new OAuth flow</td></tr>
-        <tr><td>Uninstall webhook fires multiple times</td><td>Safe — checks if session exists before deleting</td></tr>
+        <tr><td>App already installed — user re-opens</td><td>Existing session reused; no new OAuth flow</td></tr>
+        <tr><td>Uninstall webhook fires multiple times</td><td>Safe — checks if session exists before deleting</td></tr>
         <tr><td>User re-opens app after uninstall</td><td>Full OAuth flow restarts</td></tr>
         <tr><td>Trial already used on previous install</td><td>No auto-trial on re-install</td></tr>
         <tr><td>Multiple paid Shopify subscriptions</td><td>Highest tier wins</td></tr>
@@ -234,7 +273,7 @@
         <tr><td>Due date in the past</td><td>Rejected</td></tr>
         <tr><td>Assigned user inactive or from different shop</td><td>Rejected</td></tr>
         <tr><td>Bulk delete by non-admin</td><td>Rejected</td></tr>
-        <tr><td>Auto-archive unit not days or weeks</td><td>Ignored — no archive performed</td></tr>
+        <tr><td>Auto-archive unit not days or weeks</td><td>Ignored — no archive performed</td></tr>
         <tr><td>Task notes on delete</td><td>Soft-deleted, not hard-deleted</td></tr>
       </tbody>
     </table>
@@ -242,20 +281,51 @@
     <h2 id="onboarding">Onboarding Behavior</h2>
     <p>On first install, OpsPilot automatically:</p>
     <ul>
-      <li>Seeds two onboarding tasks: "Connect Slack and Google Sheets" (HIGH) and "Set up email sender and branding" (MEDIUM) — these use unique markers to prevent duplicates on re-install</li>
+      <li>Seeds two onboarding tasks: "Connect Slack and Google Sheets" (HIGH) and "Set up email sender and branding" (MEDIUM) — these use unique markers to prevent duplicates on re-install</li>
       <li>Creates a welcome note (marker: <code>onboarding:welcome-note:v1</code>)</li>
       <li>Auto-starts a 14-day STARTER trial if <code>billingTrialUsed === false</code></li>
       <li>Auto-opens the onboarding drawer if: no active workflows AND no non-onboarding open tasks</li>
     </ul>
 
     <div class="page-nav">
-      <a class="page-nav-btn page-nav-prev" href="troubleshooting.html">&#8592; Advanced Troubleshooting</a>
+      <a class="page-nav-btn page-nav-prev" href="troubleshooting.html"><span class="nav-label">&#8592; Previous</span>Advanced Troubleshooting</a>
       <span class="page-nav-btn page-nav-next disabled"></span>
     </div>
 
   </div>
 </div>
 
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="site-footer-brand">
+      <a class="footer-logo" href="index.html"><span>Ops</span><span class="logo-pilot">Pilot</span></a>
+      <p>Shopify automation &amp; task management. Workflows, alerts, and operations in one command center.</p>
+    </div>
+    <div class="site-footer-links">
+      <div>
+        <span class="footer-heading">Docs</span>
+        <a href="getting-started.html">Getting Started</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="workflows.html">Workflows</a>
+        <a href="tasks.html">Tasks</a>
+      </div>
+      <div>
+        <span class="footer-heading">Help</span>
+        <a href="faq.html">FAQ</a>
+        <a href="troubleshooting.html">Troubleshooting</a>
+        <a href="api-reference.html">API Reference</a>
+      </div>
+    </div>
+  </div>
+  <div class="site-footer-bottom">&copy; 2026 OpsPilot. All rights reserved.</div>
+</footer>
+
 <script src="nav.js"></script>
+<!-- Crisp Live Chat -->
+<script type="text/javascript">
+  window.$crisp=[];window.CRISP_WEBSITE_ID="6f9ec4d1-3401-45af-af1c-9f0f0315773c";
+  (function(){var d=document;var s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+</script>
 </body>
 </html>

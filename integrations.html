@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -7,6 +7,20 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
+<header class="site-header">
+  <a class="site-header-logo" href="index.html"><span class="logo-ops">Ops</span><span class="logo-pilot">Pilot</span></a>
+  <div class="header-search">
+    <input type="text" id="header-doc-search" placeholder="Search docs…" autocomplete="off" />
+    <div id="header-search-results" class="header-search-results" style="display:none;"></div>
+  </div>
+  <nav class="site-header-nav">
+    <a href="getting-started.html">Docs</a>
+    <a href="workflows.html">Workflows</a>
+    <a href="faq.html">FAQ</a>
+    <a href="https://apps.shopify.com/" class="header-btn">Install App</a>
+  </nav>
+</header>
 
 <div class="sidebar-overlay" id="overlay" onclick="toggleSidebar()"></div>
 
@@ -30,9 +44,9 @@
       <a href="workflows.html">Workflows</a>
       <div class="tree-branch">
         <div class="tree-node">
-          <div class="tree-toggle" onclick="toggleTree(this)">
+          <a href="workflows.html#event-based-triggers" class="tree-toggle" onclick="toggleTree(this)">
             <span class="tree-arrow">&#9656;</span> Event-based
-          </div>
+          </a>
           <div class="tree-children">
             <a href="workflows.html#event-based-triggers">Triggers</a>
             <a href="workflows.html#conditions">Conditions</a>
@@ -43,9 +57,9 @@
           </div>
         </div>
         <div class="tree-node">
-          <div class="tree-toggle" onclick="toggleTree(this)">
+          <a href="workflows.html#scheduled-workflows" class="tree-toggle" onclick="toggleTree(this)">
             <span class="tree-arrow">&#9656;</span> Scheduled
-          </div>
+          </a>
           <div class="tree-children">
             <a href="workflows.html#scheduled-trigger">Scheduled Trigger</a>
             <a href="workflows.html#scheduled-workflows">Scheduled Workflows</a>
@@ -234,13 +248,44 @@
       </div>
     </div>
 
-  </div>
-</div>
     <div class="page-nav">
-      <a class="page-nav-btn page-nav-prev" href="settings.html">&#8592; Settings</a>
-      <a class="page-nav-btn page-nav-next" href="activity.html">Activity History &#8594;</a>
+      <a class="page-nav-btn page-nav-prev" href="settings.html"><span class="nav-label">&#8592; Previous</span>Settings</a>
+      <a class="page-nav-btn page-nav-next" href="activity.html"><span class="nav-label">Next &#8594;</span>Activity History </a>
     </div>
 
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="site-footer-brand">
+      <a class="footer-logo" href="index.html"><span>Ops</span><span class="logo-pilot">Pilot</span></a>
+      <p>Shopify automation &amp; task management. Workflows, alerts, and operations in one command center.</p>
+    </div>
+    <div class="site-footer-links">
+      <div>
+        <span class="footer-heading">Docs</span>
+        <a href="getting-started.html">Getting Started</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="workflows.html">Workflows</a>
+        <a href="tasks.html">Tasks</a>
+      </div>
+      <div>
+        <span class="footer-heading">Help</span>
+        <a href="faq.html">FAQ</a>
+        <a href="troubleshooting.html">Troubleshooting</a>
+        <a href="api-reference.html">API Reference</a>
+      </div>
+    </div>
+  </div>
+  <div class="site-footer-bottom">&copy; 2026 OpsPilot. All rights reserved.</div>
+</footer>
+
 <script src="nav.js"></script>
+<!-- Crisp Live Chat -->
+<script type="text/javascript">
+  window.$crisp=[];window.CRISP_WEBSITE_ID="6f9ec4d1-3401-45af-af1c-9f0f0315773c";
+  (function(){var d=document;var s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+</script>
 </body>
 </html>

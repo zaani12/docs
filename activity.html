@@ -3,10 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Activity History — OpsPilot</title>
+  <title>Activity History — OpsPilot</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
+<header class="site-header">
+  <a class="site-header-logo" href="index.html"><span class="logo-ops">Ops</span><span class="logo-pilot">Pilot</span></a>
+  <div class="header-search">
+    <input type="text" id="header-doc-search" placeholder="Search docs…" autocomplete="off" />
+    <div id="header-search-results" class="header-search-results" style="display:none;"></div>
+  </div>
+  <nav class="site-header-nav">
+    <a href="getting-started.html">Docs</a>
+    <a href="workflows.html">Workflows</a>
+    <a href="faq.html">FAQ</a>
+    <a href="https://apps.shopify.com/" class="header-btn">Install App</a>
+  </nav>
+</header>
 
 <div class="sidebar-overlay" id="overlay" onclick="toggleSidebar()"></div>
 
@@ -30,9 +44,9 @@
       <a href="workflows.html">Workflows</a>
       <div class="tree-branch">
         <div class="tree-node">
-          <div class="tree-toggle" onclick="toggleTree(this)">
+          <a href="workflows.html#event-based-triggers" class="tree-toggle" onclick="toggleTree(this)">
             <span class="tree-arrow">&#9656;</span> Event-based
-          </div>
+          </a>
           <div class="tree-children">
             <a href="workflows.html#event-based-triggers">Triggers</a>
             <a href="workflows.html#conditions">Conditions</a>
@@ -43,9 +57,9 @@
           </div>
         </div>
         <div class="tree-node">
-          <div class="tree-toggle" onclick="toggleTree(this)">
+          <a href="workflows.html#scheduled-workflows" class="tree-toggle" onclick="toggleTree(this)">
             <span class="tree-arrow">&#9656;</span> Scheduled
-          </div>
+          </a>
           <div class="tree-children">
             <a href="workflows.html#scheduled-trigger">Scheduled Trigger</a>
             <a href="workflows.html#scheduled-workflows">Scheduled Workflows</a>
@@ -71,7 +85,7 @@
     <div class="section-hero">
       <h1>Activity History</h1>
       <div class="last-updated">Last updated on 10 April 2026</div>
-      <p>A full audit log of everything that happens inside OpsPilot — task changes, workflow executions, notes, team actions, and more.</p>
+      <p>A full audit log of everything that happens inside OpsPilot — task changes, workflow executions, notes, team actions, and more.</p>
     </div>
 
     <!-- Hero Showcase -->
@@ -79,7 +93,7 @@
       <div class="pro-showcase-header">
         <div class="pro-showcase-logo">OpsPilot</div>
         <div class="pro-showcase-title">Complete Visibility.</div>
-        <div class="pro-showcase-subtitle">See who did what, when, and why — across every feature of your store operations.</div>
+        <div class="pro-showcase-subtitle">See who did what, when, and why — across every feature of your store operations.</div>
       </div>
       <div class="pro-showcase-grid cols-1">
         <div class="pro-card">
@@ -93,7 +107,7 @@
     </div>
 
     <h2 id="what-is-activity-history">What Is Activity History?</h2>
-    <p>Activity History is your store's operational audit log. Every significant action taken in OpsPilot is recorded here — whether it was done by a team member manually, or automatically by a workflow.</p>
+    <p>Activity History is your store's operational audit log. Every significant action taken in OpsPilot is recorded here — whether it was done by a team member manually, or automatically by a workflow.</p>
     <p>Use it to:</p>
     <ul>
       <li>Track who created, updated, or deleted tasks and notes</li>
@@ -149,7 +163,7 @@
       <li>Overall <strong>run status</strong>: SUCCESS, FAILED, SKIPPED, or QUEUED</li>
       <li>Each <strong>action result</strong> individually (a workflow with 3 actions shows 3 sub-results)</li>
       <li>Any <strong>error messages</strong> with the reason for failure or skip</li>
-      <li>A <strong>payload snapshot</strong> — the data available when the workflow ran</li>
+      <li>A <strong>payload snapshot</strong> — the data available when the workflow ran</li>
     </ul>
 
     <h3 id="workflow-run-statuses">Workflow Run Statuses</h3>
@@ -165,7 +179,7 @@
 
     <div class="callout callout-tip">
       <span class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b873e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></span>
-      <div>SKIPPED is not an error — it means the workflow ran and determined it didn't need to act (conditions not met, dedup window active, etc.). Check <a href="troubleshooting.html#workflow-errors">Advanced Troubleshooting</a> if you expected it to run.</div>
+      <div>SKIPPED is not an error — it means the workflow ran and determined it didn't need to act (conditions not met, dedup window active, etc.). Check <a href="troubleshooting.html#workflow-errors">Advanced Troubleshooting</a> if you expected it to run.</div>
     </div>
 
     <h2 id="task-timeline">Task Timeline vs. Activity History</h2>
@@ -173,23 +187,54 @@
     <table>
       <thead><tr><th></th><th>Task Timeline</th><th>Activity History</th></tr></thead>
       <tbody>
-        <tr><td><strong>Scope</strong></td><td>A single task — shows every status change and edit on that task</td><td>Entire app — all tasks, notes, workflows, and integrations</td></tr>
+        <tr><td><strong>Scope</strong></td><td>A single task — shows every status change and edit on that task</td><td>Entire app — all tasks, notes, workflows, and integrations</td></tr>
         <tr><td><strong>Where</strong></td><td>Inside the task detail view</td><td>History page in the sidebar</td></tr>
         <tr><td><strong>Best for</strong></td><td>Investigating one specific task's history</td><td>Cross-feature audit, compliance, debugging automations</td></tr>
       </tbody>
     </table>
 
     <h2 id="exporting-activity">Exporting Activity</h2>
-    <p>To export activity data for reporting or compliance purposes, use a <a href="workflows.html#add-to-google-sheet">Google Sheets workflow action</a> to automatically log activity to a spreadsheet as it happens — this is the recommended approach for ongoing audit trails.</p>
+    <p>To export activity data for reporting or compliance purposes, use a <a href="workflows.html#add-to-google-sheet">Google Sheets workflow action</a> to automatically log activity to a spreadsheet as it happens — this is the recommended approach for ongoing audit trails.</p>
 
     <div class="page-nav">
-      <a class="page-nav-btn page-nav-prev" href="integrations.html">&#8592; Integrations</a>
-      <a class="page-nav-btn page-nav-next" href="faq.html">FAQ &amp; Troubleshooting &#8594;</a>
+      <a class="page-nav-btn page-nav-prev" href="integrations.html"><span class="nav-label">&#8592; Previous</span>Integrations</a>
+      <a class="page-nav-btn page-nav-next" href="faq.html"><span class="nav-label">Next &#8594;</span>FAQ &amp; Troubleshooting</a>
     </div>
 
 </div>
 </div>
 
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="site-footer-brand">
+      <a class="footer-logo" href="index.html"><span>Ops</span><span class="logo-pilot">Pilot</span></a>
+      <p>Shopify automation &amp; task management. Workflows, alerts, and operations in one command center.</p>
+    </div>
+    <div class="site-footer-links">
+      <div>
+        <span class="footer-heading">Docs</span>
+        <a href="getting-started.html">Getting Started</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="workflows.html">Workflows</a>
+        <a href="tasks.html">Tasks</a>
+      </div>
+      <div>
+        <span class="footer-heading">Help</span>
+        <a href="faq.html">FAQ</a>
+        <a href="troubleshooting.html">Troubleshooting</a>
+        <a href="api-reference.html">API Reference</a>
+      </div>
+    </div>
+  </div>
+  <div class="site-footer-bottom">&copy; 2026 OpsPilot. All rights reserved.</div>
+</footer>
+
 <script src="nav.js"></script>
+<!-- Crisp Live Chat -->
+<script type="text/javascript">
+  window.$crisp=[];window.CRISP_WEBSITE_ID="6f9ec4d1-3401-45af-af1c-9f0f0315773c";
+  (function(){var d=document;var s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+</script>
 </body>
 </html>

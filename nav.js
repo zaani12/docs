@@ -120,8 +120,13 @@ var SEARCH_INDEX = [
 ];
 
 document.addEventListener('DOMContentLoaded', function () {
-  var input = document.getElementById('doc-search');
-  var resultsBox = document.getElementById('search-results');
+  // Wire up sidebar search
+  initSearch(document.getElementById('doc-search'), document.getElementById('search-results'));
+  // Wire up header search
+  initSearch(document.getElementById('header-doc-search'), document.getElementById('header-search-results'));
+});
+
+function initSearch(input, resultsBox) {
   if (!input || !resultsBox) return;
 
   input.addEventListener('input', function () {
@@ -157,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
   input.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') { resultsBox.style.display = 'none'; input.blur(); }
   });
-});
+}
 
 function escHtml(str) {
   return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');

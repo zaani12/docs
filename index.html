@@ -3,10 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OpsPilot — Help Center</title>
+  <title>OpsPilot — Help Center</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
+<header class="site-header">
+  <a class="site-header-logo" href="index.html"><span class="logo-ops">Ops</span><span class="logo-pilot">Pilot</span></a>
+  <div class="header-search">
+    <input type="text" id="header-doc-search" placeholder="Search docs…" autocomplete="off" />
+    <div id="header-search-results" class="header-search-results" style="display:none;"></div>
+  </div>
+  <nav class="site-header-nav">
+    <a href="getting-started.html">Docs</a>
+    <a href="workflows.html">Workflows</a>
+    <a href="faq.html">FAQ</a>
+    <a href="https://apps.shopify.com/" class="header-btn">Install App</a>
+  </nav>
+</header>
 
 <div class="sidebar-overlay" id="overlay" onclick="toggleSidebar()"></div>
 
@@ -30,9 +44,9 @@
       <a href="workflows.html">Workflows</a>
       <div class="tree-branch">
         <div class="tree-node">
-          <div class="tree-toggle" onclick="toggleTree(this)">
-            <span class="tree-arrow">▸</span> Event-based
-          </div>
+          <a href="workflows.html#event-based-triggers" class="tree-toggle" onclick="toggleTree(this)">
+            <span class="tree-arrow">&#9656;</span> Event-based
+          </a>
           <div class="tree-children">
             <a href="workflows.html#event-based-triggers">Triggers</a>
             <a href="workflows.html#conditions">Conditions</a>
@@ -43,9 +57,9 @@
           </div>
         </div>
         <div class="tree-node">
-          <div class="tree-toggle" onclick="toggleTree(this)">
-            <span class="tree-arrow">▸</span> Scheduled
-          </div>
+          <a href="workflows.html#scheduled-workflows" class="tree-toggle" onclick="toggleTree(this)">
+            <span class="tree-arrow">&#9656;</span> Scheduled
+          </a>
           <div class="tree-children">
             <a href="workflows.html#scheduled-trigger">Scheduled Trigger</a>
             <a href="workflows.html#scheduled-workflows">Scheduled Workflows</a>
@@ -69,20 +83,169 @@
   <div class="content">
 
     <div class="section-hero">
-      <h1>Welcome to OpsPilot</h1>
+      <div class="hero-badge">Shopify Automation &amp; Task Management</div>
+      <h1>Run your store with calm, <em>green-light clarity</em></h1>
       <div class="last-updated">Last updated on 10 April 2026</div>
-      <p>Your complete guide to automating Shopify store operations, managing tasks, and organizing notes — all from inside your Shopify Admin.</p>
+      <p>OpsPilot helps merchants automate daily operations with workflows, alerts, and task management. Track orders, inventory, abandoned checkouts, and customer activity in one command center.</p>
+      <div class="hero-actions">
+        <a class="btn-hero btn-hero-primary" href="https://apps.shopify.com/">Install OpsPilot <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <a class="btn-hero btn-hero-secondary" href="#explore-features">Explore features</a>
+      </div>
+    </div>
+
+    <!-- ── HERO SHOWCASE ── -->
+    <div class="feature-showcase">
+      <div class="blob-tr"></div>
+      <div class="blob-bl"></div>
+      <div class="showcase-logo">
+        <span class="showcase-logo-dot"></span> OpsPilot
+      </div>
+      <div class="showcase-title">Your Shopify Ops Command Center</div>
+      <div class="showcase-subtitle">Workflows, tasks, notes, and integrations — all managed from one powerful dashboard inside Shopify Admin.</div>
+      <div class="showcase-body">
+        <img class="showcase-image" src="images/workflows_list_.png" alt="OpsPilot Workflows overview showing stats, workflow list, and recent executions" />
+        <span class="showcase-annotation ann-left ann-pos-tl" style="--ann-w:50px;--ann-rot:18deg" data-tip="Track total, active, and success rates at a glance">
+          <span class="ann-icon"></span> Live Stats
+        </span>
+        <span class="showcase-annotation ann-left ann-pos-bl" style="--ann-w:45px;--ann-rot:-15deg" data-tip="Event-based and scheduled automation triggers">
+          <span class="ann-icon"></span> Smart Triggers
+        </span>
+        <span class="showcase-annotation ann-right ann-pos-tr" style="--ann-w:50px;--ann-rot:-18deg" data-tip="Use predefined templates or create custom workflows">
+          <span class="ann-icon"></span> Templates
+        </span>
+        <span class="showcase-annotation ann-right ann-pos-mr" style="--ann-w:45px;--ann-rot:-5deg" data-tip="Full execution history with success/failure status">
+          <span class="ann-icon"></span> Execution Log
+        </span>
+      </div>
+    </div>
+
+    <!-- ── FLOATING PREVIEW CARD ── -->
+    <div class="preview-card-wrap">
+      <div class="preview-card">
+        <div class="preview-card-bar">
+          <span class="preview-dot preview-dot-r"></span>
+          <span class="preview-dot preview-dot-y"></span>
+          <span class="preview-dot preview-dot-g"></span>
+          <span>OpsPilot &mdash; Live Operations</span>
+        </div>
+        <div class="preview-card-body">
+          <!-- Dashboard pane -->
+          <div class="preview-pane">
+            <h4>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg>
+              Dashboard
+            </h4>
+            <div class="metric-grid">
+              <div class="metric-box"><span>Queue</span><strong>6</strong></div>
+              <div class="metric-box"><span>Active</span><strong>14</strong></div>
+              <div class="metric-box"><span>Revenue</span><strong>$2.4k</strong></div>
+              <div class="metric-box"><span>Tasks</span><strong>8</strong></div>
+            </div>
+            <div class="mini-chart"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          </div>
+          <!-- Workflows pane -->
+          <div class="preview-pane">
+            <h4>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/></svg>
+              Workflows
+            </h4>
+            <div class="flow-list">
+              <div class="flow-item flow-item-active"><span class="flow-dot"></span> Order received</div>
+              <div class="flow-item flow-item-active"><span class="flow-dot"></span> Check inventory</div>
+              <div class="flow-item"><span class="flow-dot"></span> Notify via Slack</div>
+              <div class="flow-item"><span class="flow-dot"></span> Log to Sheets</div>
+            </div>
+            <div class="pill-group">
+              <span class="pill-tag">Slack</span>
+              <span class="pill-tag">Email</span>
+              <span class="pill-tag">Sheets</span>
+            </div>
+          </div>
+          <!-- Tasks pane -->
+          <div class="preview-pane">
+            <h4>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m9 12 2 2 4-4"/></svg>
+              Tasks
+            </h4>
+            <div class="flow-list">
+              <div class="flow-item flow-item-active"><span class="flow-dot"></span> VIP order flagged</div>
+              <div class="flow-item flow-item-active"><span class="flow-dot"></span> Low stock alert</div>
+              <div class="flow-item"><span class="flow-dot"></span> Checkout follow-up</div>
+              <div class="flow-item"><span class="flow-dot"></span> Inventory restock</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── FLOATING PREVIEW CARD ── -->
+    <div class="preview-card-wrap">
+      <div class="preview-card">
+        <div class="preview-card-bar">
+          <span class="preview-dot preview-dot-r"></span>
+          <span class="preview-dot preview-dot-y"></span>
+          <span class="preview-dot preview-dot-g"></span>
+          <span>OpsPilot &mdash; Live Operations</span>
+        </div>
+        <div class="preview-card-body">
+          <!-- Dashboard pane -->
+          <div class="preview-pane">
+            <h4>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg>
+              Dashboard
+            </h4>
+            <div class="metric-grid">
+              <div class="metric-box"><span>Queue</span><strong>6</strong></div>
+              <div class="metric-box"><span>Active</span><strong>14</strong></div>
+              <div class="metric-box"><span>Revenue</span><strong>$2.4k</strong></div>
+              <div class="metric-box"><span>Tasks</span><strong>8</strong></div>
+            </div>
+            <div class="mini-chart"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          </div>
+          <!-- Workflows pane -->
+          <div class="preview-pane">
+            <h4>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/></svg>
+              Workflows
+            </h4>
+            <div class="flow-list">
+              <div class="flow-item flow-item-active"><span class="flow-dot"></span> Order received</div>
+              <div class="flow-item flow-item-active"><span class="flow-dot"></span> Check inventory</div>
+              <div class="flow-item"><span class="flow-dot"></span> Notify via Slack</div>
+              <div class="flow-item"><span class="flow-dot"></span> Log to Sheets</div>
+            </div>
+            <div class="pill-group">
+              <span class="pill-tag">Slack</span>
+              <span class="pill-tag">Email</span>
+              <span class="pill-tag">Sheets</span>
+            </div>
+          </div>
+          <!-- Tasks pane -->
+          <div class="preview-pane">
+            <h4>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m9 12 2 2 4-4"/></svg>
+              Tasks
+            </h4>
+            <div class="flow-list">
+              <div class="flow-item flow-item-active"><span class="flow-dot"></span> VIP order flagged</div>
+              <div class="flow-item flow-item-active"><span class="flow-dot"></span> Low stock alert</div>
+              <div class="flow-item"><span class="flow-dot"></span> Checkout follow-up</div>
+              <div class="flow-item"><span class="flow-dot"></span> Inventory restock</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <h2 id="quick-start">Quick Start</h2>
     <div class="quick-links">
       <a class="quick-link" href="getting-started.html">
-        <div class="ql-icon">🚀</div>
+        <div class="ql-icon">ðŸš€</div>
         <div class="ql-title">Getting Started</div>
         <div class="ql-desc">Install the app, first login, and a quick tour</div>
       </a>
       <a class="quick-link" href="notes.html">
-        <div class="ql-icon">📝</div>
+        <div class="ql-icon">ðŸ“Â</div>
         <div class="ql-title">Create a Note</div>
         <div class="ql-desc">Add notes to orders, products, and customers</div>
       </a>
@@ -91,13 +254,13 @@
         <div class="ql-title">Create a Task</div>
         <div class="ql-desc">Assign tasks to your team and track progress</div>
       </a>
-      <a class="quick-link" href="workflows.html">
+      <div class="quick-link">
         <div class="ql-icon">⚡</div>
-        <div class="ql-title">Build a Workflow</div>
+        <div class="ql-title"><a href="workflows.html" style="text-decoration:none;color:inherit">Build a Workflow</a></div>
         <div class="ql-desc">Automate actions with <a href="workflows.html#triggers">triggers</a>, <a href="workflows.html#conditions">conditions</a>, and <a href="workflows.html#actions">actions</a></div>
-      </a>
+      </div>
       <a class="quick-link" href="integrations.html">
-        <div class="ql-icon">🔗</div>
+        <div class="ql-icon">ðŸâ€—</div>
         <div class="ql-title">Connect Integrations</div>
         <div class="ql-desc">Set up Email, Slack, and Google Sheets</div>
       </a>
@@ -119,13 +282,275 @@
       </tbody>
     </table>
 
-  </div>
-</div>
-    <div class="page-nav">
-      <span class="page-nav-btn page-nav-prev disabled"></span>
-      <a class="page-nav-btn page-nav-next" href="getting-started.html">Getting Started &#8594;</a>
+    <!-- ── CORE PLATFORM FEATURES ── -->
+    <div class="lp-section-header" style="margin-top:56px;">
+      <p class="lp-eyebrow">Core Platform</p>
+      <h2 class="lp-section-title" id="core-features">Everything you need to run your store</h2>
+      <p class="lp-section-sub">Powerful tools designed for Shopify merchants.</p>
+    </div>
+    <div class="lp-features">
+      <article class="lp-card">
+        <div class="lp-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg></div>
+        <h3>Real-Time Dashboard</h3>
+        <p>Complete overview of store health. Identify issues and opportunities at a glance.</p>
+        <ul class="lp-card-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> High-value orders</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Abandoned checkouts</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Inventory risks</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Pending payments</li>
+        </ul>
+      </article>
+      <article class="lp-card">
+        <div class="lp-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/></svg></div>
+        <h3>Workflow Automation</h3>
+        <p>Build flexible workflows for repetitive operational processes.</p>
+        <ul class="lp-card-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Order, customer, product triggers</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Abandoned checkout triggers</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Condition &amp; action logic</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Ready-to-use templates</li>
+        </ul>
+      </article>
+      <article class="lp-card">
+        <div class="lp-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>Task Management</h3>
+        <p>Convert important events into actionable tasks for your team.</p>
+        <ul class="lp-card-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Tasks from events</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Assign ownership</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Kanban or table views</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Custom statuses</li>
+        </ul>
+      </article>
+      <article class="lp-card">
+        <div class="lp-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></div>
+        <h3>Alerts &amp; Notifications</h3>
+        <p>Stay informed when important events occur.</p>
+        <ul class="lp-card-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Email notifications</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Slack messages</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Google Sheets logging</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Activity history</li>
+        </ul>
+      </article>
     </div>
 
+    <!-- ── SPOTLIGHT — Alternating rows ── -->
+    <div class="lp-spotlight">
+      <div class="lp-section-header">
+        <p class="lp-eyebrow">Platform Deep Dive</p>
+        <h2 class="lp-section-title">Everything Connected, Nothing Missed</h2>
+        <p class="lp-section-sub">From integrations to branding to intelligent automation — OpsPilot covers every layer.</p>
+      </div>
+      <div class="lp-spotlight-row">
+        <div class="lp-spotlight-img"><img src="images/settings/Screenshot%202026-04-08%20175929.png" alt="Stay Informed Everywhere — Slack, Email, Google Sheets" loading="lazy" /></div>
+        <div class="lp-spotlight-text">
+          <p class="lp-eyebrow">Integrations</p>
+          <h3>Stay Informed, Everywhere.</h3>
+          <p>Connect your store to Slack, Google Sheets, and Email. Get instant team alerts anywhere, automated historical data logs, and professionally branded notifications delivered on cue.</p>
+        </div>
+      </div>
+      <div class="lp-spotlight-row reverse">
+        <div class="lp-spotlight-img"><img src="images/workflows_list_.png" alt="The Automation Engine — Workflows" loading="lazy" /></div>
+        <div class="lp-spotlight-text">
+          <p class="lp-eyebrow">Automation</p>
+          <h3>The Automation Engine.</h3>
+          <p>Build powerful, logic-based workflows that run your store 24/7. Event-based and scheduled triggers, conditional logic, and 35+ predefined templates to get you started fast.</p>
+        </div>
+      </div>
+      <div class="lp-spotlight-row">
+        <div class="lp-spotlight-img"><img src="images/tasks/Screenshot%202026-04-09%20142352.png" alt="Turn Alerts into Action — Kanban tasks" loading="lazy" /></div>
+        <div class="lp-spotlight-text">
+          <p class="lp-eyebrow">Task Management</p>
+          <h3>Turn Store Data into Action.</h3>
+          <p>Automatically alert staff on unfulfilled orders, flag high-risk orders before shipping, and auto-tag VIP customers to trigger personalized follow-up — all without manual effort.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── FEATURE HIGHLIGHTS ── -->
+    <h2 id="explore-features">Explore Features</h2>
+    <div class="pro-showcase">
+      <div class="pro-showcase-header">
+        <div class="pro-showcase-logo">OpsPilot in Action</div>
+        <div class="pro-showcase-title">Everything You Need, One App</div>
+        <div class="pro-showcase-subtitle">From real-time dashboards to automated workflows — see how OpsPilot keeps your Shopify store running smoothly.</div>
+      </div>
+
+      <div class="pro-showcase-grid cols-3">
+        <a href="dashboard.html" class="pro-card" style="text-decoration:none;color:inherit">
+          <img class="pro-card-img" src="images/dashboard/Screenshot%202026-04-08%20183943.png" alt="Dashboard — Open tasks by priority chart" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Dashboard</div>
+            <p class="pro-card-desc">At-a-glance health checks, priority charts, and operational summaries.</p>
+          </div>
+        </a>
+
+        <a href="tasks.html" class="pro-card" style="text-decoration:none;color:inherit">
+          <img class="pro-card-img" src="images/tasks/Screenshot%202026-04-09%20142352.png" alt="Tasks — overview with filters and status tracking" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Tasks</div>
+            <p class="pro-card-desc">Assign, filter, and track tasks with status boards and smart filters.</p>
+          </div>
+        </a>
+
+        <a href="notes.html" class="pro-card" style="text-decoration:none;color:inherit">
+          <img class="pro-card-img" src="images/note/Screenshot%202026-04-09%20143148.png" alt="Notes — searchable notes linked to orders and products" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Notes</div>
+            <p class="pro-card-desc">Attach searchable notes to orders, products, and customers.</p>
+          </div>
+        </a>
+
+        <a href="workflows.html" class="pro-card" style="text-decoration:none;color:inherit">
+          <img class="pro-card-img" src="images/workflows_list_.png" alt="Workflows — automation list with triggers and execution log" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Workflows</div>
+            <p class="pro-card-desc">Automate emails, Slack alerts, and tasks with event or scheduled triggers.</p>
+          </div>
+        </a>
+
+        <a href="activity.html" class="pro-card" style="text-decoration:none;color:inherit">
+          <img class="pro-card-img" src="images/history/Screenshot%202026-04-09%20143316.png" alt="Activity History — full log of all task, note, and workflow changes" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Activity History</div>
+            <p class="pro-card-desc">Complete audit trail for every task, note, and workflow execution.</p>
+          </div>
+        </a>
+
+        <a href="settings.html" class="pro-card" style="text-decoration:none;color:inherit">
+          <img class="pro-card-img" src="images/settings/Screenshot%202026-04-08%20175929.png" alt="Settings — integrations, team management, and billing" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Settings</div>
+            <p class="pro-card-desc">Manage integrations, team access, email branding, and billing.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- ── DASHBOARD DEEP DIVE ── -->
+    <div class="pro-showcase" style="margin-top:12px">
+      <div class="pro-showcase-header">
+        <div class="pro-showcase-logo">Dashboard Insights</div>
+        <div class="pro-showcase-title">Monitor What Matters</div>
+        <div class="pro-showcase-subtitle">Live health signals, staff workloads, workflow trends — all on one screen.</div>
+      </div>
+
+      <div class="pro-showcase-grid cols-2">
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/dashboard/Screenshot%202026-04-08%20183754.png" alt="Health cards — checkout risk, fulfillment, and inventory status" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Health Signals</div>
+            <p class="pro-card-desc">Checkout risk, fulfillment, and inventory health at a glance.</p>
+          </div>
+        </div>
+
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/dashboard/Screenshot%202026-04-08%20184024.png" alt="Workflow trends — daily success and failure chart" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Workflow Trends</div>
+            <p class="pro-card-desc">Daily success/failure volume so you know automations are running smoothly.</p>
+          </div>
+        </div>
+
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/dashboard/Screenshot%202026-04-08%20183912.png" alt="Today's tasks panel with due dates and urgency" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Today's Tasks</div>
+            <p class="pro-card-desc">See what needs attention right now — overdue, due today, and upcoming.</p>
+          </div>
+        </div>
+
+        <div class="pro-card">
+          <img class="pro-card-img" src="images/dashboard/Screenshot%202026-04-08%20184004.png" alt="Staff tasks — workload split by team member" />
+          <div class="pro-card-body">
+            <div class="pro-card-label">Staff Tasks</div>
+            <p class="pro-card-desc">View open tasks by assignee and balance workloads across your team.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── FAQ ── -->
+    <div class="lp-faq">
+      <div class="lp-section-header">
+        <p class="lp-eyebrow">Common Questions</p>
+        <h2 class="lp-section-title">FAQ</h2>
+      </div>
+      <div class="lp-faq-grid">
+        <details class="lp-faq-item">
+          <summary class="lp-faq-q"><span>What does OpsPilot automate?</span><span class="lp-faq-marker">+</span></summary>
+          <p class="lp-faq-a">Operational follow-up across orders, customers, products, inventory, checkouts, and scheduled workflows.</p>
+        </details>
+        <details class="lp-faq-item">
+          <summary class="lp-faq-q"><span>Do I need technical knowledge?</span><span class="lp-faq-marker">+</span></summary>
+          <p class="lp-faq-a">No. Use templates or the visual builder — no code needed.</p>
+        </details>
+        <details class="lp-faq-item">
+          <summary class="lp-faq-q"><span>Can it alert outside Shopify?</span><span class="lp-faq-marker">+</span></summary>
+          <p class="lp-faq-a">Yes. Slack, email, and Google Sheets integrations are built in.</p>
+        </details>
+        <details class="lp-faq-item">
+          <summary class="lp-faq-q"><span>Is it useful for teams?</span><span class="lp-faq-marker">+</span></summary>
+          <p class="lp-faq-a">Yes — task assignments, notes, activity history, and shared workflows keep everyone aligned.</p>
+        </details>
+        <details class="lp-faq-item">
+          <summary class="lp-faq-q"><span>Can I test workflows before going live?</span><span class="lp-faq-marker">+</span></summary>
+          <p class="lp-faq-a">Yes. Run manually or test with the latest order payload to verify everything works.</p>
+        </details>
+        <details class="lp-faq-item">
+          <summary class="lp-faq-q"><span>Are there ready-made templates?</span><span class="lp-faq-marker">+</span></summary>
+          <p class="lp-faq-a">Yes. Built-in templates for common use cases that you can customize anytime.</p>
+        </details>
+      </div>
+    </div>
+
+    <!-- ── CTA ── -->
+    <div class="lp-cta">
+      <h2>Ready to automate your store?</h2>
+      <p>Join merchants saving hours every week with OpsPilot.</p>
+      <a class="btn-hero btn-hero-primary" href="https://apps.shopify.com/">Start with OpsPilot <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      <p class="lp-support-text">Questions? <a href="mailto:support@opspilotflow.com">support@opspilotflow.com</a></p>
+    </div>
+
+    <div class="page-nav">
+      <span class="page-nav-btn page-nav-prev disabled"></span>
+      <a class="page-nav-btn page-nav-next" href="getting-started.html"><span class="nav-label">Next &#8594;</span>Getting Started </a>
+    </div>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="site-footer-brand">
+      <a class="footer-logo" href="index.html"><span>Ops</span><span class="logo-pilot">Pilot</span></a>
+      <p>Shopify automation &amp; task management. Workflows, alerts, and operations in one command center.</p>
+    </div>
+    <div class="site-footer-links">
+      <div>
+        <span class="footer-heading">Docs</span>
+        <a href="getting-started.html">Getting Started</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="workflows.html">Workflows</a>
+        <a href="tasks.html">Tasks</a>
+      </div>
+      <div>
+        <span class="footer-heading">Help</span>
+        <a href="faq.html">FAQ</a>
+        <a href="troubleshooting.html">Troubleshooting</a>
+        <a href="api-reference.html">API Reference</a>
+      </div>
+    </div>
+  </div>
+  <div class="site-footer-bottom">&copy; 2026 OpsPilot. All rights reserved.</div>
+</footer>
+
 <script src="nav.js"></script>
+<!-- Crisp Live Chat -->
+<script type="text/javascript">
+  window.$crisp=[];window.CRISP_WEBSITE_ID="6f9ec4d1-3401-45af-af1c-9f0f0315773c";
+  (function(){var d=document;var s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+</script>
 </body>
 </html>
