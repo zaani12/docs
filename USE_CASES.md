@@ -557,7 +557,6 @@ OpsPilot is an embedded Shopify app for automating store operations. It provides
 | /api/item-actions | POST | CORS (Shopify admin) | Create tasks/notes from Shopify admin surface |
 | /health | GET | None | Health check |
 | /ready | GET | None | Readiness probe |
-| /docs | GET | None | API documentation page |
 | /webhooks | POST | Shopify HMAC | Generic Shopify webhook handler |
 | /webhooks/app/scopes_update | POST | Shopify HMAC | Scope change webhook (not yet implemented) |
 | /webhooks/app/uninstalled | POST | Shopify HMAC | App uninstall webhook |

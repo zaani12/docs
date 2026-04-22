@@ -156,7 +156,6 @@
         <tr><td><code>/api/item-actions</code></td><td>POST</td><td>CORS (Shopify admin surface)</td><td>Create tasks and notes from Shopify order/product/customer pages via the app extension</td></tr>
         <tr><td><code>/health</code></td><td>GET</td><td>None</td><td>Health check — returns 200 OK if the service is running</td></tr>
         <tr><td><code>/ready</code></td><td>GET</td><td>None</td><td>Readiness probe — used by infrastructure to confirm the app is ready to serve traffic</td></tr>
-        <tr><td><code>/docs</code></td><td>GET</td><td>None</td><td>API documentation page (internal)</td></tr>
         <tr><td><code>/webhooks</code></td><td>POST</td><td>Shopify HMAC signature</td><td>Generic Shopify webhook receiver — routes to appropriate handler by topic</td></tr>
         <tr><td><code>/webhooks/app/scopes_update</code></td><td>POST</td><td>Shopify HMAC</td><td>Registered but not yet implemented — scope changes do not trigger any action</td></tr>
         <tr><td><code>/webhooks/app/uninstalled</code></td><td>POST</td><td>Shopify HMAC</td><td>App uninstall webhook — removes all sessions for the shop</td></tr>
